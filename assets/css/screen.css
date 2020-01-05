@@ -22,7 +22,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 10. Subscribe Overlay
 11. Site Footer
-12. Dark Mode
+12. Dark Mode (Moved to dark.css)
 
 */
 
@@ -170,6 +170,7 @@ body {
 
 .site-logo {
     max-height: 55px;
+    height: 55px;
 }
 
 .site-description {
@@ -359,6 +360,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     width: auto;
     height: 21px;
+}
+@media (max-width: 500px) {
+    .site-nav-logo {
+        padding: 14.5px 0;
+    }
+    .site-nav-logo img {
+        height: 14px;
+    }
 }
 
 .site-home-header .site-nav-logo {
@@ -655,7 +664,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-primary-tag {
     margin: 0 0 0.2em;
-    color: var(--blue);
+    color: var(--primary);
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
@@ -941,6 +950,25 @@ make sure this only happens on large viewports / desktop-ish devices.
     text-transform: uppercase;
 }
 
+.post-full-all-tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--midgrey);
+    font-size: 1.3rem;
+    line-height: 1.4em;
+    font-weight: 600;
+    margin-top: 1.5em;
+}
+
+.post-full-all-tags > a {
+    padding: 0 .5em;
+}
+
+.post-full-all-tags > a:first-child {
+    padding: 0 .5em 0 0;
+}
+
 .post-full-meta-date {
     color: var(--midgrey);
     font-size: 1.2rem;
@@ -1007,7 +1035,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 0 170px 6vw;
     min-height: 230px;
-    font-family: Georgia, serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 2.0rem;
     line-height: 1.6em;
     background: #fff;
@@ -1085,9 +1113,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
+    color: var(--primary);
     text-decoration: none;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: var(--primary) 0 -1px 0 inset;
 }
 
 .post-full-content strong,
@@ -1156,12 +1184,13 @@ Usage (In Ghost editor):
 
 .post-full-content blockquote {
     margin: 0 0 1.5em;
-    padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
+    padding: .5em 1.5em;
+    border-left: var(--primary) 4px solid;
+    background-color: color(var(--primary) lightness(+39%));
 }
 @media (max-width: 500px) {
     .post-full-content blockquote {
-        padding: 0 1.3em;
+        padding: .5em 1.3em;
     }
 }
 
@@ -1251,7 +1280,7 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .post-full-content h1 {
@@ -1328,7 +1357,7 @@ Usage (In Ghost editor):
     margin: 0.5em 0;
     padding: 0.4em 1em 0.9em;
     border: 0;
-    color: var(--blue);
+    color: var(--primary);
     font-family: Georgia,serif;
     font-size: 3.2rem;
     line-height: 1.35em;
@@ -1754,7 +1783,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button:active,
 .subscribe-form button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--primary) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-form .button-loader,

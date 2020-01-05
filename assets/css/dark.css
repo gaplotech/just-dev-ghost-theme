@@ -159,6 +159,10 @@
         box-shadow: 0 0 1px rgba(255,255,255,0.9);
     }
 
+    .post-full-content blockquote {
+        background-color: color(var(--darkmode) lightness(+5%));
+    }
+
     .kg-bookmark-title {
         color: #fff;
     }

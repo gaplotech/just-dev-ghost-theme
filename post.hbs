@@ -31,6 +31,12 @@ into the {body} of the default.hbs template --}}
                 <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
                 {{/if}}
 
+                <p class="post-full-all-tags">
+                    {{#foreach tags from="2"}}
+                    <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">#{{name}}</a>{{#unless @last}}|{{/unless}}
+                    {{/foreach}}
+                </p>
+
                 <div class="post-full-byline">
 
                     <section class="post-full-byline-content">

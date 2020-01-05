@@ -47,11 +47,6 @@ pre[class*="language-"] {
   position: relative;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #232323;
-}
-
 /* Inline code */
 :not(pre) > code{
   padding: .3rem;
@@ -264,6 +259,10 @@ div.code-toolbar > .toolbar .toolbar-item {
   padding: 4px;
 }
 
+div.code-toolbar > .toolbar .toolbar-item:hover {
+  color: #e49c3b;
+}
+
 div.code-toolbar > .toolbar a {
   cursor: pointer;
 }
@@ -305,8 +304,8 @@ div.code-toolbar > .toolbar span:focus {
 
 pre[class*="language-"].line-numbers {
   position: relative;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
   padding-left: 3.8em;
   counter-reset: linenumber;
 }
@@ -328,7 +327,7 @@ pre[class*="language-"].line-numbers > code {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #292929;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .line-numbers-rows > span {
