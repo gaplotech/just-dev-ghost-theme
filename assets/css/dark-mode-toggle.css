@@ -1,0 +1,9 @@
+#dark-mode-toggle {
+    --dark-mode-toggle-dark-icon: url("/assets/sun.svg");
+    --dark-mode-toggle-light-icon: url("/assets/moon.svg");
+    --dark-mode-toggle-icon-size: 2rem;
+    opacity: 0.75;
+}
+#dark-mode-toggle:hover {
+    opacity: 1;
+}

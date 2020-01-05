@@ -12,9 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/dark-mode-toggle.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/dark.css"}}" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/gapstyle.css"}}" />
-
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -22,7 +23,6 @@
 <body class="{{body_class}}">
 
     <div class="site-wrapper">
-
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
 
@@ -84,6 +84,8 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
+    {{!-- https://github.com/GoogleChromeLabs/dark-mode-toggle --}}
+    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
     {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
     <script src="{{asset "built/casper.js"}}"></script>
 
