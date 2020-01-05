@@ -8,12 +8,16 @@
         background: var(--darkmode);
     }
 
+    ::selection {
+        background: color(var(--primary));
+    }
+
     img {
         opacity: 0.9;
     }
 
     .site-header-background:before {
-        background: rgba(0,0,0,0.6);
+        background: color(var(--darkgrey) l(+2%));
     }
 
     .post-feed {
@@ -160,7 +164,7 @@
     }
 
     .post-full-content blockquote {
-        background-color: color(var(--darkmode) lightness(+5%));
+        background-color: color(var(--darkmode) lightness(+4%));
     }
 
     .kg-bookmark-title {

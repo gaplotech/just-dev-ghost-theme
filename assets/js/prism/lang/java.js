@@ -28,6 +28,21 @@
         }
     });
 
+    Prism.languages.insertBefore('java', 'keyword', {
+        'constant': /\b[A-Z](?:[A-Z_]|\dx?)*\b/
+    });
+
+    Prism.languages.insertBefore('java', 'punctuation', {
+        'property-access': {
+            pattern: /(\.\s*)#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*/,
+            lookbehind: true
+        },
+        'maybe-class-name': {
+            pattern: /(^|[^$\w\xA0-\uFFFF])[A-Z][$\w\xA0-\uFFFF]+/,
+            lookbehind: true
+        },
+    });
+
     Prism.languages.insertBefore('java', 'string', {
         'triple-quoted-string': {
             // http://openjdk.java.net/jeps/355#Description

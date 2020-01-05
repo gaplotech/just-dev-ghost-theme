@@ -4,7 +4,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
   color: #CBAD96;
-  background: #232323;
+  background: #2C2C2C;
   font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   direction: ltr;
   font-feature-settings: normal;
@@ -24,7 +24,7 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  font-size: 14px;
+  font-size: .75em;
 }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
@@ -233,6 +233,7 @@ pre[class*='language-'] {
 
 div.code-toolbar {
   position: relative;
+  width: 100%;
 }
 
 div.code-toolbar > .toolbar {

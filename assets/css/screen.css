@@ -114,7 +114,7 @@ body {
     margin-top: 64px;
     padding-bottom: 12px;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    background: color(var(--darkgrey) l(+2%)) no-repeat center center;
     background-size: cover;
 }
 
@@ -272,7 +272,7 @@ body {
     right: 0;
     left: 0;
     z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
+    background: color(var(--darkgrey) l(+2%));
 }
 
 .site-nav {
@@ -305,7 +305,6 @@ body {
 .site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
 .site-nav-main .site-nav-left-wrapper:after {
     right: 0;
-    background: linear-gradient(to right, color(var(--darkgrey) l(-5%) a(0)) 0%,color(var(--darkgrey) l(-5%)) 100%);
 }
 
 .site-nav-left {
@@ -1048,7 +1047,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 @media (max-width: 800px) {
     .post-full-content {
-        padding: 0 5vw;
+        padding: 0 2.5vw;
         font-size: 1.8rem;
     }
 }
@@ -1873,7 +1872,7 @@ Usage (In Ghost editor):
 
 .read-next {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: color(var(--darkgrey) l(-5%));
+    background: color(var(--darkgrey) l(+2%));
 }
 
 .read-next-feed {
@@ -1931,7 +1930,7 @@ Usage (In Ghost editor):
     overflow: hidden;
     margin: 0 25px 50px;
     padding: 25px;
-    background: linear-gradient(color(var(--darkgrey) l(+2%)), color(var(--darkgrey) l(-5%)));
+    background: linear-gradient(color(var(--darkgrey) l(+5%)), color(var(--darkgrey) l(+2%)));
     border-radius: 3px;
 }
 
@@ -2783,7 +2782,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%));
+    background: color(var(--darkgrey) l(+2%));
 }
 
 .site-footer-content {

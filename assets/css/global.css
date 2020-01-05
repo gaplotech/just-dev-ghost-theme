@@ -15,7 +15,7 @@
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
     --brown: #a3821a;
-    --darkmode: color(var(--darkgrey) l(+2%));
+    --darkmode: #232323;
 }
 
 /* Reset
@@ -299,7 +299,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--primary) lightness(+30%));
+    background: color(var(--primary) lightness(+20%));
 }
 
 hr {

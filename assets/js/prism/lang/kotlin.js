@@ -41,6 +41,7 @@
             pattern: /\B@(?:\w+:)?(?:[A-Z]\w*|\[[^\]]+\])/,
             alias: 'builtin'
         },
+        'constant': /\b[A-Z](?:[A-Z_]|\dx?)*\b/
     });
     Prism.languages.insertBefore('kotlin', 'function', {
         'label': {
@@ -96,6 +97,18 @@
             }
         },
     });
+
+    Prism.languages.insertBefore('kotlin', 'punctuation', {
+        'property-access': {
+            pattern: /(\.\s*)#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*/,
+            lookbehind: true
+        },
+        'maybe-class-name': {
+            pattern: /(^|[^$\w\xA0-\uFFFF])[A-Z][$\w\xA0-\uFFFF]+/,
+            lookbehind: true
+        },
+    });
+
     Prism.languages.insertBefore('kotlin', 'constant', {
         'maybe-generic-template': {
             pattern: /T/,
