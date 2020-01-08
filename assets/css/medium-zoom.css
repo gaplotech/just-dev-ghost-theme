@@ -1,0 +1,10 @@
+@import "global.css";
+
+.medium-zoom-overlay {
+    z-index: 1000;
+    background-color: var(--darkmode);
+}
+
+.medium-zoom-image {
+    z-index: 1001;
+}

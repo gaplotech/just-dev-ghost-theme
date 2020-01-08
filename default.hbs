@@ -11,11 +11,14 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Styles'n'Scripts --}}
+    {{!-- Standalone css --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/dark-mode-toggle.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/dark.css"}}" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/gapstyle.css"}}" />
+
+    {{!-- Css Deponds on screen.css --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/medium-zoom.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/dark.css"}}" media="(prefers-color-scheme: dark)" />
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 

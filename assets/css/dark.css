@@ -227,4 +227,8 @@
     .subscribe-form .success .message-success {
         color: color(var(--green) l(+5%) s(-5%));
     }
+
+    .kg-bookmark-card {
+        background-color: color(var(--darkmode) lightness(+4%));
+    }
 }

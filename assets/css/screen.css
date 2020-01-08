@@ -689,7 +689,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-excerpt {
     max-width: 56em;
     color: var(--midgrey);
-    font-family: Georgia, serif;
 }
 
 .post-card-excerpt p {
@@ -1001,7 +1000,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-custom-excerpt {
     margin: 20px 0 0;
     color: var(--midgrey);
-    font-family: Georgia, serif;
     font-size: 2.3rem;
     line-height: 1.4em;
     font-weight: 300;
@@ -1357,7 +1355,6 @@ Usage (In Ghost editor):
     padding: 0.4em 1em 0.9em;
     border: 0;
     color: var(--primary);
-    font-family: Georgia,serif;
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -2193,7 +2190,6 @@ Usage (In Ghost editor):
 
 .kg-bookmark-card {
     width: 100%;
-    background: var(--white);
 }
 
 .kg-card + .kg-bookmark-card {
@@ -2234,7 +2230,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .kg-bookmark-description {
@@ -2701,7 +2697,6 @@ Usage (In Ghost editor):
     margin: 0 auto 50px;
     max-width: 650px;
     color: #fff;
-    font-family: Georgia, serif;
     font-size: 2.4rem;
     line-height: 1.3em;
     font-weight: 300;
