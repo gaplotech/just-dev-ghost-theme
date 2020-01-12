@@ -48,7 +48,7 @@ into the {body} of the default.hbs template --}}
     //   scrolling but continuous processing even when not scrolling
     $(document).ready(function () {
         
-        var nav = document.querySelector('.site-nav-main .site-nav');
+        var navs = document.querySelectorAll('.site-nav-main .site-nav, .site-nav-main .m-site-nav');
         var feed = document.querySelector('.post-feed');
 
         var lastScrollY = window.scrollY;
@@ -80,9 +80,13 @@ into the {body} of the default.hbs template --}}
 
             // show/hide nav
             if (lastScrollY >= trigger - 20) {
-                nav.classList.add('fixed-nav-active');
+                navs.forEach(function(nav) {
+                    nav.classList.add('fixed-nav-active');
+                });
             } else {
-                nav.classList.remove('fixed-nav-active');
+                navs.forEach(function(nav) {
+                    nav.classList.remove('fixed-nav-active');
+                });
             }
 
             ticking = false;

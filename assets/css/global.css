@@ -467,3 +467,17 @@ h6 {
     font-size: 1.4rem;
     font-weight: 500;
 }
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 0.4s ease-in-out;
+}
+.ripple:hover {
+    background: transparent radial-gradient(circle, transparent 1%, var(--darkmode) 1%) center/15000%;
+}
+.ripple:active {
+    background-color: color(var(--primary) l(+10%));
+    background-size: 100%;
+    transition: background 0s;
+}

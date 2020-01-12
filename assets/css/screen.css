@@ -286,6 +286,85 @@ body {
     font-size: 1.3rem;
 }
 
+.m-site-nav {
+    position: relative;
+    z-index: 100;
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow-y: hidden;
+    height: 64px;
+    font-size: 1.3rem;
+}
+
+.full-site-nav-content {
+    background-color: #fff;
+    display: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 1100;
+}
+
+.full-site-nav-content .full-nav {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.full-site-nav-content a.full-nav:hover {
+    background-color: color(var(--primary) a(70%));
+    text-decoration: none;
+}
+
+.full-site-nav-content a.full-nav {
+    color: #000;
+}
+
+@media (max-width: 500px) {
+    .site-nav {
+        display: none;
+    }
+
+    .m-site-nav {
+        display: flex;
+    }
+
+    .site-nav-main .m-site-nav {
+        padding-right: 5vw;
+    }
+
+    .m-site-nav .site-nav-right {
+        display: flex;
+    }
+
+    .nav-more-btn {
+        z-index: 1100;
+        padding: 0.5rem 0.5rem;
+        opacity: .7;
+        border-radius: 10rem;
+        height: 3.5rem;
+    }
+
+    .full-site-nav-content {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        width: auto;
+        min-width: 150px;
+        height: auto;
+        right: 1rem;
+        top: 5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-in-out;
+    }
+
+    .full-site-nav-content.active {
+        max-height: 400px;
+        transition: max-height 0.3s ease-in-out;
+    }
+}
+
 .site-nav-left-wrapper {
     position: relative;
     flex: 1 0 auto;
@@ -415,8 +494,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     bottom: 8px;
     left: 12px;
     height: 1px;
-    background: #fff;
-    opacity: 0.25;
+    background: color(var(--primary));
+    opacity: 1;
     transition: all 0.35s ease-in-out;
 }
 
@@ -564,12 +643,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     z-index: 100;
 }
 
-.home-template .site-nav-main .site-nav {
+.home-template .site-nav-main .site-nav, .home-template .site-nav-main .m-site-nav {
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
 }
 
-.home-template .site-nav-main .fixed-nav-active {
+.home-template .site-nav-main .fixed-nav-active, .home-template .site-nav-main .m-site-nav .fixed-nav-active {
     opacity: 1;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
 }

@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="site-nav-right">
-        <dark-mode-toggle id="dark-mode-toggle"></dark-mode-toggle>
+        <img class="dark-mode-toggle ripple" src="{{asset "moon.svg"}}" data-dark-src="{{asset "moon.svg"}}" data-light-src="{{asset "sun.svg"}}">
 
         {{#if @site.secondary_navigation}}
             {{navigation type="secondary"}}
@@ -39,4 +39,34 @@
             <a class="subscribe-button" href="#subscribe">Subscribe</a>
         {{/if}}
     </div>
+
 </nav>
+{{!-- Mobile Nav --}}
+<nav class="m-site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+            {{#if @site.logo}}
+                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+            {{else}}
+                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+            {{/if}}
+            <div class="site-nav-content">
+
+            </div>
+        </div>
+        <div class="site-nav-right">
+            <img class="dark-mode-toggle ripple" src="{{asset "moon.svg"}}" data-dark-src="{{asset "moon.svg"}}" data-light-src="{{asset "sun.svg"}}">
+            <img class="nav-more-btn ripple" src="{{asset "more_vert-24px.svg"}}"/>
+        </div>
+    </div>
+
+</nav>
+
+<div class="full-site-nav-content">
+    {{#if @site.navigation}}
+        {{#foreach navigation}}
+            <a class="full-nav nav-{{slug}}{{#if current}} nav-current{{/if}}" href="{{url absolute="true"}}">{{label}}</a>
+        {{/foreach}}
+    {{/if}}
+
+</div>
