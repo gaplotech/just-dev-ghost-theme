@@ -1,4 +1,4 @@
-@import "global.css";
+@import "variables.css";
 
 .medium-zoom-overlay {
     z-index: 1000;

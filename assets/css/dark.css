@@ -1,4 +1,4 @@
-@import "global.css";
+@import "variables.css";
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
@@ -14,10 +14,6 @@
 
     img {
         opacity: 0.9;
-    }
-
-    .site-header-background:before {
-        background: color(var(--darkgrey) l(+2%));
     }
 
     .post-feed {
