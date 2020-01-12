@@ -2,7 +2,6 @@ const {series, watch, src, dest, parallel} = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
-const livereload = require('gulp-livereload');
 const postcss = require('gulp-postcss');
 const zip = require('gulp-zip');
 const concat = require('gulp-concat');
@@ -16,9 +15,12 @@ const colorFunction = require('postcss-color-function');
 const cssnano = require('cssnano');
 const customProperties = require('postcss-custom-properties');
 const easyimport = require('postcss-easy-import');
+const browserSync = require('browser-sync').create();
 
 function serve(done) {
-    livereload.listen();
+    browserSync.init({
+        proxy: "localhost:2368"
+    });
     done();
 }
 
@@ -32,10 +34,8 @@ const handleError = (done) => {
 };
 
 function hbs(done) {
-    pump([
-        src(['*.hbs', 'partials/**/*.hbs']),
-        livereload()
-    ], handleError(done));
+    browserSync.reload();
+    done();
 }
 
 function css(done) {
@@ -51,7 +51,7 @@ function css(done) {
         src('assets/css/*.css', {sourcemaps: true}),
         postcss(processors),
         dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
+        browserSync.stream()
     ], handleError(done));
 }
 
@@ -66,7 +66,7 @@ function js(done) {
         concat('casper.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
+        browserSync.stream()
     ], handleError(done));
 }
 
