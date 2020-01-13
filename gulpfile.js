@@ -2,19 +2,14 @@ const {series, watch, src, dest, parallel} = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
-const postcss = require('gulp-postcss');
 const zip = require('gulp-zip');
+const sass = require('gulp-sass');
+const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
 const fs = require('fs');
 
-// postcss plugins
-const autoprefixer = require('autoprefixer');
-const colorFunction = require('postcss-color-function');
-const cssnano = require('cssnano');
-const customProperties = require('postcss-custom-properties');
-const easyimport = require('postcss-easy-import');
 const browserSync = require('browser-sync').create();
 
 function serve(done) {
@@ -39,17 +34,10 @@ function hbs(done) {
 }
 
 function css(done) {
-    const processors = [
-        easyimport,
-        customProperties({preserve: false}),
-        colorFunction(),
-        autoprefixer(),
-        cssnano()
-    ];
-
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
-        postcss(processors),
+        src('assets/scss/*.scss', {sourcemaps: true}),
+        sass(),
+        cleanCSS(),
         dest('assets/built/', {sourcemaps: '.'}),
         browserSync.stream()
     ], handleError(done));
@@ -86,10 +74,10 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const cssWatcher = () => watch('assets/css/**', css);
+const sassWatcher = () => watch('assets/scss/**', css);
 const jsWatcher = () => watch('assets/js/**', js);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher);
+const watcher = parallel(sassWatcher, hbsWatcher, jsWatcher);
 const build = series(css, js);
 const dev = series(build, serve, watcher);
 

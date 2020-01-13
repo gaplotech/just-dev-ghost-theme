@@ -1,0 +1,12 @@
+.dark-mode-toggle {
+  z-index: 1100;
+  padding: .5rem;
+  opacity: .7;
+  border-radius: 10rem;
+  height: 3rem;
+  width: 3rem;
+
+  &:hover {
+    opacity: 1;
+  }
+}

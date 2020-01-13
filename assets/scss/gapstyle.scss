@@ -1,0 +1,387 @@
+/**
+ * Based on copypasta from Remy Bach and Sarah Drasner
+ */
+
+code[class*="language-"] {
+  color: #CBAD96;
+  background: #2C2C2C;
+  font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+  direction: ltr;
+  font-feature-settings: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  margin-bottom: 0;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  font-size: .75em;
+}
+
+pre {
+  &[class*="language-"] {
+    color: #CBAD96;
+    background: #2C2C2C;
+    font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+    direction: ltr;
+    font-feature-settings: normal;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    margin-bottom: 0;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    font-size: .75em;
+
+    &::-moz-selection, ::-moz-selection, &::selection, ::selection {
+      color: inherit;
+      background: rgba(33, 66, 131, 0.85);
+    }
+
+    padding: 1rem 2rem;
+    margin: 0 0 .5rem 0;
+    overflow: auto;
+    position: relative;
+  }
+
+  > code[class*="language-"] {
+    &::-moz-selection, ::-moz-selection {
+      color: inherit;
+      background: rgba(33, 66, 131, 0.85);
+    }
+  }
+
+  > code[class*="language-"] {
+    &::selection, ::selection {
+      color: inherit;
+      background: rgba(33, 66, 131, 0.85);
+    }
+  }
+}
+
+/* Code blocks */
+
+/* Inline code */
+
+:not(pre) > code {
+  padding: .3rem;
+  margin: .2rem;
+  border-radius: .4rem;
+  font-size: 90%;
+  color: #CBAD96 !important;
+  background: #232323 !important;
+}
+
+.token {
+  &.comment, &.prolog, &.cdata {
+    color: #808080;
+  }
+
+  &.doc-comment {
+    color: #629755;
+
+    > .token.keyword {
+      color: #526D4A;
+      text-decoration: underline;
+    }
+  }
+
+  &.delimiter, &.boolean, &.keyword, &.selector, &.important, &.atrule {
+    font-weight: bold;
+    color: #F92672;
+  }
+
+  &.operator, &.punctuation, &.attr-name {
+    color: #a9b7c6;
+  }
+
+  &.tag {
+    color: #e8bf6a;
+
+    .punctuation {
+      color: #e8bf6a;
+    }
+  }
+
+  &.doctype, &.builtin {
+    color: #e8bf6a;
+  }
+
+  &.entity, &.number, &.symbol {
+    color: #AE81FF;
+  }
+
+  &.property {
+    color: #CF8822;
+  }
+
+  &.constant, &.console.class-name, &.dom.variable {
+    color: #4186F8;
+  }
+
+  &.variable {
+    color: #CBAD96;
+  }
+
+  &.string, &.char {
+    color: #E6DB74;
+  }
+
+  &.attr-value {
+    color: #a5c261;
+
+    .punctuation {
+      color: #a5c261;
+
+      &:first-child {
+        color: #a9b7c6;
+      }
+    }
+  }
+
+  &.url, &.url-link, &.email-link {
+    color: #589DF6;
+    text-decoration: underline;
+  }
+
+  &.function {
+    color: #A6E22E;
+  }
+
+  &.regex {
+    color: #E6DB74;
+    background: #143D1B;
+  }
+
+  &.class-name, &.maybe-class-name {
+    color: #66D9EE;
+  }
+
+  &.property-access {
+    color: #CF8822;
+  }
+
+  &.abstract > .token {
+    &.class-name, &.maybe-class-name {
+      color: #00CFD3;
+    }
+  }
+
+  &.interface > .token {
+    &.class-name, &.maybe-class-name {
+      color: #0ED38B;
+    }
+  }
+
+  &.object > .token {
+    &.class-name, &.maybe-class-name {
+      font-weight: bold;
+    }
+  }
+
+  &.annotation {
+    color: #BBB529;
+  }
+
+  &.interpolation {
+    color: #FD971F;
+
+    > .token.delimiter {
+      color: #CC7832;
+    }
+  }
+
+  &.generics > .token.class-name, &.maybe-generic-template {
+    color: #20999D;
+  }
+
+  &.label.symbol {
+    color: #467CDA;
+  }
+
+  &.namespace {
+    color: #A9B7C6;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.inserted {
+    background: #294436;
+  }
+
+  &.deleted {
+    background: #484a4a;
+  }
+}
+
+code.language-css .token {
+  &.property {
+    color: #89BB26;
+
+    + .token.punctuation {
+      color: #89BB26;
+    }
+  }
+
+  &.id {
+    color: #F92672;
+  }
+
+  &.selector > .token {
+    &.class, &.attribute, &.pseudo-class, &.pseudo-element {
+      color: #F92672;
+    }
+  }
+}
+
+pre[class*='language-'] {
+  border: 0;
+  overflow-y: hidden;
+}
+
+div.code-toolbar {
+  position: relative;
+  width: 100%;
+
+  > .toolbar {
+    font-family: Hack, Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
+    position: absolute;
+    top: .3em;
+    right: .2em;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  &:hover > .toolbar, &:focus-within > .toolbar {
+    opacity: 1;
+  }
+
+  > .toolbar {
+    .toolbar-item {
+      display: inline-block;
+      padding: 4px;
+
+      &:hover {
+        color: #e49c3b;
+      }
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    button {
+      background: none;
+      border: 0;
+      color: inherit;
+      font: inherit;
+      line-height: normal;
+      overflow: visible;
+      padding: 0;
+      -webkit-user-select: none;
+
+      /* for button */
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    a, button, span {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2rem;
+      color: #a9b7c6;
+      padding: 4px 8px;
+      text-align: right;
+      font-size: 14px;
+      box-shadow: none;
+    }
+
+    a {
+      &:hover, &:focus {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    button {
+      &:hover, &:focus {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    span {
+      &:hover, &:focus {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+   IE11 and old Edge versions don't support :focus-within. */
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+
+  > code {
+    position: relative;
+    white-space: inherit;
+  }
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em;
+
+  /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+
+  &:before {
+    content: counter(linenumber);
+    color: #999;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+  }
+}
