@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
@@ -56,11 +56,15 @@ body {
   color: lighten($midgrey, +10%);
 }
 
-.author-avatar, .static-avatar {
+.author-avatar,
+.static-avatar {
   border-color: lighten($darkgrey, +2%);
 }
 
-.site-main, .post-template .site-main, .page-template .site-main, .post-full-content {
+.site-main,
+.post-template .site-main,
+.page-template .site-main,
+.post-full-content {
   background: $darkmode;
 }
 
@@ -102,7 +106,11 @@ body {
 }
 
 .post-full-content {
-  h1, h2, h3, h4, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h6 {
     color: rgba(255, 255, 255, 0.9);
   }
 
@@ -111,7 +119,8 @@ body {
     box-shadow: inset 0 -1px 0 #fff;
   }
 
-  strong, em {
+  strong,
+  em {
     color: #fff;
   }
 
@@ -171,7 +180,8 @@ hr {
   color: #fff;
 }
 
-.kg-bookmark-description, .kg-bookmark-metadata {
+.kg-bookmark-description,
+.kg-bookmark-metadata {
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -216,7 +226,8 @@ hr {
     opacity: 0.9;
   }
 
-  .invalid .message-error, .error .message-error {
+  .invalid .message-error,
+  .error .message-error {
     color: desaturate(lighten($red, +5%), 5%);
   }
 

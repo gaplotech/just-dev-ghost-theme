@@ -1,4 +1,3 @@
-
 // NOTE: Scroll performance is poor in Safari
 // - this appears to be due to the events firing much more slowly in Safari.
 //   Dropping the scroll event and using only a raf loop results in smoother
@@ -10,23 +9,23 @@ $(document).ready(() => {
   let lastScrollY = window.scrollY
   let ticking = false
 
-  function onScroll () {
+  function onScroll() {
     lastScrollY = window.scrollY
     requestTick()
   }
 
-  function onResize () {
+  function onResize() {
     requestTick()
   }
 
-  function requestTick () {
+  function requestTick() {
     if (!ticking) {
       requestAnimationFrame(update)
     }
     ticking = true
   }
 
-  function update () {
+  function update() {
     const trigger = feed.getBoundingClientRect().top + window.scrollY
 
     // show/hide nav

@@ -8,18 +8,14 @@
     "standard"
   ],
   "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly",
-    "angular": "readonly",
-    "WebViewJavascriptBridge": "writable",
-    "ionic": "readonly",
-    "moment": "readonly"
+    "$": "readonly",
+    "mediumZoom": "readonly",
+    "GapTheme": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 2018
   },
   "rules": {
-    "standard/no-callback-literal": 0,
-    "no-undef": 0
+    "standard/no-callback-literal": 0
   }
 }

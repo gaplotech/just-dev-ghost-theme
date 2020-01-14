@@ -3,7 +3,83 @@
 /* Reset
 /* ---------------------------------------------------------- */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -16,24 +92,28 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
 blockquote {
-  &:before, &:after {
-    content: "";
+  &:before,
+  &:after {
+    content: '';
     content: none;
   }
 }
 
 q {
-  &:before, &:after {
-    content: "";
+  &:before,
+  &:after {
+    content: '';
     content: none;
   }
 }
@@ -57,7 +137,8 @@ html {
 * {
   box-sizing: inherit;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     box-sizing: inherit;
   }
 }
@@ -65,16 +146,20 @@ html {
 a {
   background-color: transparent;
 
-  &:active, &:hover {
+  &:active,
+  &:hover {
     outline: 0;
   }
 }
 
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
-i, em, dfn {
+i,
+em,
+dfn {
   font-style: italic;
 }
 
@@ -118,12 +203,19 @@ mark {
   background-color: #fdffb6;
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   margin: 0;
 
   /* 3 */
@@ -145,7 +237,8 @@ select {
   text-transform: none;
 }
 
-button, html input[type="button"] {
+button,
+html input[type='button'] {
   cursor: pointer;
 
   /* 3 */
@@ -156,7 +249,8 @@ button, html input[type="button"] {
 }
 
 input {
-  &[type="reset"], &[type="submit"] {
+  &[type='reset'],
+  &[type='submit'] {
     cursor: pointer;
 
     /* 3 */
@@ -167,7 +261,8 @@ input {
   }
 }
 
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default;
 }
 
@@ -188,7 +283,8 @@ input {
     outline: none;
   }
 
-  &[type="checkbox"], &[type="radio"] {
+  &[type='checkbox'],
+  &[type='radio'] {
     box-sizing: border-box;
 
     /* 1 */
@@ -197,13 +293,14 @@ input {
     /* 2 */
   }
 
-  &[type="number"] {
-    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+  &[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
       height: auto;
     }
   }
 
-  &[type="search"] {
+  &[type='search'] {
     box-sizing: content-box;
 
     /* 2 */
@@ -212,7 +309,8 @@ input {
 
     /* 1 */
 
-    &::-webkit-search-cancel-button, &::-webkit-search-decoration {
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
       -webkit-appearance: none;
     }
   }
@@ -236,7 +334,8 @@ table {
   border-collapse: collapse;
 }
 
-td, th {
+td,
+th {
   padding: 0;
 }
 
@@ -264,7 +363,7 @@ body {
   background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "liga" on;
+  -moz-font-feature-settings: 'liga' on;
 }
 
 ::selection {
@@ -283,7 +382,12 @@ hr {
   border-top: 1px solid lighten($lightgrey, +10%);
 }
 
-audio, canvas, iframe, img, svg, video {
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
   vertical-align: middle;
 }
 
@@ -297,11 +401,16 @@ textarea {
   resize: vertical;
 }
 
-p, ul, ol, dl, blockquote {
+p,
+ul,
+ol,
+dl,
+blockquote {
   margin: 0 0 1.5em 0;
 }
 
-ol, ul {
+ol,
+ul {
   padding-left: 1.3em;
   padding-right: 1.5em;
 }
@@ -311,7 +420,8 @@ ol ol {
 }
 
 ul {
-  ul, ol {
+  ul,
+  ol {
     margin: 0.5em 0 1em;
   }
 }
@@ -328,7 +438,8 @@ ol {
   list-style: decimal;
 }
 
-ul, ol {
+ul,
+ol {
   max-width: 100%;
 }
 
@@ -369,7 +480,7 @@ blockquote {
     opacity: 0.8;
 
     &:before {
-      content: "\2014 \00A0";
+      content: '\2014 \00A0';
     }
   }
 
@@ -393,7 +504,12 @@ a {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   line-height: 1.15;
   font-weight: 600;
@@ -441,7 +557,8 @@ h4 {
   font-weight: 500;
 }
 
-h5, h6 {
+h5,
+h6 {
   margin: 1.5em 0 0.5em 0;
   font-size: 1.4rem;
   font-weight: 500;

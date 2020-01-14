@@ -13,7 +13,7 @@
  * to the element with the class "post-feed" in the currently viewed page.
  */
 
-((window, document) => {
+;((window, document) => {
   // next link element
   const nextElement = document.querySelector('link[rel=next]')
   if (!nextElement) {
@@ -35,7 +35,7 @@
   let lastWindowHeight = window.innerHeight
   let lastDocumentHeight = document.documentElement.scrollHeight
 
-  function onPageLoad () {
+  function onPageLoad() {
     if (this.status === 404) {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
@@ -66,7 +66,7 @@
     loading = false
   }
 
-  function onUpdate () {
+  function onUpdate() {
     // return if already loading
     if (loading) {
       return
@@ -89,17 +89,17 @@
     xhr.send(null)
   }
 
-  function requestTick () {
+  function requestTick() {
     ticking || window.requestAnimationFrame(onUpdate)
     ticking = true
   }
 
-  function onScroll () {
+  function onScroll() {
     lastScrollY = window.scrollY
     requestTick()
   }
 
-  function onResize () {
+  function onResize() {
     lastWindowHeight = window.innerHeight
     lastDocumentHeight = document.documentElement.scrollHeight
     requestTick()

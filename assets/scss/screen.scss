@@ -28,7 +28,7 @@ production stylesheet in assets/built/screen.css
 
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
-@import "global";
+@import 'global';
 
 body {
   background: #fff;
@@ -92,7 +92,9 @@ body {
 /* ---------------------------------------------------------- */
 
 @media (min-width: 900px) {
-  .home-template .post-feed, .tag-template .post-feed, .author-template .post-feed {
+  .home-template .post-feed,
+  .tag-template .post-feed,
+  .author-template .post-feed {
     padding: 40px 0 5vw;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -115,7 +117,7 @@ body {
   background-size: cover;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -127,7 +129,7 @@ body {
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -140,7 +142,8 @@ body {
   }
 
   &.no-image {
-    &:before, &:after {
+    &:before,
+    &:after {
       display: none;
     }
   }
@@ -161,7 +164,7 @@ body {
   z-index: 10;
   margin: 0 0 0 -2px;
   padding: 0;
-  font-size: 5.0rem;
+  font-size: 5rem;
   line-height: 1em;
   font-weight: 600;
 }
@@ -223,11 +226,11 @@ body {
     padding-bottom: 0;
     color: $darkgrey;
     background: #fff;
-    opacity: 1.0;
+    opacity: 1;
 
     .site-description {
       color: $midgrey;
-      opacity: 1.0;
+      opacity: 1;
     }
 
     .site-header-content {
@@ -338,7 +341,7 @@ body {
   .nav-more-btn {
     z-index: 1100;
     padding: 0.5rem 0.5rem;
-    opacity: .7;
+    opacity: 0.7;
     border-radius: 10rem;
     height: 3.5rem;
   }
@@ -369,8 +372,9 @@ body {
   display: flex;
 }
 
-.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after, .site-nav-main .site-nav-left-wrapper:after {
-  content: "";
+.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
+.site-nav-main .site-nav-left-wrapper:after {
+  content: '';
   position: absolute;
   top: 0;
   z-index: 1000;
@@ -378,7 +382,8 @@ body {
   height: 100%;
 }
 
-.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after, .site-nav-main .site-nav-left-wrapper:after {
+.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
+.site-nav-main .site-nav-left-wrapper:after {
   right: 0;
 }
 
@@ -482,7 +487,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
       }
 
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         right: 100%;
         bottom: 8px;
@@ -523,7 +528,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     left: -25px;
 
     &:before {
-      content: "– ";
+      content: '– ';
       opacity: 0.5;
     }
   }
@@ -574,7 +579,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   opacity: 0.8;
 
   &:hover {
-    opacity: 1.0;
+    opacity: 1;
   }
 
   svg {
@@ -639,12 +644,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .home-template .site-nav-main {
   z-index: 100;
 
-  .site-nav, .m-site-nav {
+  .site-nav,
+  .m-site-nav {
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
   }
 
-  .fixed-nav-active, .m-site-nav .fixed-nav-active {
+  .fixed-nav-active,
+  .m-site-nav .fixed-nav-active {
     opacity: 1;
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
   }
@@ -775,7 +782,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   padding: 0;
 }
 
-.author-profile-image, .avatar-wrapper {
+.author-profile-image,
+.avatar-wrapper {
   display: block;
   width: 100%;
   height: 100%;
@@ -785,7 +793,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-meta {
-  .profile-image-wrapper, .avatar-wrapper {
+  .profile-image-wrapper,
+  .avatar-wrapper {
     position: relative;
   }
 }
@@ -835,7 +844,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .author-list-item:hover .author-name-tooltip {
-  opacity: 1.0;
+  opacity: 1;
   transform: translateY(0px);
 }
 
@@ -947,7 +956,8 @@ make sure this only happens on large viewports / desktop-ish devices.
       font-size: 3.2rem;
     }
 
-    .post-card-content-link, .post-card-meta {
+    .post-card-content-link,
+    .post-card-meta {
       padding: 0 0 0 40px;
     }
 
@@ -989,7 +999,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* 7. Single Post
 /* ---------------------------------------------------------- */
 
-.post-template .site-main, .page-template .site-main {
+.post-template .site-main,
+.page-template .site-main {
   margin-top: 64px;
   padding-bottom: 4vw;
   background: #fff;
@@ -1025,10 +1036,10 @@ make sure this only happens on large viewports / desktop-ish devices.
   margin-top: 1.5em;
 
   > a {
-    padding: 0 .5em;
+    padding: 0 0.5em;
 
     &:first-child {
-      padding: 0 .5em 0 0;
+      padding: 0 0.5em 0 0;
     }
   }
 }
@@ -1099,7 +1110,7 @@ make sure this only happens on large viewports / desktop-ish devices.
   padding: 0 170px 6vw;
   min-height: 230px;
   font-family: $default-font-family;
-  font-size: 2.0rem;
+  font-size: 2rem;
   line-height: 1.6em;
   background: #fff;
 }
@@ -1127,31 +1138,49 @@ make sure this only happens on large viewports / desktop-ish devices.
 .no-image .post-full-content {
   padding-top: 0;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     display: none;
   }
 }
 
 .post-full-content {
-  h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl,
+  pre,
+  blockquote {
     margin: 0 0 1.5em 0;
     min-width: 100%;
   }
 }
 
-.post-full-comments, .footnotes {
+.post-full-comments,
+.footnotes {
   margin: 0 0 1.5em 0;
   min-width: 100%;
 }
 
 @media (max-width: 500px) {
   .post-full-content {
-    p, ul, ol, dl, pre {
+    p,
+    ul,
+    ol,
+    dl,
+    pre {
       margin-bottom: 1.28em;
     }
   }
 
-  .post-full-comments, .footnotes {
+  .post-full-comments,
+  .footnotes {
     margin-bottom: 1.28em;
   }
 }
@@ -1178,7 +1207,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
   }
 
-  strong, em {
+  strong,
+  em {
     color: darken($darkgrey, 5%);
   }
 
@@ -1191,7 +1221,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin-top: 0;
   }
 
-  img, video {
+  img,
+  video {
     display: block;
     margin: 1.5em auto;
     max-width: 1040px;
@@ -1199,7 +1230,7 @@ make sure this only happens on large viewports / desktop-ish devices.
   }
 
   img {
-    &[src$="#full"] {
+    &[src$='#full'] {
       max-width: none;
       width: 100vw;
     }
@@ -1218,7 +1249,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
   blockquote {
     margin: 0 0 1.5em;
-    padding: .5em 1.5em;
+    padding: 0.5em 1.5em;
     border-left: $primary 4px solid;
     background-color: lighten($primary, +39%);
 
@@ -1284,7 +1315,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 2em 0;
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       top: -15px;
       left: 50%;
@@ -1302,7 +1333,12 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: darken($darkgrey, 5%);
   }
 
@@ -1366,14 +1402,15 @@ make sure this only happens on large viewports / desktop-ish devices.
 
   h6 {
     margin: 0.5em 0 0.2em 0;
-    font-size: 2.0rem;
+    font-size: 2rem;
     font-weight: 700;
   }
 }
 
 @media (max-width: 1040px) {
   .post-full-content {
-    img, video {
+    img,
+    video {
       width: 100%;
     }
   }
@@ -1401,7 +1438,7 @@ Usage (In Ghost editor):
 
 @media (max-width: 500px) {
   .post-full-content blockquote {
-    padding: .5em 1.3em;
+    padding: 0.5em 1.3em;
   }
 }
 
@@ -1517,7 +1554,8 @@ Usage (In Ghost editor):
   .post-full-content {
     padding: 0;
 
-    &:before, &:after {
+    &:before,
+    &:after {
       display: none;
     }
   }
@@ -1538,7 +1576,8 @@ Usage (In Ghost editor):
   white-space: nowrap;
   vertical-align: top;
   -webkit-overflow-scrolling: touch;
-  background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+  background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
+    radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
   background-attachment: scroll, scroll;
   background-size: 10px 100%, 10px 100%;
   background-repeat: no-repeat;
@@ -1659,7 +1698,7 @@ Usage (In Ghost editor):
   pointer-events: none;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 100%;
     left: 50%;
@@ -1673,7 +1712,7 @@ Usage (In Ghost editor):
   }
 
   &.hovered {
-    opacity: 1.0;
+    opacity: 1;
     transform: scale(1) translateY(0px);
     pointer-events: auto;
   }
@@ -1842,16 +1881,24 @@ Usage (In Ghost editor):
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(lighten($blue, +7%), desaturate(darken($blue, 7%) , 10%) 60%, desaturate(darken($blue, 7%), 10%) 90%, desaturate(darken($blue, 4%), 10%));
+    background: linear-gradient(
+      lighten($blue, +7%),
+      desaturate(darken($blue, 7%), 10%) 60%,
+      desaturate(darken($blue, 7%), 10%) 90%,
+      desaturate(darken($blue, 4%), 10%)
+    );
     border-radius: 5px;
     -webkit-font-smoothing: subpixel-antialiased;
 
-    &:active, &:focus {
+    &:active,
+    &:focus {
       background: desaturate(darken($primary, 9%), 10%);
     }
   }
 
-  .button-loader, .message-success, .message-error {
+  .button-loader,
+  .message-success,
+  .message-error {
     display: none;
   }
 
@@ -1871,12 +1918,15 @@ Usage (In Ghost editor):
   }
 
   .button-loader svg {
-    path, rect {
+    path,
+    rect {
       fill: #fff;
     }
   }
 
-  .success .message-success, .invalid .message-error, .error .message-error {
+  .success .message-success,
+  .invalid .message-error,
+  .error .message-error {
     margin: 1em auto 0;
     max-width: 400px;
     color: $red;
@@ -1890,7 +1940,8 @@ Usage (In Ghost editor):
     color: darken($green, 5%);
   }
 
-  .invalid .message-error, .error .message-error {
+  .invalid .message-error,
+  .error .message-error {
     display: block;
   }
 }
@@ -1968,7 +2019,7 @@ Usage (In Ghost editor):
   }
 
   .post-card:hover .post-card-image {
-    opacity: 1.0;
+    opacity: 1;
   }
 
   .post-card-excerpt {
@@ -2172,7 +2223,10 @@ Usage (In Ghost editor):
     margin: 0.8em 0 2.3em;
   }
 
-  h1 + figure, h2 + figure, h3 + figure, h4 + figure {
+  h1 + figure,
+  h2 + figure,
+  h3 + figure,
+  h4 + figure {
     margin-top: 2em;
   }
 
@@ -2181,7 +2235,7 @@ Usage (In Ghost editor):
   }
 
   figcaption {
-    margin: 1.0em 0 0;
+    margin: 1em 0 0;
     color: darken($midgrey, 10%);
     font-family: $default-font-family;
     font-size: 75%;
@@ -2240,13 +2294,15 @@ Usage (In Ghost editor):
 }
 
 .kg-gallery-card + {
-  .kg-image-card.kg-width-wide, .kg-gallery-card {
+  .kg-image-card.kg-width-wide,
+  .kg-gallery-card {
     margin: -2.25em 0 3em;
   }
 }
 
 .kg-image-card.kg-width-wide + {
-  .kg-gallery-card, .kg-image-card.kg-width-wide {
+  .kg-gallery-card,
+  .kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
   }
 }
@@ -2355,7 +2411,7 @@ Usage (In Ghost editor):
   line-height: 1.5em;
 
   &:after {
-    content: "•";
+    content: '•';
     margin: 0 6px;
   }
 }
@@ -2374,7 +2430,10 @@ Usage (In Ghost editor):
       margin: 0.2em 0 1.3em;
     }
 
-    h1 + figure, h2 + figure, h3 + figure, h4 + figure {
+    h1 + figure,
+    h2 + figure,
+    h3 + figure,
+    h4 + figure {
       margin-top: 0.9em;
     }
   }
@@ -2382,7 +2441,8 @@ Usage (In Ghost editor):
 
 @media (max-width: 500px) {
   .post-full-content {
-    .kg-width-wide, .kg-width-full {
+    .kg-width-wide,
+    .kg-width-full {
       margin-right: -5vw;
       margin-left: -5vw;
     }
@@ -2396,7 +2456,9 @@ Usage (In Ghost editor):
     }
   }
 
-  .kg-bookmark-title, .kg-bookmark-description, .kg-bookmark-metadata {
+  .kg-bookmark-title,
+  .kg-bookmark-description,
+  .kg-bookmark-metadata {
     font-size: 1.4rem;
     line-height: 1.5em;
   }
@@ -2458,7 +2520,7 @@ Usage (In Ghost editor):
     flex-shrink: 0;
     margin: 6px 0 -6px;
     max-width: 46em;
-    font-size: 2.0rem;
+    font-size: 2rem;
     line-height: 1.4em;
     font-weight: 400;
     opacity: 0.8;
@@ -2482,9 +2544,10 @@ Usage (In Ghost editor):
 }
 
 .no-image .author-header-content {
-  .author-bio, .author-meta {
+  .author-bio,
+  .author-meta {
     color: $midgrey;
-    opacity: 1.0;
+    opacity: 1;
   }
 }
 
@@ -2508,8 +2571,10 @@ Usage (In Ghost editor):
   padding: 10px 0;
 }
 
-.author-location + .author-stats:before, .author-stats + .author-social-link:before, .author-social-link + .author-social-link:before {
-  content: "\2022";
+.author-location + .author-stats:before,
+.author-stats + .author-social-link:before,
+.author-social-link + .author-social-link:before {
+  content: '\2022';
   display: inline-block;
   margin: 0 12px;
   color: #fff;
@@ -2517,7 +2582,9 @@ Usage (In Ghost editor):
 }
 
 .no-image {
-  .author-location + .author-stats:before, .author-stats + .author-social-link:before, .author-social-link + .author-social-link:before {
+  .author-location + .author-stats:before,
+  .author-stats + .author-social-link:before,
+  .author-social-link + .author-social-link:before {
     color: $midgrey;
   }
 }
@@ -2546,7 +2613,8 @@ Usage (In Ghost editor):
     letter-spacing: 0;
   }
 
-  .author-location, .author-stats {
+  .author-location,
+  .author-stats {
     display: none;
   }
 }
@@ -2672,7 +2740,7 @@ Usage (In Ghost editor):
   display: block;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 32px;
     right: 25px;
@@ -2685,7 +2753,7 @@ Usage (In Ghost editor):
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 32px;
     right: 25px;
@@ -2718,7 +2786,8 @@ Usage (In Ghost editor):
   pointer-events: none;
 
   .subscribe-close {
-    &:before, &:after {
+    &:before,
+    &:after {
       top: 36px;
       width: 30px;
     }
@@ -2816,11 +2885,17 @@ Usage (In Ghost editor):
     line-height: 38px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(lighten($blue, +7%), desaturate(darken($blue, 7%) , 10%) 60%, desaturate(darken($blue, 7%), 10%) 90%, desaturate(darken($blue, 4%), 10%));
+    background: linear-gradient(
+      lighten($blue, +7%),
+      desaturate(darken($blue, 7%), 10%) 60%,
+      desaturate(darken($blue, 7%), 10%) 90%,
+      desaturate(darken($blue, 4%), 10%)
+    );
     border-radius: 8px;
     -webkit-font-smoothing: subpixel-antialiased;
 
-    &:active, &:focus {
+    &:active,
+    &:focus {
       background: desaturate(darken($blue, 9%), 10%);
     }
   }
@@ -2867,7 +2942,7 @@ Usage (In Ghost editor):
     margin-left: 20px;
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       top: 11px;
       left: -11px;

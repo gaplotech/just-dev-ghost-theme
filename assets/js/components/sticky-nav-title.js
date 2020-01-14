@@ -17,11 +17,11 @@
 
 ((window, document) => {
   // set up Casper as a global object
-  if (!window.Casper) {
-    window.Casper = {}
+  if (!window.GapTheme) {
+    window.GapTheme = {}
   }
 
-  window.Casper.stickyNavTitle = function stickyNavTitle (options) {
+  window.GapTheme.stickyNavTitle = function stickyNavTitle (options) {
     const nav = document.querySelector(options.navSelector)
     const title = document.querySelector(options.titleSelector)
 

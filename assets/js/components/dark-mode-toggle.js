@@ -4,7 +4,7 @@
  * rewrite the concept in es5 for better backward compatibility
  * @author GapLoTech
  */
-((window, document) => {
+;((window, document) => {
   const doc = document
   const store = localStorage
   const PREFERS_COLOR_SCHEME = 'prefers-color-scheme'
@@ -20,8 +20,12 @@
   const NOT_ALL = 'not all'
   const CLASS_NAME = '.dark-mode-toggle'
 
-  const _darkCSS = doc.querySelectorAll(`${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${DARK}"]`)
-  const _lightCSS = doc.querySelectorAll(`${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${LIGHT}"],${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${NO_PREFERENCE}"]`)
+  const _darkCSS = doc.querySelectorAll(
+    `${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${DARK}"]`
+  )
+  const _lightCSS = doc.querySelectorAll(
+    `${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${LIGHT}"],${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${NO_PREFERENCE}"]`
+  )
 
   const hasNativePrefersColorScheme = matchMedia(MQ_DARK).media !== NOT_ALL
   const modeInStore = store.getItem(PERMANENT_COLOR_SCHEME)
@@ -34,7 +38,7 @@
     mode = LIGHT
   }
 
-  function updateMode (element) {
+  function updateMode(element) {
     if (mode === LIGHT) {
       _lightCSS.forEach(link => {
         link.media = ALL

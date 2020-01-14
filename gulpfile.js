@@ -13,15 +13,15 @@ const fs = require('fs')
 
 const browserSync = require('browser-sync').create()
 
-function serve (done) {
+function serve(done) {
   browserSync.init({
     proxy: 'localhost:2368'
   })
   done()
 }
 
-const handleError = (done) => {
-  return function (err) {
+const handleError = done => {
+  return function(err) {
     if (err) {
       beeper()
     }
@@ -29,80 +29,86 @@ const handleError = (done) => {
   }
 }
 
-function hbs (done) {
+function hbs(done) {
   browserSync.reload()
   done()
 }
 
-function css (done) {
-  pump([
-    src('assets/scss/*.scss', { sourcemaps: true }),
-    sass(),
-    cleanCSS(),
-    dest('assets/built/', { sourcemaps: '.' }),
-    browserSync.stream()
-  ], handleError(done))
+function css(done) {
+  pump(
+    [
+      src('assets/scss/*.scss', { sourcemaps: true }),
+      sass(),
+      cleanCSS(),
+      dest('assets/built/', { sourcemaps: '.' }),
+      browserSync.stream()
+    ],
+    handleError(done)
+  )
 }
 
-function esnext (done) {
-  pump([
-    src([
-      'assets/js/components/*.js'
-    ], { sourcemaps: true }),
-    babel({
-      presets: ['@babel/preset-env']
-    }),
-    concat('components.js'),
-    uglify(),
-    dest('assets/built/', { sourcemaps: '.' }),
-    browserSync.stream()
-  ], handleError(done))
+function esnext(done) {
+  pump(
+    [
+      src(['assets/js/components/*.js'], { sourcemaps: true }),
+      babel({
+        presets: ['@babel/preset-env']
+      }),
+      concat('components.js'),
+      uglify(),
+      dest('assets/built/', { sourcemaps: '.' }),
+      browserSync.stream()
+    ],
+    handleError(done)
+  )
 }
 
-function pagejs (done) {
-  pump([
-    src([
-      'assets/js/*.js'
-    ], { sourcemaps: true }),
-    babel({
-      presets: ['@babel/preset-env']
-    }),
-    uglify(),
-    dest('assets/built/', { sourcemaps: '.' }),
-    browserSync.stream()
-  ], handleError(done))
+function pagejs(done) {
+  pump(
+    [
+      src(['assets/js/*.js'], { sourcemaps: true }),
+      babel({
+        presets: ['@babel/preset-env']
+      }),
+      uglify(),
+      dest('assets/built/', { sourcemaps: '.' }),
+      browserSync.stream()
+    ],
+    handleError(done)
+  )
 }
 
-function es5 (done) {
-  pump([
-    src([
-      // pull in lib files first so our own code can depend on it
-      'assets/es5/lib/*.js',
-      'assets/es5/prism/**/*.js'
-    ], { sourcemaps: true }),
-    concat('lib.js'),
-    uglify(),
-    dest('assets/built/', { sourcemaps: '.' }),
-    browserSync.stream()
-  ], handleError(done))
+function es5(done) {
+  pump(
+    [
+      src(
+        [
+          // pull in lib files first so our own code can depend on it
+          'assets/es5/lib/*.js',
+          'assets/es5/prism/**/*.js'
+        ],
+        { sourcemaps: true }
+      ),
+      concat('lib.js'),
+      uglify(),
+      dest('assets/built/', { sourcemaps: '.' }),
+      browserSync.stream()
+    ],
+    handleError(done)
+  )
 }
 
 const js = parallel(es5, esnext, pagejs)
 
-function zipper (done) {
+function zipper(done) {
   const targetDir = 'dist/'
   const themeName = require('./package.json').name
   const filename = themeName + '.zip'
 
-  pump([
-    src([
-      '**',
-      '!node_modules', '!node_modules/**',
-      '!dist', '!dist/**'
-    ]),
-    zip(filename),
-    dest(targetDir)
-  ], handleError(done))
+  pump(
+    [src(['**', '!node_modules', '!node_modules/**', '!dist', '!dist/**']), zip(filename), dest(targetDir)],
+    handleError(done)
+  )
 }
 
 const sassWatcher = () => watch('assets/scss/**', css)
@@ -147,13 +153,12 @@ const changelog = ({ previousVersion }) => {
 }
 
 const previousRelease = () => {
-  return releaseUtils
-    .releases
+  return releaseUtils.releases
     .get({
       userAgent: USER_AGENT,
       uri: `https://api.github.com/repos/${REPO}/releases`
     })
-    .then((response) => {
+    .then(response => {
       if (!response || !response.length) {
         console.log('No releases found. Skipping')
         return
@@ -208,30 +213,28 @@ const release = () => {
     return
   }
 
-  return previousRelease()
-    .then((previousVersion) => {
-      changelog({ previousVersion })
+  return previousRelease().then(previousVersion => {
+    changelog({ previousVersion })
 
-      return releaseUtils
-        .releases
-        .create({
-          draft: true,
-          preRelease: false,
-          tagName: newVersion,
-          releaseName: newVersion,
-          userAgent: USER_AGENT,
-          uri: `https://api.github.com/repos/${REPO}/releases`,
-          github: {
-            username: config.github.username,
-            token: config.github.token
-          },
-          content: [`**Ships with Ghost ${shipsWithGhost} Compatible with Ghost >= ${compatibleWithGhost}**\n\n`],
-          changelogPath: CHANGELOG_PATH
-        })
-        .then((response) => {
-          console.log(`\nRelease draft generated: ${response.releaseUrl}\n`)
-        })
-    })
+    return releaseUtils.releases
+      .create({
+        draft: true,
+        preRelease: false,
+        tagName: newVersion,
+        releaseName: newVersion,
+        userAgent: USER_AGENT,
+        uri: `https://api.github.com/repos/${REPO}/releases`,
+        github: {
+          username: config.github.username,
+          token: config.github.token
+        },
+        content: [`**Ships with Ghost ${shipsWithGhost} Compatible with Ghost >= ${compatibleWithGhost}**\n\n`],
+        changelogPath: CHANGELOG_PATH
+      })
+      .then(response => {
+        console.log(`\nRelease draft generated: ${response.releaseUrl}\n`)
+      })
+  })
 }
 
 exports.release = release

@@ -8,8 +8,8 @@
  * the display matches what is seen in the editor.
  */
 
-((window, document) => {
-  const resizeImagesInGalleries = function resizeImagesInGalleries () {
+;((window, document) => {
+  const resizeImagesInGalleries = function resizeImagesInGalleries() {
     const images = document.querySelectorAll('.kg-gallery-image img')
     images.forEach(image => {
       const container = image.closest('.kg-gallery-image')

@@ -2,9 +2,9 @@
  * Based on copypasta from Remy Bach and Sarah Drasner
  */
 
-code[class*="language-"] {
-  color: #CBAD96;
-  background: #2C2C2C;
+code[class*='language-'] {
+  color: #cbad96;
+  background: #2c2c2c;
   font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   direction: ltr;
   font-feature-settings: normal;
@@ -22,13 +22,13 @@ code[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 pre {
-  &[class*="language-"] {
-    color: #CBAD96;
-    background: #2C2C2C;
+  &[class*='language-'] {
+    color: #cbad96;
+    background: #2c2c2c;
     font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
     direction: ltr;
     font-feature-settings: normal;
@@ -46,28 +46,33 @@ pre {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
-    font-size: .75em;
+    font-size: 0.75em;
 
-    &::-moz-selection, ::-moz-selection, &::selection, ::selection {
+    &::-moz-selection,
+    ::-moz-selection,
+    &::selection,
+    ::selection {
       color: inherit;
       background: rgba(33, 66, 131, 0.85);
     }
 
     padding: 1rem 2rem;
-    margin: 0 0 .5rem 0;
+    margin: 0 0 0.5rem 0;
     overflow: auto;
     position: relative;
   }
 
-  > code[class*="language-"] {
-    &::-moz-selection, ::-moz-selection {
+  > code[class*='language-'] {
+    &::-moz-selection,
+    ::-moz-selection {
       color: inherit;
       background: rgba(33, 66, 131, 0.85);
     }
   }
 
-  > code[class*="language-"] {
-    &::selection, ::selection {
+  > code[class*='language-'] {
+    &::selection,
+    ::selection {
       color: inherit;
       background: rgba(33, 66, 131, 0.85);
     }
@@ -79,16 +84,18 @@ pre {
 /* Inline code */
 
 :not(pre) > code {
-  padding: .3rem;
-  margin: .2rem;
-  border-radius: .4rem;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border-radius: 0.4rem;
   font-size: 90%;
-  color: #CBAD96 !important;
+  color: #cbad96 !important;
   background: #232323 !important;
 }
 
 .token {
-  &.comment, &.prolog, &.cdata {
+  &.comment,
+  &.prolog,
+  &.cdata {
     color: #808080;
   }
 
@@ -96,17 +103,24 @@ pre {
     color: #629755;
 
     > .token.keyword {
-      color: #526D4A;
+      color: #526d4a;
       text-decoration: underline;
     }
   }
 
-  &.delimiter, &.boolean, &.keyword, &.selector, &.important, &.atrule {
+  &.delimiter,
+  &.boolean,
+  &.keyword,
+  &.selector,
+  &.important,
+  &.atrule {
     font-weight: bold;
-    color: #F92672;
+    color: #f92672;
   }
 
-  &.operator, &.punctuation, &.attr-name {
+  &.operator,
+  &.punctuation,
+  &.attr-name {
     color: #a9b7c6;
   }
 
@@ -118,28 +132,34 @@ pre {
     }
   }
 
-  &.doctype, &.builtin {
+  &.doctype,
+  &.builtin {
     color: #e8bf6a;
   }
 
-  &.entity, &.number, &.symbol {
-    color: #AE81FF;
+  &.entity,
+  &.number,
+  &.symbol {
+    color: #ae81ff;
   }
 
   &.property {
-    color: #CF8822;
+    color: #cf8822;
   }
 
-  &.constant, &.console.class-name, &.dom.variable {
-    color: #4186F8;
+  &.constant,
+  &.console.class-name,
+  &.dom.variable {
+    color: #4186f8;
   }
 
   &.variable {
-    color: #CBAD96;
+    color: #cbad96;
   }
 
-  &.string, &.char {
-    color: #E6DB74;
+  &.string,
+  &.char {
+    color: #e6db74;
   }
 
   &.attr-value {
@@ -154,68 +174,75 @@ pre {
     }
   }
 
-  &.url, &.url-link, &.email-link {
-    color: #589DF6;
+  &.url,
+  &.url-link,
+  &.email-link {
+    color: #589df6;
     text-decoration: underline;
   }
 
   &.function {
-    color: #A6E22E;
+    color: #a6e22e;
   }
 
   &.regex {
-    color: #E6DB74;
-    background: #143D1B;
+    color: #e6db74;
+    background: #143d1b;
   }
 
-  &.class-name, &.maybe-class-name {
-    color: #66D9EE;
+  &.class-name,
+  &.maybe-class-name {
+    color: #66d9ee;
   }
 
   &.property-access {
-    color: #CF8822;
+    color: #cf8822;
   }
 
   &.abstract > .token {
-    &.class-name, &.maybe-class-name {
-      color: #00CFD3;
+    &.class-name,
+    &.maybe-class-name {
+      color: #00cfd3;
     }
   }
 
   &.interface > .token {
-    &.class-name, &.maybe-class-name {
-      color: #0ED38B;
+    &.class-name,
+    &.maybe-class-name {
+      color: #0ed38b;
     }
   }
 
   &.object > .token {
-    &.class-name, &.maybe-class-name {
+    &.class-name,
+    &.maybe-class-name {
       font-weight: bold;
     }
   }
 
   &.annotation {
-    color: #BBB529;
+    color: #bbb529;
   }
 
   &.interpolation {
-    color: #FD971F;
+    color: #fd971f;
 
     > .token.delimiter {
-      color: #CC7832;
+      color: #cc7832;
     }
   }
 
-  &.generics > .token.class-name, &.maybe-generic-template {
-    color: #20999D;
+  &.generics > .token.class-name,
+  &.maybe-generic-template {
+    color: #20999d;
   }
 
   &.label.symbol {
-    color: #467CDA;
+    color: #467cda;
   }
 
   &.namespace {
-    color: #A9B7C6;
+    color: #a9b7c6;
   }
 
   &.bold {
@@ -237,20 +264,23 @@ pre {
 
 code.language-css .token {
   &.property {
-    color: #89BB26;
+    color: #89bb26;
 
     + .token.punctuation {
-      color: #89BB26;
+      color: #89bb26;
     }
   }
 
   &.id {
-    color: #F92672;
+    color: #f92672;
   }
 
   &.selector > .token {
-    &.class, &.attribute, &.pseudo-class, &.pseudo-element {
-      color: #F92672;
+    &.class,
+    &.attribute,
+    &.pseudo-class,
+    &.pseudo-element {
+      color: #f92672;
     }
   }
 }
@@ -267,13 +297,14 @@ div.code-toolbar {
   > .toolbar {
     font-family: Hack, Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
     position: absolute;
-    top: .3em;
-    right: .2em;
+    top: 0.3em;
+    right: 0.2em;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
   }
 
-  &:hover > .toolbar, &:focus-within > .toolbar {
+  &:hover > .toolbar,
+  &:focus-within > .toolbar {
     opacity: 1;
   }
 
@@ -306,7 +337,9 @@ div.code-toolbar {
       -ms-user-select: none;
     }
 
-    a, button, span {
+    a,
+    button,
+    span {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 2rem;
       color: #a9b7c6;
@@ -317,21 +350,24 @@ div.code-toolbar {
     }
 
     a {
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: inherit;
         text-decoration: none;
       }
     }
 
     button {
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: inherit;
         text-decoration: none;
       }
     }
 
     span {
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: inherit;
         text-decoration: none;
       }
@@ -342,7 +378,7 @@ div.code-toolbar {
 /* Separate line b/c rules are thrown out if selector is invalid.
    IE11 and old Edge versions don't support :focus-within. */
 
-pre[class*="language-"].line-numbers {
+pre[class*='language-'].line-numbers {
   position: relative;
   padding-top: 1em;
   padding-bottom: 1em;
