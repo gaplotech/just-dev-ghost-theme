@@ -17,8 +17,7 @@
     </div>
   </div>
   <div class="site-nav-right">
-    <img class="dark-mode-toggle ripple" src="{{asset "moon.svg"}}" data-dark-src="{{asset "moon.svg"}}"
-         data-light-src="{{asset "sun.svg"}}">
+    {{> components/dark-mode-toggle}}
 
     {{#if @site.secondary_navigation}}
       {{navigation type="secondary"}}
@@ -59,8 +58,7 @@
       </div>
     </div>
     <div class="site-nav-right">
-      <img class="dark-mode-toggle ripple" src="{{asset "moon.svg"}}" data-dark-src="{{asset "moon.svg"}}"
-           data-light-src="{{asset "sun.svg"}}">
+      {{> components/dark-mode-toggle}}
       <img class="nav-more-btn ripple" src="{{asset "more_vert-24px.svg"}}"/>
     </div>
   </div>

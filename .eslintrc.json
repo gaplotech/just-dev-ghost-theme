@@ -10,7 +10,8 @@
   "globals": {
     "$": "readonly",
     "mediumZoom": "readonly",
-    "GapTheme": "readonly"
+    "GapTheme": "readonly",
+    "Vue": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 2018

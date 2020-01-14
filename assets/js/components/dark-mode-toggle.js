@@ -1,12 +1,10 @@
 /**
  * Inspired by https://github.com/GoogleChromeLabs/dark-mode-toggle/blob/master/src/dark-mode-toggle.mjs
  * The origin abstraction is too leaky(difficult to change UI's padding/margin) and required modern browser version to load the modules
- * rewrite the concept in es5 for better backward compatibility
+ * just rewrite the concept in vuejs components
  * @author GapLoTech
  */
 ;((window, document) => {
-  const doc = document
-  const store = localStorage
   const PREFERS_COLOR_SCHEME = 'prefers-color-scheme'
   const MEDIA = 'media'
   const LIGHT = 'light'
@@ -18,57 +16,95 @@
   const PERMANENT_COLOR_SCHEME = 'permanentcolorscheme'
   const ALL = 'all'
   const NOT_ALL = 'not all'
-  const CLASS_NAME = '.dark-mode-toggle'
-
-  const _darkCSS = doc.querySelectorAll(
+  const darkCss = document.querySelectorAll(
     `${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${DARK}"]`
   )
-  const _lightCSS = doc.querySelectorAll(
+  const lightCss = document.querySelectorAll(
     `${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${LIGHT}"],${LINK_REL_STYLESHEET}[${MEDIA}*=${PREFERS_COLOR_SCHEME}][${MEDIA}*="${NO_PREFERENCE}"]`
   )
 
-  const hasNativePrefersColorScheme = matchMedia(MQ_DARK).media !== NOT_ALL
-  const modeInStore = store.getItem(PERMANENT_COLOR_SCHEME)
-  let mode
-  if (modeInStore) {
-    mode = modeInStore
-  } else if (hasNativePrefersColorScheme) {
-    mode = matchMedia(MQ_LIGHT).matches ? LIGHT : DARK
-  } else {
-    mode = LIGHT
+  const enableLink = link => {
+    link.media = ALL
+    link.disabled = false
   }
 
-  function updateMode(element) {
-    if (mode === LIGHT) {
-      _lightCSS.forEach(link => {
-        link.media = ALL
-        link.disabled = false
-      })
-      _darkCSS.forEach(link => {
-        link.media = NOT_ALL
-        link.disabled = true
-      })
-      element.setAttribute('src', element.attributes.getNamedItem('data-dark-src').value)
+  const disableLink = link => {
+    link.media = NOT_ALL
+    link.disabled = true
+  }
+
+  const getInitialMode = () => {
+    const hasNativePrefersColorScheme = matchMedia(MQ_DARK).media !== NOT_ALL
+    const modeInStore = localStorage.getItem(PERMANENT_COLOR_SCHEME)
+    if (modeInStore) {
+      return modeInStore
+    } else if (hasNativePrefersColorScheme) {
+      return matchMedia(MQ_LIGHT).matches ? LIGHT : DARK
     } else {
-      _darkCSS.forEach(link => {
-        link.media = ALL
-        link.disabled = false
-      })
-      _lightCSS.forEach(link => {
-        link.media = NOT_ALL
-        link.disabled = true
-      })
-      element.setAttribute('src', element.attributes.getNamedItem('data-light-src').value)
+      return LIGHT
     }
   }
 
-  const _toggles = document.querySelectorAll(CLASS_NAME)
-  _toggles.forEach(element => {
-    element.addEventListener('click', () => {
-      mode = mode === LIGHT ? DARK : LIGHT
-      store.setItem(PERMANENT_COLOR_SCHEME, mode)
-      _toggles.forEach(updateMode)
-    })
-    updateMode(element)
+  const updateExternal = mode => {
+    if (mode === LIGHT) {
+      lightCss.forEach(enableLink)
+      darkCss.forEach(disableLink)
+    } else {
+      darkCss.forEach(enableLink)
+      lightCss.forEach(disableLink)
+    }
+
+    // persist
+    localStorage.setItem(PERMANENT_COLOR_SCHEME, mode)
+  }
+
+  // sync different dark-mode-toggle state via eventBus
+  const eventBus = new Vue()
+
+  const DarkModeToggle = Vue.extend({
+    data: function() {
+      return {
+        mode: getInitialMode(),
+        darkSrc: null,
+        lightSrc: null
+      }
+    },
+
+    beforeMount() {
+      this.darkSrc = this.$el.attributes['dark-src'].value
+      this.lightSrc = this.$el.attributes['light-src'].value
+
+      // subscribe color scheme changes
+      eventBus.$on(PERMANENT_COLOR_SCHEME, mode => {
+        this.mode = mode
+      })
+    },
+
+    mounted() {
+      updateExternal(this.mode)
+    },
+
+    computed: {
+      src() {
+        return this.mode === LIGHT ? this.darkSrc : this.lightSrc
+      }
+    },
+
+    methods: {
+      toggle() {
+        const mode = this.mode === LIGHT ? DARK : LIGHT
+        updateExternal(mode)
+        eventBus.$emit(PERMANENT_COLOR_SCHEME, mode)
+      }
+    },
+
+    beforeDestroy() {
+      eventBus.$off(PERMANENT_COLOR_SCHEME)
+    }
+  })
+
+  // init
+  document.querySelectorAll('.dark-mode-toggle').forEach(element => {
+    new DarkModeToggle().$mount(element)
   })
 })(window, document)
