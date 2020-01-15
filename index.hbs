@@ -6,7 +6,6 @@ into the {body} of the default.hbs template --}}
   {{#> header-background
     background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="inner">
-      {{> "site-nav"}}
       <div class="site-header-content">
         <h1 class="site-title">
           {{#if @site.logo}}
@@ -23,6 +22,9 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
+  <div class="nav-wrapper">
+    {{> site-nav}}
+  </div>
   <div class="inner posts">
 
     <div class="post-feed">
@@ -37,9 +39,9 @@ into the {body} of the default.hbs template --}}
   </div>
 </main>
 
-{{> site-header}}
+<!--{{> site-header}}-->
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script src="{{asset "built/index.js"}}"></script>
+  <script src="{{asset "js/pages/index.js"}}"></script>
 {{/contentFor}}

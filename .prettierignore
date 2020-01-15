@@ -1,4 +1,5 @@
 dist
 .idea
 node_modules
-es5
+src/es5
+assets

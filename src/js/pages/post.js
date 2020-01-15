@@ -1,16 +1,8 @@
-$(document).ready(() => {
+document.addEventListener('DOMContentLoaded', () => {
   // FitVids - start
   const $postContent = $('.post-full-content')
   $postContent.fitVids()
   // FitVids - end
-
-  // Replace nav with title on scroll - start
-  GapTheme.stickyNavTitle({
-    navSelector: '.site-nav-main',
-    titleSelector: '.post-full-title',
-    activeClass: 'nav-post-title-active'
-  })
-  // Replace nav with title on scroll - end
 
   // Hover on avatar
   let hoverTimeout

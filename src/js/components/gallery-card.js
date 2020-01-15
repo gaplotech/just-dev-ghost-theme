@@ -8,7 +8,7 @@
  * the display matches what is seen in the editor.
  */
 
-;((window, document) => {
+const initGalleryCard = () => {
   const resizeImagesInGalleries = function resizeImagesInGalleries() {
     const images = document.querySelectorAll('.kg-gallery-image img')
     images.forEach(image => {
@@ -21,4 +21,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', resizeImagesInGalleries)
-})(window, document)
+}
+
+export { initGalleryCard }

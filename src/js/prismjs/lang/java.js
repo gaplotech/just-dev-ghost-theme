@@ -17,7 +17,7 @@
         'function': [
             Prism.languages.clike.function,
             {
-                pattern: /(\:\:)[a-z_]\w*/,
+                pattern: /(::)[a-z_]\w*/,
                 lookbehind: true
             }
         ],

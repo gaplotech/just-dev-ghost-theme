@@ -5,13 +5,15 @@
     "es6": true
   },
   "extends": [
-    "standard"
+    "standard",
+    "prettier"
   ],
   "globals": {
     "$": "readonly",
     "mediumZoom": "readonly",
     "GapTheme": "readonly",
-    "Vue": "readonly"
+    "Vue": "readonly",
+    "Prism": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 2018

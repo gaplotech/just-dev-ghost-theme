@@ -13,7 +13,7 @@
  * to the element with the class "post-feed" in the currently viewed page.
  */
 
-;((window, document) => {
+const initInfiniteScroll = () => {
   // next link element
   const nextElement = document.querySelector('link[rel=next]')
   if (!nextElement) {
@@ -109,4 +109,6 @@
   window.addEventListener('resize', onResize)
 
   requestTick()
-})(window, document)
+}
+
+export { initInfiniteScroll }

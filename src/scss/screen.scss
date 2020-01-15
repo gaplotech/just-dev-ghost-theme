@@ -29,6 +29,8 @@ production stylesheet in assets/built/screen.css
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 @import 'global';
+@import 'dark-mode-toggle';
+@import 'medium-zoom';
 
 body {
   background: #fff;
@@ -56,11 +58,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.site-main {
-  z-index: 100;
-  flex-grow: 1;
 }
 
 /* Full width page blocks */
@@ -273,24 +270,13 @@ body {
   right: 0;
   left: 0;
   z-index: 1000;
-  background: $darkmode;
+  background: $nav-bar-color;
 }
 
 .site-nav {
   position: relative;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  overflow-y: hidden;
-  height: 64px;
-  font-size: 1.3rem;
-}
-
-.m-site-nav {
-  position: relative;
-  z-index: 100;
-  display: none;
   justify-content: space-between;
   align-items: flex-start;
   overflow-y: hidden;
@@ -321,51 +307,6 @@ body {
   }
 }
 
-@media (max-width: 500px) {
-  .site-nav {
-    display: none;
-  }
-
-  .m-site-nav {
-    display: flex;
-  }
-
-  .site-nav-main .m-site-nav {
-    padding-right: 5vw;
-  }
-
-  .m-site-nav .site-nav-right {
-    display: flex;
-  }
-
-  .nav-more-btn {
-    z-index: 1100;
-    padding: 0.5rem 0.5rem;
-    opacity: 0.7;
-    border-radius: 10rem;
-    height: 3.5rem;
-  }
-
-  .full-site-nav-content {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    width: auto;
-    min-width: 150px;
-    height: auto;
-    right: 1rem;
-    top: 5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in-out;
-
-    &.active {
-      max-height: 400px;
-      transition: max-height 0.3s ease-in-out;
-    }
-  }
-}
-
 .site-nav-left-wrapper {
   position: relative;
   flex: 1 0 auto;
@@ -388,6 +329,7 @@ body {
 }
 
 .site-nav-left {
+  max-width: 80vw;
   flex: 1 0 auto;
   display: flex;
   align-items: center;
@@ -406,14 +348,6 @@ body {
     padding-right: 20px;
   }
 }
-
-/* Site Nav Hack Explanation (above):
-
-What's happening above is .site-nav-left is set to overflow-x and allow sideways scrolling, so that when there isn't enough space for all nav items (either due to lots of nav items, or a small viewport), you can still scroll side-to-side to reach them. Also, there is a small gradient on the left and right side covering the menu so that the menu goes offscreen smoothly.
-
-The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px of padding-bottom and a 40px fixed height parent (.site-nav) hides that entirely. Slightly hacky code. But nice clean end-result.
-
-*/
 
 .site-nav-logo {
   position: relative;
@@ -440,16 +374,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   }
 }
 
-@media (max-width: 500px) {
-  .site-nav-logo {
-    padding: 14.5px 0;
-
-    img {
-      height: 14px;
-    }
-  }
-}
-
 .site-home-header .site-nav-logo {
   display: none;
 }
@@ -459,8 +383,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   align-self: flex-start;
 }
 
-.nav {
+.nav, .nav-logo {
   position: absolute;
+
+  @media (max-width: 700px) {
+    position: relative;
+  }
+
   z-index: 1000;
   display: flex;
   margin: 0 0 0 -12px;
@@ -506,11 +435,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   }
 }
 
-.nav-post-title-active .nav {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(-175%);
-}
 
 .nav-post-title {
   visibility: hidden;
@@ -532,12 +456,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
       opacity: 0.5;
     }
   }
-}
-
-.nav-post-title-active .nav-post-title {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .site-nav-right {
@@ -665,15 +583,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
   .site-nav-main {
     padding-right: 0;
     padding-left: 0;
-  }
-
-  .site-nav-left {
-    margin-right: 0;
-    padding-left: 5vw;
-  }
-
-  .site-nav-right {
-    display: none;
   }
 }
 
@@ -2966,5 +2875,101 @@ Usage (In Ghost editor):
 
   .site-footer-nav a:first-child {
     margin-left: 0;
+  }
+}
+
+
+.site-main, .site-nav-main {
+  //z-index: 100;
+  flex-grow: 1;
+  .site-nav {
+    background-color: $nav-bar-color;
+  }
+
+  @media (max-width: 500px) {
+    .site-nav-content {
+      display: none;
+    }
+    .site-nav {
+      .site-nav-logo {
+        display: flex;
+      }
+    }
+    .hide-below-500 {
+      display: none;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .hide-above-500 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .site-nav {
+      .site-nav-logo {
+        display: flex;
+      }
+    }
+    .hide-below-700 {
+      display: none;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .hide-above-700 {
+      display: none;
+    }
+  }
+
+  .fixed-nav-active.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10000;
+    padding: 0 5vw;
+
+    .site-nav-logo {
+      display: unset;
+      transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+      transform: translateX(0);
+      visibility: visible;
+      width: auto;
+      max-width: 200px;
+    }
+  }
+
+  :not(.fixed-nav-active).site-nav {
+    padding: 0 5vw;
+    margin: 0 -5vw;
+    justify-content: center;
+
+    .site-nav-logo {
+      visibility: hidden;
+      transform: translateX(-100%);
+      max-width: 0;
+    }
+  }
+
+  .full-site-nav-content {
+    z-index: 1200;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: auto;
+    min-width: 150px;
+    height: auto;
+    right: 1rem;
+    top: 5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+
+    &.active {
+      max-height: 400px;
+      transition: max-height 0.3s ease-in-out;
+    }
   }
 }

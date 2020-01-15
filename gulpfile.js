@@ -78,18 +78,13 @@ function pagejs(done) {
   )
 }
 
-function es5(done) {
+const js = parallel(esnext, pagejs, prism)
+
+function prism(done) {
   pump(
     [
-      src(
-        [
-          // pull in lib files first so our own code can depend on it
-          'assets/es5/lib/*.js',
-          'assets/es5/prism/**/*.js'
-        ],
-        { sourcemaps: true }
-      ),
-      concat('lib.js'),
+      src(['assets/es5/prism/*.js', 'assets/es5/prism/**/*.js'], { sourcemaps: true }),
+      concat('prism.js'),
       uglify(),
       dest('assets/built/', { sourcemaps: '.' }),
       browserSync.stream()
@@ -97,8 +92,6 @@ function es5(done) {
     handleError(done)
   )
 }
-
-const js = parallel(es5, esnext, pagejs)
 
 function zipper(done) {
   const targetDir = 'dist/'

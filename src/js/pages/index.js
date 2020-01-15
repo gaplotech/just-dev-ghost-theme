@@ -2,14 +2,15 @@
 // - this appears to be due to the events firing much more slowly in Safari.
 //   Dropping the scroll event and using only a raf loop results in smoother
 //   scrolling but continuous processing even when not scrolling
-$(document).ready(() => {
-  const navs = document.querySelectorAll('.site-nav-main .site-nav, .site-nav-main .m-site-nav')
-  const feed = document.querySelector('.post-feed')
-
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.site-nav')
+  const navWrapper = document.querySelector('.nav-wrapper')
   let lastScrollY = window.scrollY
+  let direction = 0
   let ticking = false
 
   function onScroll() {
+    direction = window.scrollY - lastScrollY
     lastScrollY = window.scrollY
     requestTick()
   }
@@ -26,17 +27,16 @@ $(document).ready(() => {
   }
 
   function update() {
-    const trigger = feed.getBoundingClientRect().top + window.scrollY
+    const trigger = navWrapper.getBoundingClientRect().top + window.scrollY
 
-    // show/hide nav
-    if (lastScrollY >= trigger - 20) {
-      navs.forEach(nav => {
+    if(direction >= 0) {
+      if (lastScrollY >= trigger) {
         nav.classList.add('fixed-nav-active')
-      })
+      }
     } else {
-      navs.forEach(nav => {
+      if (lastScrollY <= trigger) {
         nav.classList.remove('fixed-nav-active')
-      })
+      }
     }
 
     ticking = false
@@ -46,4 +46,5 @@ $(document).ready(() => {
   window.addEventListener('resize', onResize, false)
 
   update()
+
 })
