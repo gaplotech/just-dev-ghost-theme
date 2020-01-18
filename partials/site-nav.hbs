@@ -15,29 +15,29 @@
   </div>
   <div class="site-nav-right">
     {{> components/dark-mode-toggle}}
-    <img class="nav-more-btn ripple hide-above-700" src="{{asset "more_vert-24px.svg"}}"/>
+    <img class="nav-more-btn ripple" src="{{asset "more_vert-24px.svg"}}"/>
 
     {{#if @site.secondary_navigation}}
       {{navigation type="secondary"}}
     {{else}}
       <div class="social-links">
         {{#if @site.facebook}}
-          <a class="social-link social-link-fb hide-below-700" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
+          <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
              rel="noopener">{{> "icons/facebook"}}</a>
         {{/if}}
         {{#if @site.twitter}}
-          <a class="social-link social-link-tw hide-below-700" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
+          <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
              rel="noopener">{{> "icons/twitter"}}</a>
         {{/if}}
       </div>
       {{#unless @labs.members}}
-        <a class="rss-button hide-below-700" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
+        <a class="social-link rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
            target="_blank" rel="noopener">{{> "icons/rss"}}</a>
       {{/unless}}
     {{/if}}
 
     {{#if @labs.members}}
-      <a class="subscribe-button hide-below-700" href="#subscribe">Subscribe</a>
+      <a class="subscribe-button" href="#subscribe">Subscribe</a>
     {{/if}}
   </div>
 

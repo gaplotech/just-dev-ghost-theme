@@ -569,14 +569,13 @@ h6 {
 
 .ripple {
   background-position: center;
-  transition: background 0.4s ease-in-out;
 
   &:hover {
-    background: transparent radial-gradient(circle, transparent 1%, $darkmode 1%) (center / 15000%);
+    background: transparent;
   }
 
   &:active {
-    background-color: lighten($primary, +10%);
+    background-color: lighten($darkmode, +10%);
     background-size: 100%;
     transition: background 0s;
   }

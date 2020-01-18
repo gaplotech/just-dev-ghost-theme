@@ -1,0 +1,203 @@
+@import "global";
+
+/* Subscribe Message and Overlay
+/* ---------------------------------------------------------- */
+
+.subscribe-success-message {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9000;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  background: $green;
+  transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  transform: translateY(-175%);
+}
+
+.subscribe-success .subscribe-success-message {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.subscribe-success-message.close {
+  visibility: hidden;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(-175%);
+}
+
+.subscribe-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    right: 25px;
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    opacity: 0.8;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    right: 25px;
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    opacity: 0.8;
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    cursor: default;
+  }
+}
+
+.subscribe-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(9, 10, 11, 0.97);
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  pointer-events: none;
+
+  .subscribe-close {
+    &:before,
+    &:after {
+      top: 36px;
+      width: 30px;
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.subscribe-overlay-content {
+  position: relative;
+  z-index: 9999;
+  margin: 0 0 5vw 0;
+  padding: 4vw;
+  color: #fff;
+  text-align: center;
+}
+
+.subscribe-overlay .subscribe-form {
+  border: none;
+  color: #fff;
+  background: none;
+}
+
+.subscribe-overlay-logo {
+  position: fixed;
+  top: 23px;
+  left: 30px;
+  height: 30px;
+}
+
+.subscribe-overlay-title {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  font-size: 5.2rem;
+  line-height: 1.15em;
+}
+
+.subscribe-overlay-description {
+  margin: 0 auto 50px;
+  max-width: 650px;
+  color: #fff;
+  font-size: 2.4rem;
+  line-height: 1.3em;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.subscribe-overlay {
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 540px;
+  }
+
+  .form-group {
+    flex-grow: 1;
+  }
+
+  .subscribe-email {
+    display: block;
+    padding: 14px 20px;
+    width: 100%;
+    border: none;
+    color: $midgrey;
+    font-size: 2rem;
+    line-height: 1em;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    user-select: text;
+    border-radius: 8px;
+    transition: border-color 0.15s linear;
+    -webkit-appearance: none;
+  }
+}
+
+.subscribe-email:focus {
+  outline: 0;
+  border-color: darken($lightgrey, 2%);
+}
+
+.subscribe-overlay {
+  button {
+    display: inline-block;
+    margin: 0 0 0 15px;
+    padding: 0 25px;
+    height: 52px;
+    outline: none;
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    background: linear-gradient(
+                    lighten($blue, +7%),
+                    desaturate(darken($blue, 7%), 10%) 60%,
+                    desaturate(darken($blue, 7%), 10%) 90%,
+                    desaturate(darken($blue, 4%), 10%)
+    );
+    border-radius: 8px;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    &:active,
+    &:focus {
+      background: desaturate(darken($blue, 9%), 10%);
+    }
+  }
+
+  .loading .button-loader {
+    top: 5px;
+  }
+}

@@ -59,9 +59,6 @@ const updateExternal = mode => {
   localStorage.setItem(PERMANENT_COLOR_SCHEME, mode)
 }
 
-// sync different dark-mode-toggle state via eventBus
-const eventBus = new Vue()
-
 const DarkModeToggle = Vue.extend({
   data: function() {
     return {
@@ -74,11 +71,6 @@ const DarkModeToggle = Vue.extend({
   beforeMount() {
     this.darkSrc = this.$el.attributes['dark-src'].value
     this.lightSrc = this.$el.attributes['light-src'].value
-
-    // subscribe color scheme changes
-    eventBus.$on(PERMANENT_COLOR_SCHEME, mode => {
-      this.mode = mode
-    })
   },
 
   mounted() {
@@ -95,13 +87,9 @@ const DarkModeToggle = Vue.extend({
     toggle() {
       const mode = this.mode === LIGHT ? DARK : LIGHT
       updateExternal(mode)
-      eventBus.$emit(PERMANENT_COLOR_SCHEME, mode)
+      this.mode = mode
     }
   },
-
-  beforeDestroy() {
-    eventBus.$off(PERMANENT_COLOR_SCHEME)
-  }
 })
 
 export { DarkModeToggle }
