@@ -89,7 +89,7 @@ const DarkModeToggle = Vue.extend({
       updateExternal(mode)
       this.mode = mode
     }
-  },
+  }
 })
 
 export { DarkModeToggle }

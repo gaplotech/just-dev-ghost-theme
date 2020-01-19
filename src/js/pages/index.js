@@ -4,6 +4,7 @@
 //   scrolling but continuous processing even when not scrolling
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.site-nav')
+  const spacer = document.querySelector('.nav-spacer')
   const navWrapper = document.querySelector('.nav-wrapper')
   let lastScrollY = window.scrollY
   let direction = 0
@@ -29,22 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
   function update() {
     const trigger = navWrapper.getBoundingClientRect().top + window.scrollY
 
-    if(direction >= 0) {
+    if (direction >= 0) {
       if (lastScrollY >= trigger) {
         nav.classList.add('fixed-nav-active')
+        spacer.classList.add('active')
       }
     } else {
       if (lastScrollY <= trigger) {
         nav.classList.remove('fixed-nav-active')
+        spacer.classList.remove('active')
       }
     }
 
     ticking = false
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('scroll', onScroll, { passive: false })
   window.addEventListener('resize', onResize, false)
 
   update()
-
 })
