@@ -1,15 +1,16 @@
 const Path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const glob = require('glob')
+const RemovePlugin = require('remove-files-webpack-plugin')
 
 module.exports = {
   entry: {
-    'js/prism': './src/js/prismjs/prism.js',
+    'js/prism': Path.resolve(__dirname, '../src/js/prismjs/prism.js'),
     'js/app': Path.resolve(__dirname, '../src/js/app.js'),
     'css/app': Path.resolve(__dirname, '../src/scss/screen.scss'),
     'css/dark': Path.resolve(__dirname, '../src/scss/dark.scss'),
     'css/gapstyle': Path.resolve(__dirname, '../src/scss/gapstyle.scss'),
-    ...glob.sync('./src/js/pages/*.js').reduce((acc, curr) => {
+    ...glob.sync(Path.resolve(__dirname, '../src/js/pages/*.js')).reduce((acc, curr) => {
       const [head] = curr.replace('./src/', '').split('.')
       acc[head] = curr
       return acc
@@ -21,7 +22,20 @@ module.exports = {
   optimization: {
     splitChunks: false
   },
-  plugins: [new CopyWebpackPlugin([{ from: Path.resolve(__dirname, '../static'), to: '' }])],
+  plugins: [
+    new CopyWebpackPlugin([{ from: Path.resolve(__dirname, '../static'), to: '' }]),
+    new RemovePlugin({
+      // scss entry will produce unnecessary .js file, use this plugin to remove it
+      after: {
+        test: [
+          {
+            folder: Path.resolve(__dirname, '../assets/css'),
+            method: filePath => new RegExp(/\.js$/).test(filePath)
+          }
+        ]
+      }
+    })
+  ],
   resolve: {
     alias: {
       '~': Path.resolve(__dirname, '../src')
