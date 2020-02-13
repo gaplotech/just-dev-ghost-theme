@@ -5,13 +5,13 @@ const RemovePlugin = require('remove-files-webpack-plugin')
 
 module.exports = {
   entry: {
-    'js/prism': Path.resolve(__dirname, '../src/js/prismjs/prism.js'),
-    'js/app': Path.resolve(__dirname, '../src/js/app.js'),
-    'css/app': Path.resolve(__dirname, '../src/scss/screen.scss'),
-    'css/dark': Path.resolve(__dirname, '../src/scss/dark.scss'),
-    'css/gapstyle': Path.resolve(__dirname, '../src/scss/gapstyle.scss'),
-    ...glob.sync(Path.resolve(__dirname, '../src/js/pages/*.js')).reduce((acc, curr) => {
-      const [head] = curr.replace('./src/', '').split('.')
+    'js/prism': './src/js/prismjs/prism.js',
+    'js/app': './src/js/app.js',
+    'css/app': './src/scss/screen.scss',
+    'css/dark': './src/scss/dark.scss',
+    'css/gapstyle': './src/scss/gapstyle.scss',
+    ...glob.sync('./src/js/pages/*.js').reduce((acc, curr) => {
+      const [head] = curr.replace(`./src/`, '').split('.')
       acc[head] = curr
       return acc
     }, {})
