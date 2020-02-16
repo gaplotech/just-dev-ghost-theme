@@ -9,7 +9,7 @@ body {
 }
 
 ::selection {
-  background: $primary;
+  background: darken($primary, 4%);
 }
 
 .post-feed {
@@ -73,11 +73,11 @@ body {
 }
 
 .post-full-custom-excerpt {
-  color: lighten($midgrey, +10%);
+  color: lighten($midgrey, +20%);
 }
 
 .post-full-image {
-  background-color: lighten($darkmode, +8%);
+  background-color: $darkmode;
 }
 
 .post-full-byline {
@@ -125,8 +125,8 @@ body {
   }
 
   code {
-    color: #fff;
-    background: #000;
+    color: rgba(255, 255, 255, 0.75);
+    background: lighten($darkmode, +4%);
   }
 }
 

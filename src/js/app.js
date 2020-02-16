@@ -9,7 +9,7 @@ document.querySelectorAll('.dark-mode-toggle').forEach(element => {
   new DarkModeToggle().$mount(element)
 })
 
-mediumZoom('.kg-image-card img, .kg-gallery-image img', {
+mediumZoom('.kg-image-card img, .kg-gallery-image img, .post-content img', {
   background: null
 })
 

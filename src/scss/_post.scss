@@ -97,7 +97,7 @@
   align-items: center;
   overflow: hidden;
   margin: 25px 0 50px;
-  background: lighten($lightgrey, +10%);
+  background: #fff;
   border-radius: 3px;
 
   img {
@@ -270,11 +270,12 @@
   }
 
   code {
-    padding: 0 5px 2px;
+    padding: 0.4rem 0.4rem;
+    margin: 0.2rem;
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400 !important;
-    background: $whitegrey;
+    background-color: #f1f1f1;
     border-radius: 3px;
   }
 

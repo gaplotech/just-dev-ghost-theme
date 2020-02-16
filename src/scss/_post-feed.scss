@@ -37,7 +37,8 @@
 
 .post-card-image {
   width: 100%;
-  height: 200px;
+  height: auto;
+  max-height: 200px;
   background: $lightgrey no-repeat center center;
   object-fit: cover;
 }

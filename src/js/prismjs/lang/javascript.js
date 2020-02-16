@@ -212,7 +212,6 @@
     inside['maybe-class-name'] = /^[A-Z][\s\S]*/
   }
 })(Prism)
-
 ;(function(Prism) {
   var templateString = Prism.languages.javascript['template-string']
 
@@ -559,7 +558,6 @@
 })(Prism)
 
 Prism.languages.js = Prism.languages.javascript
-
 ;(function(Prism) {
   var javascript = Prism.languages.javascript
 

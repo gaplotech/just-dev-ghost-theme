@@ -84,12 +84,11 @@ pre {
 /* Inline code */
 
 :not(pre) > code {
+  font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   padding: 0.3rem;
   margin: 0.2rem;
   border-radius: 0.4rem;
   font-size: 90%;
-  color: #cbad96 !important;
-  background: #232323 !important;
 }
 
 .token {
