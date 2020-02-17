@@ -218,6 +218,7 @@
   small {
     display: inline-block;
     line-height: 1.6em;
+    width: 100%;
   }
 
   li:first-child {
@@ -233,6 +234,7 @@
   }
 
   img {
+    max-width: 100%;
     &[src$='#full'] {
       max-width: none;
       width: 100vw;
@@ -1204,8 +1206,10 @@ Usage (In Ghost editor):
   align-items: center;
 }
 
-.post-full-content .kg-image {
-  max-width: 100%;
+.post-full-content {
+  .kg-image, img {
+    max-width: 100%;
+  }
 }
 
 /* Preventing full-width image overlap with post image.  */

@@ -292,6 +292,7 @@ pre[class*='language-'] {
 div.code-toolbar {
   position: relative;
   width: 100%;
+  margin: 0 0 1.5em 0;
 
   > .toolbar {
     font-family: Hack, Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
