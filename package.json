@@ -114,6 +114,7 @@
         }
     },
     "dependencies": {
+        "bulma": "^0.8.0",
         "medium-zoom": "^1.0.5",
         "prismjs": "^1.19.0",
         "reframe.js": "^2.2.7",

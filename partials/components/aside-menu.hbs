@@ -1,0 +1,43 @@
+<div class="aside-menu">
+  <div class="backdrop" :class="{ active: isToggle }" @click="toggle()"></div>
+  <aside class="fixed-left-menu bulma menu" :class="{ active: isToggle }">
+    <p class="menu-label">
+      General
+    </p>
+    <ul class="menu-list">
+      {{#if @site.navigation}}
+        {{#foreach navigation}}
+          <li>
+            <a
+              class="full-nav nav-{{slug}}{{#if current}} nav-current{{/if}}"
+              href="{{url absolute="true"}}"
+              @click="toggle()"
+            >{{label}}
+            </a>
+          </li>
+        {{/foreach}}
+      {{/if}}
+    </ul>
+    <p class="menu-label">
+      Social
+    </p>
+    <ul class="menu-list">
+      {{#if @site.facebook}}
+        <li><a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
+               rel="noopener">Facebook</a></li>
+      {{/if}}
+      {{#if @site.twitter}}
+        <li><a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
+               rel="noopener">Twitter</a></li>
+      {{/if}}
+      {{#unless @labs.members}}
+        <a class="social-link rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
+           target="_blank" rel="noopener">RSS</a>
+      {{/unless}}
+      {{#if @labs.members}}
+        <a class="subscribe-button" href="#subscribe">Subscribe</a>
+      {{/if}}
+    </ul>
+  </aside>
+</div>
+

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.site-nav')
   const spacer = document.querySelector('.nav-spacer')
   const navWrapper = document.querySelector('.nav-wrapper')
+  const menuToggle = document.querySelector('.menu-toggle')
   let lastScrollY = window.scrollY
   let direction = 0
   let ticking = false
@@ -32,11 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (direction >= 0) {
       if (lastScrollY >= trigger) {
+        navWrapper.classList.remove('fixed-nav-inactive')
+        menuToggle.classList.add('fixed-nav-active')
         nav.classList.add('fixed-nav-active')
         spacer.classList.add('active')
       }
     } else {
       if (lastScrollY <= trigger) {
+        navWrapper.classList.add('fixed-nav-inactive')
+        menuToggle.classList.remove('fixed-nav-active')
         nav.classList.remove('fixed-nav-active')
         spacer.classList.remove('active')
       }

@@ -22,7 +22,7 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-  <div class="nav-wrapper">
+  <div class="nav-wrapper {{#is 'index'}}index-nav fixed-nav-inactive{{/is}}">
     <div class="nav-spacer"></div>
     {{> site-nav}}
   </div>

@@ -368,7 +368,7 @@ body {
 
 ::selection {
   text-shadow: none;
-  background: lighten($primary, 30%);
+  background: rgba($primary, 0.2);
 }
 
 hr {
@@ -569,7 +569,8 @@ h6 {
 .ripple {
   background-position: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: transparent;
   }
 
@@ -578,4 +579,8 @@ h6 {
     background-size: 100%;
     transition: background 0s;
   }
+}
+
+.fb_iframe_widget_fluid {
+  width: auto !important;
 }

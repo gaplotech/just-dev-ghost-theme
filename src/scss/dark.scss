@@ -9,7 +9,7 @@ body {
 }
 
 ::selection {
-  background: darken($primary, 4%);
+  background: rgba($primary, 0.2);
 }
 
 .post-feed {
@@ -242,4 +242,15 @@ hr {
 
 .medium-zoom-overlay {
   background-color: $darkmode;
+}
+
+.fixed-left-menu {
+  background-color: lighten($darkmode, +6%);
+}
+
+.bulma {
+  $menu-item-color: rgba(255, 255, 255, 0.9);
+  $menu-item-hover-color: rgba(255, 255, 255, 0.9);
+  $menu-item-hover-background-color: rgba($primary, 0.2);
+  @import '~bulma/bulma';
 }
