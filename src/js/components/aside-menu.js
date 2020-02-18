@@ -16,8 +16,11 @@ const ASideMenu = Vue.extend({
   },
 
   methods: {
-    toggle() {
+    toggle(event) {
       this.publishToggleEvent(!this.isToggle)
+      if (event) {
+        event.preventDefault()
+      }
     },
 
     publishToggleEvent(bool) {

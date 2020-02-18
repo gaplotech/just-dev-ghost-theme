@@ -198,15 +198,15 @@
   }
 
   a {
-    color: $darkgrey;
+    color: $primary;
     word-break: break-word;
-    box-shadow: $darkgrey 0 -1px 0 inset;
+    box-shadow: $primary 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: $primary;
+      color: $darkgrey;
       text-decoration: none;
-      box-shadow: $primary 0 -1px 0 inset;
+      box-shadow: $darkgrey 0 -1px 0 inset;
     }
   }
 
@@ -235,6 +235,7 @@
 
   img {
     max-width: 100%;
+    background: #fff;
     &[src$='#full'] {
       max-width: none;
       width: 100vw;

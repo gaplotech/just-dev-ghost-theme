@@ -5,7 +5,7 @@
   border-radius: 10rem;
   height: 3rem;
   width: 3rem;
-
+  filter: invert(100%);
   &:hover {
     opacity: 1;
   }

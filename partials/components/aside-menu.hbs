@@ -1,5 +1,5 @@
 <div class="aside-menu">
-  <div class="backdrop" :class="{ active: isToggle }" @click="toggle()"></div>
+  <div class="backdrop" :class="{ active: isToggle }" @click="toggle($event)"></div>
   <aside class="fixed-left-menu bulma menu" :class="{ active: isToggle }">
     <p class="menu-label">
       General

@@ -10,7 +10,7 @@
   right: 0;
   left: 0;
   z-index: 1000;
-  background: $nav-bar-color;
+  background: #fff;
 }
 
 .site-nav {
@@ -22,6 +22,11 @@
   overflow-y: hidden;
   height: 64px;
   font-size: 1.3rem;
+  border-bottom: 1px solid rgba(0,0,0, 0.1);
+
+  @media (max-width: 700px) {
+    height: 48px;
+  }
 }
 
 .site-nav-left-wrapper {
@@ -66,7 +71,11 @@
   }
 
   @media (max-width: 700px) {
-    margin-left: 40px;
+    margin-left: 32px;
+  }
+
+  @media (max-width: 700px) {
+    padding: 4px 0;
   }
 }
 
@@ -83,7 +92,7 @@
   font-weight: bold;
   letter-spacing: -0.5px;
   text-transform: none;
-
+  filter: invert(100%);
   &:hover {
     text-decoration: none;
   }
@@ -92,6 +101,11 @@
     display: block;
     width: auto;
     height: 21px;
+
+    @media (max-width: 700px) {
+      margin-top: 2px;
+      height: 12px;
+    }
   }
 }
 
@@ -139,6 +153,14 @@
     z-index: 1000;
     left: -16px;
     top: 8px;
+
+    @media (max-width: 700px) {
+      top: 4px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   @media (max-width: 700px) {
@@ -149,6 +171,7 @@
   display: none;
 
   .menu-toggle-btn {
+    filter: invert(100%);
     opacity: 0.7;
     &:hover {
       opacity: 1;
@@ -171,6 +194,7 @@
       left: 0;
       height: 100vh;
       width: 100vw;
+      z-index: 1199;
     }
   }
   .fixed-left-menu {
@@ -178,10 +202,10 @@
     background-color: #fff;
     border-right: 1px solid rgba(0,0,0, 0.1);
     width: 300px;
-    height: calc(100vh - 64px);
-    top: 64px;
+    height: calc(100vh - 48px);
+    top: 48px;
     left: 0;
-    z-index: 10!important;
+    z-index: 1200;
     padding: 1.5rem;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateX(-300px);
@@ -216,7 +240,7 @@
       position: relative;
       display: block;
       padding: 12px 12px;
-      color: #fff;
+      color: #000;
       opacity: 0.8;
       transition: opacity 0.35s ease-in-out;
 
@@ -292,6 +316,11 @@
       margin-right: -12px;
     }
   }
+
+  @media (max-width: 700px) {
+    padding: 0;
+    height: 48px;
+  }
 }
 
 .social-links {
@@ -313,6 +342,7 @@
   svg {
     height: 1.8rem;
     fill: #fff;
+    filter: invert(100%);
   }
 }
 
@@ -401,7 +431,8 @@
   flex-grow: 1;
 
   .site-nav {
-    background-color: $nav-bar-color;
+    color: #000;
+    background-color: #fff;
   }
 
   .fixed-nav-active.site-nav {
@@ -411,7 +442,8 @@
     width: 100vw;
     z-index: 10000;
     padding: 0 5vw;
-    background-color: $nav-bar-color;
+    color: #000;
+    background-color: #fff;
     .site-nav-logo {
       display: unset;
     }
@@ -484,7 +516,7 @@
 }
 
 .nav-spacer {
-  height: 64px;
+  height: 48px;
   display: none;
   &.active {
     display: block;

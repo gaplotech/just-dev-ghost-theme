@@ -9,7 +9,7 @@
   {{!-- Base Meta --}}
   <title>{{meta_title}}</title>
   <meta name="HandheldFriendly" content="True"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"/>
 
   <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}"/>
   <link rel="stylesheet" type="text/css" href="{{asset "css/dark.css"}}" media="(prefers-color-scheme: dark)"/>
@@ -33,10 +33,10 @@
       <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
       <nav class="site-footer-nav">
         <a href="{{@site.url}}">Latest Posts</a>
+        <a href="https://www.github.com/gaplo917" target="_blank" rel="noopener">GitHub</a>
         {{#if @site.facebook}}
           <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
         {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-        <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
       </nav>
     </div>
   </footer>
