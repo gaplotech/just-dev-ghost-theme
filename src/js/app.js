@@ -3,7 +3,6 @@ import { DarkModeToggle } from './components/dark-mode-toggle'
 import { MenuToggle } from './components/menu-toggle'
 import { ASideMenu } from './components/aside-menu'
 import { initGalleryCard } from './components/gallery-card'
-import { initInfiniteScroll } from './components/infinite-scroll'
 
 // init
 document.querySelectorAll('.dark-mode-toggle').forEach(element => {
@@ -23,4 +22,3 @@ mediumZoom('.kg-image-card img, .kg-gallery-image img, .post-content img', {
 })
 
 initGalleryCard()
-initInfiniteScroll()

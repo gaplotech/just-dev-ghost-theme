@@ -1,0 +1,16 @@
+&.pagination-footer {
+  padding-bottom: 4rem;
+}
+
+.pagination-previous,
+.pagination-next {
+  flex-grow: unset !important;
+  background-color: $primary;
+  color: #fff;
+  border-color: $primary;
+  margin: 0 2rem;
+
+  &:hover {
+    border-color: $primary;
+  }
+}

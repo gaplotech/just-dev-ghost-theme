@@ -44,6 +44,10 @@ body {
   }
 }
 
+mark {
+  background-color: rgba($primary, 0.5);
+}
+
 .post-card-title {
   color: rgba(255, 255, 255, 0.85);
 }
@@ -73,7 +77,7 @@ body {
 }
 
 .post-full-byline {
-  border-top-color: lighten($darkmode, +15%);
+  border-top-color: lighten($darkmode, +8%);
 }
 
 .post-full-byline-meta h4 a {
@@ -128,9 +132,14 @@ body {
     color: rgba(255, 255, 255, 0.75);
     background: lighten($darkmode, +4%);
   }
+
+  blockquote {
+    color: #fff;
+  }
 }
 
-hr {
+hr,
+.post-full-byline {
   border-top-color: lighten($darkmode, +8%);
 }
 
@@ -297,4 +306,5 @@ hr {
   $menu-item-hover-color: rgba(255, 255, 255, 0.9);
   $menu-item-hover-background-color: rgba($primary, 0.2);
   @import '~bulma/bulma';
+  @import 'bulma-pagination';
 }

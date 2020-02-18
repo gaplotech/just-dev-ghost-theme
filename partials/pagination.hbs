@@ -1,0 +1,11 @@
+<!-- start pagination -->
+<div class="bulma pagination-footer">
+  <nav class="pagination is-centered is-medium" role="navigation" aria-label="pagination">
+    <a class="pagination-previous" {{#if prev}}href="{{page_url prev}}"{{/if}} {{#unless prev}}disabled{{/unless}}>上一頁</a>
+    <ul class="pagination-list">
+      <li>{{page}} / {{pages}}</li>
+    </ul>
+    <a class="pagination-next" {{#if next}}href="{{page_url next}}"{{/if}} {{#unless next}}disabled{{/unless}}>下一頁</a>
+  </nav>
+</div>
+<!-- end pagination -->

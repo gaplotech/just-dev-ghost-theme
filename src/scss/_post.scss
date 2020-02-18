@@ -163,6 +163,9 @@
     margin: 0 0 1.5em 0;
     min-width: 100%;
   }
+  blockquote {
+    color: #000;
+  }
 }
 
 .post-full-comments,
@@ -321,20 +324,6 @@
   hr {
     margin: 2em 0;
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      display: block;
-      margin-left: -10px;
-      width: 1px;
-      height: 30px;
-      background: lighten($lightgrey, +10%);
-      box-shadow: #fff 0 0 0 5px;
-      transform: rotate(45deg);
-    }
-
     + p {
       margin-top: 1.2em;
     }
@@ -414,7 +403,7 @@
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 500px) {
   .post-full-content {
     img,
     video {
@@ -1194,7 +1183,6 @@ Usage (In Ghost editor):
     flex: 1 1 auto;
     margin: 25px;
     padding: 25px 0 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
