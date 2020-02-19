@@ -281,7 +281,8 @@
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400 !important;
-    background-color: #f1f1f1;
+    color: #d63200;
+    background-color: #f8f8f8;
     border-radius: 3px;
   }
 
@@ -294,16 +295,11 @@
     margin: 1.5em 0 3em;
     padding: 20px;
     max-width: 100%;
-    border: darken($darkgrey, 10%) 1px solid;
     color: $whitegrey;
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: darken($darkgrey, 3%);
+    background-color: #f8f8f8;
     border-radius: 5px;
-
-    ::selection {
-      color: darken($midgrey, 25%);
-    }
 
     code {
       padding: 0;
