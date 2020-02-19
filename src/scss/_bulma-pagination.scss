@@ -1,7 +1,9 @@
 &.pagination-footer {
   padding-bottom: 4rem;
 }
-
+.pagination-list {
+  max-width: 40px;
+}
 .pagination-previous,
 .pagination-next {
   flex-grow: unset !important;
@@ -14,3 +16,9 @@
     border-color: $primary;
   }
 }
+.pagination {
+  @media screen and (min-width: 769px) {
+    justify-content: center !important;
+  }
+}
+

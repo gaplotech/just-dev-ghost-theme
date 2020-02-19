@@ -9,7 +9,7 @@
   {{!-- Base Meta --}}
   <title>{{meta_title}}</title>
   <meta name="HandheldFriendly" content="True"/>
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 
   <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}"/>
   <link rel="stylesheet" type="text/css" href="{{asset "css/dark.css"}}" media="(prefers-color-scheme: dark)"/>
@@ -108,7 +108,5 @@
 
 {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 {{ghost_foot}}
-
-<link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'>
 </body>
 </html>

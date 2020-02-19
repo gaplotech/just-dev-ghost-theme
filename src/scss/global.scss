@@ -1,5 +1,5 @@
 @import 'variables';
-
+@import 'jetbrain_mono';
 /* Reset
 /* ---------------------------------------------------------- */
 
@@ -207,7 +207,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   font-size: 1em;
 }
 
@@ -349,9 +349,6 @@ html {
   font-size: 62.5%;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  @media (max-width: 700px) {
-    font-size: 50%;
-  }
 }
 
 body {
@@ -587,4 +584,14 @@ h6 {
 
 .fb_iframe_widget_fluid {
   width: auto !important;
+}
+
+img[src$='.gif?inline=1'] {
+  width: auto !important;
+  height: auto !important;
+  max-height: 40px !important;
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 4px !important;
+  background: transparent !important;
 }

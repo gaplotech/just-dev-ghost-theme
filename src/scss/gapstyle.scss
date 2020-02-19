@@ -5,7 +5,7 @@
 code[class*='language-'] {
   color: #cbad96;
   background: #2c2c2c;
-  font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+  font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   direction: ltr;
   font-feature-settings: normal;
   text-align: left;
@@ -29,7 +29,7 @@ pre {
   &[class*='language-'] {
     color: #cbad96;
     background: #2c2c2c;
-    font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+    font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
     direction: ltr;
     font-feature-settings: normal;
     text-align: left;
@@ -84,7 +84,7 @@ pre {
 /* Inline code */
 
 :not(pre) > code {
-  font-family: Hack, Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+  font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   padding: 0.3rem;
   margin: 0.2rem;
   border-radius: 0.4rem;
@@ -295,7 +295,7 @@ div.code-toolbar {
   margin: 0 0 1.5em 0;
 
   > .toolbar {
-    font-family: Hack, Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
+    font-family: 'JetBrains Mono', Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
     position: absolute;
     top: 0.3em;
     right: 0.2em;
