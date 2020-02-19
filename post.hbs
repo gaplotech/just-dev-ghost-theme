@@ -33,7 +33,7 @@ into the {body} of the default.hbs template --}}
 
           <p class="post-full-all-tags">
             {{#foreach tags from="2"}}
-              <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">#{{name}}</a>{{#unless @last}}
+              <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>{{#unless @last}}
               |{{/unless}}
             {{/foreach}}
           </p>
