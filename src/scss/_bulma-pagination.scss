@@ -15,6 +15,13 @@
   &:hover {
     border-color: $primary;
   }
+
+  &[disabled]{
+    color: rgba(#fff, 0.4);
+    opacity: 1;
+    background-color: #595959;
+    border-color: #595959;
+  }
 }
 .pagination {
   @media screen and (min-width: 769px) {

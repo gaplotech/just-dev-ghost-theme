@@ -152,28 +152,6 @@ hr,
     color: rgba(255, 255, 255, 0.65);
   }
 
-  table {
-    td {
-      &:first-child {
-        background-image: linear-gradient(to right, $darkmode 50%, rgba($darkmode, 0%) 100%);
-      }
-
-      &:last-child {
-        background-image: linear-gradient(to left, $darkmode 50%, rgba($darkmode, 0%) 100%);
-      }
-    }
-
-    th {
-      color: rgba(255, 255, 255, 0.85);
-      background-color: lighten($darkmode, +8%);
-      border: lighten($darkmode, +8%) 1px solid;
-    }
-
-    td {
-      border: lighten($darkmode, +8%) 1px solid;
-    }
-  }
-
   .kg-bookmark-container {
     color: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.9);

@@ -568,21 +568,17 @@ Usage (In Ghost editor):
   white-space: nowrap;
   vertical-align: top;
   -webkit-overflow-scrolling: touch;
-  background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
-  radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
   background-attachment: scroll, scroll;
   background-size: 10px 100%, 10px 100%;
   background-repeat: no-repeat;
 
   td {
     &:first-child {
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
       background-size: 20px 100%;
       background-repeat: no-repeat;
     }
 
     &:last-child {
-      background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
       background-position: 100% 0;
       background-size: 20px 100%;
       background-repeat: no-repeat;
@@ -590,20 +586,20 @@ Usage (In Ghost editor):
   }
 
   th {
-    color: $darkgrey;
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
-    background-color: lighten($whitegrey, +4%);
     padding: 6px 12px;
-    border: desaturate(darken($whitegrey, 1%), 5%) 1px solid;
   }
 
   td {
     padding: 6px 12px;
-    border: desaturate(darken($whitegrey, 1%), 5%) 1px solid;
+  }
+
+  tr {
+    border-bottom: 1px solid rgba(#aaa, 0.4);
   }
 }
 
