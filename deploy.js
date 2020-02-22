@@ -5,6 +5,9 @@ const FormData = require('form-data')
 const fs = require('fs')
 const path = require('path')
 
+const themeName = require('./package.json').name
+const baseEndpoint = 'https://gaplotech.ghost.io'
+
 // Admin API key goes here
 const key = process.env.GHOST_ADMIN_API_KEY
 
@@ -24,8 +27,8 @@ const token = jwt.sign({}, Buffer.from(secret, 'hex'), {
 })
 
 // Make an authenticated request to create a post
-const url = 'https://gaplotech.ghost.io/ghost/api/v3/admin/themes/upload/'
-const themePath = path.resolve(__dirname, 'dist/gaplotech-blog-theme.zip')
+const url = `${baseEndpoint}/ghost/api/v3/admin/themes/upload/`
+const themePath = path.resolve(__dirname, `dist/${themeName}.zip`)
 
 const formData = new FormData()
 // Append any files to the request
