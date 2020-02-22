@@ -232,7 +232,8 @@ hr,
 }
 
 .social-link {
-  svg {
+  i {
+    color: $dark-nav-bar-text-color;
     filter: none;
   }
 }

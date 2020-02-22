@@ -217,6 +217,17 @@
         opacity: 0.5;
       }
     }
+
+    &.nav-current {
+      a {
+        text-decoration: none;
+        opacity: 1;
+        &:before {
+          right: 12px;
+          opacity: 0.5;
+        }
+      }
+    }
   }
 }
 
@@ -282,52 +293,20 @@
 
 .social-link {
   display: inline-block;
-  margin: 0;
-  padding: 10px;
   opacity: 0.8;
+  padding: 0 2px;
 
   &:hover {
     opacity: 1;
   }
 
-  svg {
-    height: 1.8rem;
-    fill: #fff;
-    filter: invert(100%);
+  i {
+    font-size: 1.5rem;
+    color: $default-nav-bar-text-color;
+    padding: 8px;
+    border-radius: 1.5rem;
   }
 }
-
-.social-link-fb svg {
-  height: 1.6rem;
-}
-
-.social-link-wb svg {
-  height: 1.6rem;
-
-  path {
-    stroke: #fff;
-  }
-}
-
-.social-link-rss svg {
-  height: 1.9rem;
-}
-
-.rss-button {
-  padding: 10px 8px;
-  opacity: 0.8;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  svg {
-    margin-bottom: 1px;
-    height: 2.1rem;
-    fill: #fff;
-  }
-}
-
 /* Special behaviors for home navigation */
 
 .home-template .site-nav-main {

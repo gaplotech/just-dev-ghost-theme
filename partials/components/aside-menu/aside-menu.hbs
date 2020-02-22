@@ -22,18 +22,18 @@
       Social
     </p>
     <ul class="menu-list">
-      <li><a class="social-link social-link-fb" href="https://github.com/gaplo917" title="Facebook" target="_blank"
-             rel="noopener">GitHub</a></li>
+      <li><a class="social-link social-link-fb" href="https://github.com/gaplo917" title="GitHub" target="_blank"
+             rel="noopener"><i class="fab fa-github"></i>GitHub</a></li>
       {{#if @site.facebook}}
         <li><a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
-               rel="noopener">Facebook</a></li>
+               rel="noopener"><i class="fab fa-facebook"></i>Facebook</a></li>
       {{/if}}
       {{#if @site.twitter}}
         <li><a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
-               rel="noopener">Twitter</a></li>
+               rel="noopener"><i class="fab fa-twitter"></i>Twitter</a></li>
       {{/if}}
-        <a class="social-link rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
-           target="_blank" rel="noopener">RSS</a>
+        <li><a class="social-link rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
+           target="_blank" rel="noopener"><i class="fas fa-rss"></i>RSS</a></li>
     </ul>
   </aside>
 </div>

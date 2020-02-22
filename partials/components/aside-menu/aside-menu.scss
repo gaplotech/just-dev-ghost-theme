@@ -1,4 +1,21 @@
 .aside-menu {
+  .menu-list {
+    li {
+      i {
+        padding-right: 8px;
+      }
+    }
+  }
+
+  .nav-current::before {
+    content: '•';
+    position: absolute;
+    left: 12px;
+    color: $primary;
+    font-size: 1.5em;
+    margin-top: -0.1em;
+  }
+
   .backdrop {
     display: none;
     &.active {
