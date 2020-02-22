@@ -5,14 +5,21 @@ const FormData = require('form-data')
 const fs = require('fs')
 const path = require('path')
 
+// Load .env config
+require('dotenv').config()
+
 const themeName = require('./package.json').name
-const baseEndpoint = 'https://gaplotech.ghost.io'
+const serverUrl = process.env.GHOST_SERVER
 
 // Admin API key goes here
 const key = process.env.GHOST_ADMIN_API_KEY
 
+if (!serverUrl) {
+  throw new Error('environment variable missing GHOST_SERVER')
+}
+
 if (!key) {
-  throw new Error('missing GHOST_ADMIN_API_KEY')
+  throw new Error('environment variable missing GHOST_ADMIN_API_KEY')
 }
 
 // Split the key into ID and SECRET
@@ -27,7 +34,7 @@ const token = jwt.sign({}, Buffer.from(secret, 'hex'), {
 })
 
 // Make an authenticated request to create a post
-const url = `${baseEndpoint}/ghost/api/v3/admin/themes/upload/`
+const url = `${serverUrl}/ghost/api/v3/admin/themes/upload/`
 const themePath = path.resolve(__dirname, `dist/${themeName}.zip`)
 
 const formData = new FormData()
