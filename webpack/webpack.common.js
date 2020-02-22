@@ -30,7 +30,7 @@ module.exports = {
         test: [
           {
             folder: Path.resolve(__dirname, '../assets/css'),
-            method: filePath => new RegExp(/\.js$/).test(filePath)
+            method: filePath => new RegExp(/\.js$|\.js.map$/).test(filePath)
           }
         ]
       }
