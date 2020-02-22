@@ -13,11 +13,11 @@
       </div>
     </div>
     <div class="site-nav-content-toggle">
-      {{> components/menu-toggle this}}
+      {{> components/menu-toggle/menu-toggle this}}
     </div>
   </div>
   <div class="site-nav-right">
-    {{> components/dark-mode-toggle}}
+    {{> components/dark-mode-toggle/dark-mode-toggle }}
     {{!-- <img class="nav-more-btn ripple" src="{{asset "more_vert-24px.svg"}}"/> --}}
 
     {{#if @site.secondary_navigation}}
@@ -38,10 +38,6 @@
            target="_blank" rel="noopener">{{> "icons/rss"}}</a>
       {{/unless}}
     {{/if}}
-
-    {{#if @labs.members}}
-      <a class="subscribe-button" href="#subscribe">Subscribe</a>
-    {{/if}}
   </div>
 
 </nav>
@@ -55,4 +51,4 @@
 
 </div>
 
-{{> components/aside-menu }}
+{{> components/aside-menu/aside-menu }}

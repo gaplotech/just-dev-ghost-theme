@@ -1,11 +1,10 @@
 /* Global - Set up the things
 /* ---------------------------------------------------------- */
 @import 'global';
-@import 'dark-mode-toggle';
 @import 'medium-zoom';
 
 body {
-  background: #fff;
+  background: $default-bg-color;
 }
 
 .img {
@@ -84,11 +83,12 @@ body {
 
 @import 'error-template';
 
-@import 'subscribe-message';
-
 @import 'site-navigation';
 
 @import 'footer';
+
+// all components scss
+@import '../../partials/components/index';
 
 .bulma {
   $menu-item-hover-background-color: rgba($primary, 0.2);

@@ -5,7 +5,7 @@
 
 body {
   color: rgba(255, 255, 255, 0.8);
-  background: $darkmode;
+  background: $dark-bg-color;
 }
 
 ::selection {
@@ -13,11 +13,11 @@ body {
 }
 
 .post-feed {
-  background: $darkmode;
+  background: $dark-bg-color;
 }
 
 .full-site-nav-content {
-  background-color: lighten($darkmode, +2%);
+  background-color: lighten($dark-bg-color, +2%);
 
   a.full-nav {
     color: #fff;
@@ -25,15 +25,15 @@ body {
 }
 
 .post-card {
-  border-bottom-color: lighten($darkmode, +8%);
+  border-bottom-color: lighten($dark-bg-color, +8%);
 
   &:hover {
-    border-bottom-color: lighten($darkmode, +8%);
+    border-bottom-color: lighten($dark-bg-color, +8%);
   }
 }
 
 .author-profile-image {
-  background: $darkmode;
+  background: $dark-bg-color;
 }
 
 .post-card-byline-content a {
@@ -65,7 +65,7 @@ mark {
 .post-template .site-main,
 .page-template .site-main,
 .post-full-content {
-  background: $darkmode;
+  background: $dark-bg-color;
 }
 
 .post-full-title {
@@ -77,7 +77,7 @@ mark {
 }
 
 .post-full-byline {
-  border-top-color: lighten($darkmode, +8%);
+  border-top-color: lighten($dark-bg-color, +8%);
 }
 
 .post-full-byline-meta h4 a {
@@ -89,11 +89,11 @@ mark {
 }
 
 .author-list-item .author-card {
-  background: color($darkmode l(+4%));
+  background: color($dark-bg-color l(+4%));
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
 
   &:before {
-    border-top-color: lighten($darkmode, +4%);
+    border-top-color: lighten($dark-bg-color, +4%);
   }
 }
 
@@ -130,7 +130,7 @@ mark {
 
   code {
     color: #16f0a0;
-    background: lighten($darkmode, +4%);
+    background: lighten($dark-bg-color, +4%);
   }
 
   pre {
@@ -144,7 +144,7 @@ mark {
 
 hr,
 .post-full-byline {
-  border-top-color: lighten($darkmode, +8%);
+  border-top-color: lighten($dark-bg-color, +8%);
 }
 
 .post-full-content {
@@ -163,7 +163,7 @@ hr,
   }
 
   blockquote {
-    background-color: lighten($darkmode, +4%);
+    background-color: lighten($dark-bg-color, +4%);
   }
 }
 
@@ -178,10 +178,10 @@ hr,
 
 .site-archive-header .no-image {
   color: rgba(255, 255, 255, 0.9);
-  background: $darkmode;
+  background: $dark-bg-color;
 
   .site-header-content {
-    border-bottom-color: lighten($darkmode, +15%);
+    border-bottom-color: lighten($dark-bg-color, +15%);
   }
 }
 
@@ -189,55 +189,17 @@ hr,
   box-shadow: 0 0 0 6px hsla(0, 0%, 100%, 0.04);
 }
 
-.subscribe-form {
-  border: none;
-  background: linear-gradient(darken($darkmode, 6%), darken($darkmode, 3%));
-}
-
-.subscribe-form-title {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.subscribe-form p {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.subscribe-email {
-  border-color: lighten($darkmode, +6%);
-  color: rgba(255, 255, 255, 0.9);
-  background: lighten($darkmode, +3%);
-
-  &:focus {
-    border-color: lighten($darkmode, +25%);
-  }
-}
-
-.subscribe-form {
-  button {
-    opacity: 0.9;
-  }
-
-  .invalid .message-error,
-  .error .message-error {
-    color: desaturate(lighten($red, +5%), 5%);
-  }
-
-  .success .message-success {
-    color: desaturate(lighten($green, +5%), 5%);
-  }
-}
-
 .kg-bookmark-card {
-  background-color: lighten($darkmode, +4%);
+  background-color: lighten($dark-bg-color, +4%);
 }
 
 .medium-zoom-overlay {
-  background-color: $darkmode;
+  background-color: $dark-bg-color;
 }
 
 .aside-menu {
   .fixed-left-menu {
-    background-color: lighten($darkmode, +6%);
+    background-color: lighten($dark-bg-color, +6%);
   }
 }
 
@@ -260,12 +222,12 @@ hr,
 .site-nav-main {
   .site-nav {
     color: #fff;
-    background-color: $nav-bar-color;
+    background-color: $dark-nav-bar-bg-color;
   }
 
   .fixed-nav-active.site-nav {
     color: #fff;
-    background-color: $nav-bar-color;
+    background-color: $dark-nav-bar-bg-color;
   }
 }
 
@@ -289,4 +251,11 @@ hr,
   $menu-item-hover-background-color: rgba($primary, 0.2);
   @import '~bulma/bulma';
   @import 'bulma-pagination';
+
+  .pagination-next {
+    &[disabled] {
+      background-color: #595959;
+      border-color: #595959;
+    }
+  }
 }

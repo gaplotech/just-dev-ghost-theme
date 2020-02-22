@@ -59,37 +59,39 @@ const updateExternal = mode => {
   localStorage.setItem(PERMANENT_COLOR_SCHEME, mode)
 }
 
-const DarkModeToggle = Vue.extend({
-  data: function() {
-    return {
-      mode: getInitialMode(),
-      darkSrc: null,
-      lightSrc: null
+const DarkModeToggle = () =>
+  new Vue({
+    el: '#dark-mode-toggle',
+    data: function() {
+      return {
+        mode: getInitialMode(),
+        darkSrc: null,
+        lightSrc: null
+      }
+    },
+
+    beforeMount() {
+      this.darkSrc = this.$el.attributes['dark-src'].value
+      this.lightSrc = this.$el.attributes['light-src'].value
+    },
+
+    mounted() {
+      updateExternal(this.mode)
+    },
+
+    computed: {
+      src() {
+        return this.mode === LIGHT ? this.darkSrc : this.lightSrc
+      }
+    },
+
+    methods: {
+      toggle() {
+        const mode = this.mode === LIGHT ? DARK : LIGHT
+        updateExternal(mode)
+        this.mode = mode
+      }
     }
-  },
-
-  beforeMount() {
-    this.darkSrc = this.$el.attributes['dark-src'].value
-    this.lightSrc = this.$el.attributes['light-src'].value
-  },
-
-  mounted() {
-    updateExternal(this.mode)
-  },
-
-  computed: {
-    src() {
-      return this.mode === LIGHT ? this.darkSrc : this.lightSrc
-    }
-  },
-
-  methods: {
-    toggle() {
-      const mode = this.mode === LIGHT ? DARK : LIGHT
-      updateExternal(mode)
-      this.mode = mode
-    }
-  }
-})
+  })
 
 export { DarkModeToggle }

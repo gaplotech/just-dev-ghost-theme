@@ -10,7 +10,7 @@
   right: 0;
   left: 0;
   z-index: 1000;
-  background: #fff;
+  background: $default-nav-bar-bg-color;
 }
 
 .site-nav {
@@ -86,7 +86,7 @@
   display: inline-block;
   margin-right: 32px;
   padding: 12px 0;
-  color: #fff;
+  color: $default-nav-bar-text-color;
   font-size: 1.7rem;
   line-height: 1.8rem;
   font-weight: bold;
@@ -167,55 +167,6 @@
     display: block;
   }
 }
-.menu-toggle {
-  display: none;
-
-  .menu-toggle-btn {
-    filter: invert(100%);
-    opacity: 0.7;
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &.fixed-nav-active {
-    display: block;
-  }
-
-}
-
-.aside-menu {
-  .backdrop {
-    display: none;
-    &.active {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      z-index: 1199;
-    }
-  }
-  .fixed-left-menu {
-    position: fixed;
-    background-color: #fff;
-    border-right: 1px solid rgba(0,0,0, 0.1);
-    width: 300px;
-    height: calc(100vh - 48px);
-    top: 48px;
-    left: 0;
-    z-index: 1200;
-    padding: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateX(-300px);
-    overflow-y: auto;
-    &.active {
-      transform: translateX(0);
-    }
-
-  }
-}
 
 .nav, .nav-logo {
   position: absolute;
@@ -240,7 +191,7 @@
       position: relative;
       display: block;
       padding: 12px 12px;
-      color: #000;
+      color: $default-nav-bar-text-color;
       opacity: 0.8;
       transition: opacity 0.35s ease-in-out;
 
@@ -274,7 +225,7 @@
   visibility: hidden;
   position: absolute;
   top: 9px;
-  color: #fff;
+  color: $default-nav-bar-text-color;
   font-size: 1.7rem;
   font-weight: 400;
   text-transform: none;
@@ -362,26 +313,6 @@
   height: 1.9rem;
 }
 
-.subscribe-button {
-  display: block;
-  padding: 4px 10px;
-  margin: 0 0 0 10px;
-  border: #fff 1px solid;
-  color: #fff;
-  line-height: 1em;
-  border-radius: 10px;
-  opacity: 0.8;
-
-  &:hover {
-    text-decoration: none;
-    opacity: 1;
-  }
-}
-
-.site-nav-right .nav + .subscribe-button {
-  margin-left: 24px;
-}
-
 .rss-button {
   padding: 10px 8px;
   opacity: 0.8;
@@ -431,8 +362,8 @@
   flex-grow: 1;
 
   .site-nav {
-    color: #000;
-    background-color: #fff;
+    color: $default-nav-bar-text-color;
+    background-color: $default-nav-bar-bg-color;
   }
 
   .fixed-nav-active.site-nav {
@@ -442,8 +373,8 @@
     width: 100vw;
     z-index: 10000;
     padding: 0 5vw;
-    color: #000;
-    background-color: #fff;
+    color: $default-nav-bar-text-color;
+    background-color: $default-nav-bar-bg-color;
     .site-nav-logo {
       display: unset;
     }
@@ -461,7 +392,7 @@
 }
 
 .full-site-nav-content {
-  background-color: #fff;
+  background-color: $default-nav-bar-bg-color;
   display: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 12000;
@@ -494,7 +425,7 @@
       background-color: rgba($primary, 70%);
       text-decoration: none;
     }
-    color: #000;
+    color: $default-nav-bar-text-color;
   }
 }
 

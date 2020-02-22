@@ -361,7 +361,7 @@ body {
   font-style: normal;
   letter-spacing: 0;
   text-rendering: optimizeLegibility;
-  background: #fff;
+  background: $default-bg-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: 'liga' on;
@@ -566,7 +566,6 @@ h6 {
 }
 
 /* Ripple effect */
-
 .ripple {
   background-position: center;
 
@@ -576,7 +575,7 @@ h6 {
   }
 
   &:active {
-    background-color: lighten($darkmode, +10%);
+    background-color: lighten($dark-bg-color, +10%);
     background-size: 100%;
     transition: background 0s;
   }
@@ -598,6 +597,6 @@ img[src$='.gif?inline=1'] {
 
 .fb-post.fb_iframe_widget {
   iframe {
-    background-color: white;
+    background-color: $default-bg-color;
   }
 }

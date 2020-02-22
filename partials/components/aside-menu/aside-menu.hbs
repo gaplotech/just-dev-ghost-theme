@@ -1,4 +1,4 @@
-<div class="aside-menu">
+<div id="aside-menu" class="aside-menu">
   <div class="backdrop" :class="{ active: isToggle }" @click="toggle($event)"></div>
   <aside class="fixed-left-menu bulma menu" :class="{ active: isToggle }">
     <p class="menu-label">
@@ -22,6 +22,8 @@
       Social
     </p>
     <ul class="menu-list">
+      <li><a class="social-link social-link-fb" href="https://github.com/gaplo917" title="Facebook" target="_blank"
+             rel="noopener">GitHub</a></li>
       {{#if @site.facebook}}
         <li><a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
                rel="noopener">Facebook</a></li>
@@ -30,13 +32,8 @@
         <li><a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
                rel="noopener">Twitter</a></li>
       {{/if}}
-      {{#unless @labs.members}}
         <a class="social-link rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
            target="_blank" rel="noopener">RSS</a>
-      {{/unless}}
-      {{#if @labs.members}}
-        <a class="subscribe-button" href="#subscribe">Subscribe</a>
-      {{/if}}
     </ul>
   </aside>
 </div>
