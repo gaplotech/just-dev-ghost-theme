@@ -42,8 +42,6 @@ into the {body} of the default.hbs template --}}
 
 </main>
 
-<!--{{> site-header}}-->
-
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script src="{{asset "js/pages/index.js"}}"></script>
