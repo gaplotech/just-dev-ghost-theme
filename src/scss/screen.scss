@@ -92,6 +92,9 @@ body {
 
 .bulma {
   $menu-item-hover-background-color: rgba($primary, 0.2);
-  @import '~bulma/bulma';
+  @import '~bulma/sass/utilities/_all.sass';
+  @import '~bulma/sass/base/_all.sass';
+  @import '~bulma/sass/components/menu';
+  @import '~bulma/sass/components/pagination';
   @import 'bulma-pagination';
 }

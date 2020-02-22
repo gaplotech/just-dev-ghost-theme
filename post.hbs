@@ -167,5 +167,5 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script src="{{asset "js/pages/post.js"}}"></script>
+  <script async defer src="{{asset "js/pages/post.js"}}"></script>
 {{/contentFor}}

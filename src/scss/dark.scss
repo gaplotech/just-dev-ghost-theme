@@ -53,7 +53,7 @@ mark {
 }
 
 .post-card-excerpt {
-  color: lighten($midgrey, +10%);
+  color: $dark-secondary-text-color;
 }
 
 .author-avatar,
@@ -73,7 +73,7 @@ mark {
 }
 
 .post-full-custom-excerpt {
-  color: lighten($midgrey, +20%);
+  color: lighten($dark-secondary-text-color, 20%);
 }
 
 .post-full-byline {
@@ -242,6 +242,15 @@ hr,
   filter: none;
 }
 
+.site-archive-header {
+  .no-image {
+    .site-description {
+      color: $dark-secondary-text-color;
+      opacity: 1;
+    }
+  }
+}
+
 .dark-mode-toggle {
   filter: none;
 }
@@ -250,7 +259,10 @@ hr,
   $menu-item-color: rgba(255, 255, 255, 0.9);
   $menu-item-hover-color: rgba(255, 255, 255, 0.9);
   $menu-item-hover-background-color: rgba($primary, 0.2);
-  @import '~bulma/bulma';
+  @import '~bulma/sass/utilities/_all.sass';
+  @import '~bulma/sass/base/_all.sass';
+  @import '~bulma/sass/components/menu';
+  @import '~bulma/sass/components/pagination';
   @import 'bulma-pagination';
 
   .pagination-next {

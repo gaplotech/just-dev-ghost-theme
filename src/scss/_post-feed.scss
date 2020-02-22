@@ -39,7 +39,7 @@
   width: 100%;
   height: auto;
   max-height: 240px;
-  background: #fff no-repeat center center;
+  background: #f8f8f8 no-repeat center center;
   object-fit: cover;
 }
 
@@ -92,7 +92,7 @@
 
 .post-card-excerpt {
   max-width: 56em;
-  color: $midgrey;
+  color: $default-secondary-text-color;
 
   p {
     margin-bottom: 1em;

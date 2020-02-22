@@ -13,3 +13,5 @@ import './lang/sql'
 import './lang/swift'
 import './lang/typescript'
 import './lang/scala'
+
+Prism.highlightAll()

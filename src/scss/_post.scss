@@ -79,7 +79,7 @@
 
 .post-full-custom-excerpt {
   margin: 20px 0 0;
-  color: $midgrey;
+  color: darken($default-secondary-text-color, 20%);
   font-size: 2.3rem;
   line-height: 1.4em;
   font-weight: 300;
@@ -97,7 +97,7 @@
   align-items: center;
   overflow: hidden;
   margin: 25px 0 50px;
-  background: #fff;
+  background: #f8f8f8;
   border-radius: 3px;
 
   img {

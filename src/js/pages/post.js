@@ -1,5 +1,3 @@
 import reframe from 'reframe.js'
 
-document.addEventListener('DOMContentLoaded', () => {
-  reframe('.post-full-content iframe')
-})
+reframe('.post-full-content iframe')

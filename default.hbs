@@ -14,8 +14,6 @@
   <link rel="apple-touch-icon" href="{{asset "apple-touch-icon.jpg"}}">
   <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}"/>
   <link rel="stylesheet" type="text/css" href="{{asset "css/dark.css"}}" media="(prefers-color-scheme: dark)"/>
-  <link rel="stylesheet" type="text/css" href="{{asset "css/gapstyle.css"}}"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
   {{{block "styles"}}}
   {{!-- This tag outputs SEO meta+structured data and other important settings --}}
   {{ghost_head}}
@@ -81,8 +79,10 @@
   </div>
 {{/if}}
 --}}
-<script src="{{asset "js/app.js"}}"></script>
-<script src="{{asset "js/prism.js"}}"></script>
+<link rel="preload" href="{{asset "css/gapstyle.css"}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{asset "css/gapstyle.css"}}"></noscript>
+<script async defer src="{{asset "js/app.js"}}"></script>
+<script async defer src="{{asset "js/prism.js"}}" data-manual></script>
 {{!-- Global site tag (gtag.js) - Google Analytics --}}
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158393017-1"></script>
 <script>
@@ -92,17 +92,6 @@
 
     gtag('config', 'UA-158393017-1');
 </script>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '1394306507563714',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v6.0'
-    });
-  };
-</script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
 {{{block "scripts"}}}
 

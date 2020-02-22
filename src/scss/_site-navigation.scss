@@ -301,10 +301,14 @@
   }
 
   i {
-    font-size: 1.5rem;
     color: $default-nav-bar-text-color;
     padding: 8px;
     border-radius: 1.5rem;
+
+    svg {
+      width: 1.5rem;
+      margin-bottom: 3px; // don't know why
+    }
   }
 }
 /* Special behaviors for home navigation */
