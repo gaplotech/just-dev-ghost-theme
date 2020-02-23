@@ -1,6 +1,7 @@
 import 'prismjs'
 import './plugin/toolbar'
 import './plugin/linenumber'
+import './plugin/linehighlight'
 import './lang/bash'
 import './lang/docker'
 import './lang/git'
