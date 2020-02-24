@@ -8,7 +8,12 @@
       {{/if}}
       <div class="site-nav-content">
         {{#if @site.navigation}}
-          {{navigation}}
+          <ul class="nav" role="menu">
+          <!-- {{navigation}}-->
+          {{#foreach navigation}}
+            <li class=" nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{t label}}</a></li>
+          {{/foreach}}
+          </ul>
         {{/if}}
       </div>
     </div>
@@ -43,14 +48,5 @@
   </div>
 
 </nav>
-
-<div class="full-site-nav-content">
-  {{#if @site.navigation}}
-    {{#foreach navigation}}
-      <a class="full-nav nav-{{slug}}{{#if current}} nav-current{{/if}}" href="{{url absolute="true"}}">{{label}}</a>
-    {{/foreach}}
-  {{/if}}
-
-</div>
 
 {{> components/aside-menu/aside-menu }}

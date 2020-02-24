@@ -265,10 +265,16 @@ hr,
   @import '~bulma/sass/components/pagination';
   @import 'bulma-pagination';
 
+  .pagination-previous,
   .pagination-next {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+
     &[disabled] {
-      background-color: #595959;
-      border-color: #595959;
+      color: rgba(#fff, 0.4);
     }
   }
 }

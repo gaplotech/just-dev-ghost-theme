@@ -9,10 +9,9 @@
       <div class="inner site-header-content">
         <h1 class="site-title">{{name}}</h1>
         <h2 class="site-description">
+          {{plural ../../pagination.total empty=(t 'posts') singular=(t '% post') plural=(t '% posts')}} -
           {{#if description}}
             {{description}}
-          {{else}}
-            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
           {{/if}}
         </h2>
       </div>
@@ -26,7 +25,7 @@
     <div class="post-feed">
       {{#foreach posts}}
       {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-        {{> "post-card"}}
+        {{> post-card}}
       {{/foreach}}
     </div>
   </div>

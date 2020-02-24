@@ -20,7 +20,8 @@
         "build:theme": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors;",
         "build:zip": "gulp zip",
         "deploy": "node deploy.js",
-        "release": "yarn build && yarn deploy"
+        "release": "yarn build && yarn deploy",
+        "restart": "ghost restart"
     },
     "author": {
         "name": "GapLoTech",

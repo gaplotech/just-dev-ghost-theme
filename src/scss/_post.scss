@@ -36,7 +36,6 @@
   font-size: 1.3rem;
   line-height: 1.4em;
   font-weight: 600;
-  margin-top: 1.5em;
 
   > a {
     padding: 0 0.5em;
@@ -825,11 +824,6 @@ Usage (In Ghost editor):
     }
   }
 
-  .post-card-primary-tag {
-    color: #fff;
-    opacity: 0.6;
-  }
-
   .post-card-title {
     color: #fff;
     opacity: 0.8;
@@ -887,10 +881,9 @@ Usage (In Ghost editor):
   text-transform: uppercase;
 
   a {
-    color: #fff;
+    color: $primary;
     font-weight: 500;
     text-decoration: none;
-    opacity: 0.8;
 
     &:hover {
       opacity: 1;
@@ -967,15 +960,13 @@ Usage (In Ghost editor):
 
   a {
     padding: 7px 12px 8px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
     font-size: 1.3rem;
     border-radius: 999px;
     transition: all 0.35s ease-in-out;
 
     &:hover {
-      border-color: $yellow;
-      color: $yellow;
+      color: $primary;
       text-decoration: none;
     }
   }

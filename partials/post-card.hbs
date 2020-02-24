@@ -19,14 +19,14 @@
 
   <div class="post-card-content">
 
+    <div class="post-card-meta post-full-all-tags" style="display:flex; margin-top: 1em; margin-bottom: 0.5em;">
+      {{#foreach tags}}
+        <a href="{{url}}" title="{{name}}" class="post-card-primary-tag tag tag-{{id}} {{slug}}">{{name}}</a>{{#unless @last}}
+        |{{/unless}}
+      {{/foreach}}
+    </div>
     <a class="post-card-content-link" href="{{url}}">
-
       <header class="post-card-header">
-        {{#if primary_tag}}
-          {{#primary_tag}}
-            <div class="post-card-primary-tag">{{name}}</div>
-          {{/primary_tag}}
-        {{/if}}
         <h2 class="post-card-title">{{title}}</h2>
       </header>
 
