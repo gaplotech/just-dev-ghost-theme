@@ -36,11 +36,12 @@ body {
   background: $dark-bg-color;
 }
 
-.post-card-byline-content a {
-  color: rgba(255, 255, 255, 0.8);
-
-  &:hover {
-    color: #fff;
+.post-card-byline-content {
+  color: $dark-secondary-text-color;
+  a {
+    &:hover {
+      color: #fff;
+    }
   }
 }
 
@@ -80,11 +81,16 @@ mark {
   border-top-color: lighten($dark-bg-color, +8%);
 }
 
-.post-full-byline-meta h4 a {
-  color: rgba(255, 255, 255, 0.8);
+.post-full-byline-meta {
+  color: $dark-secondary-text-color;
+  h4 {
+    a {
+      color: rgba(255, 255, 255, 0.8);
 
-  &:hover {
-    color: #fff;
+      &:hover {
+        color: $primary;
+      }
+    }
   }
 }
 

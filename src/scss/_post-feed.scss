@@ -41,6 +41,23 @@
   max-height: 240px;
   background: #f8f8f8 no-repeat center center;
   object-fit: cover;
+
+  &[src$='120x63.png'] {
+    max-height: unset;
+    width: 100%;
+  }
+}
+
+.close-tag-placeholder {
+  display: none;
+  position: absolute;
+  width: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .post-card-image.empty ~ & {
+    display: block;
+  }
 }
 
 .post-card-content-link {
@@ -96,6 +113,7 @@
 
   p {
     margin-bottom: 1em;
+    word-wrap: break-word;
   }
 }
 
@@ -181,8 +199,8 @@
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  margin: 2px 0 0 6px;
-  color: lighten($midgrey, +10%);
+  margin-bottom: 4px;
+  color: $default-secondary-text-color;
   font-size: 1.2rem;
   line-height: 1.4em;
   font-weight: 400;
@@ -289,6 +307,7 @@ make sure this only happens on large viewports / desktop-ish devices.
       margin-bottom: 1.5em;
       font-size: 1.8rem;
       line-height: 1.5em;
+      word-wrap: break-word;
     }
   }
 }

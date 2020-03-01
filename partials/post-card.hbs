@@ -11,15 +11,23 @@
                     {{img_url feature_image size="l"}} 1000w,
                     {{img_url feature_image size="xl"}} 2000w"
            sizes="(max-width: 1000px) 400px, 700px"
-           src="{{img_url feature_image size="m"}}"
+           src="{{asset "120x63.png"}}"
+           onerror="this.classList.add('empty'); this.removeAttribute('srcset')"
            alt="{{title}}"
       />
+      <div class="close-tag-placeholder">{{> icons/jbm-close-tag}}</div>
     </a>
   {{/if}}
+  {{#unless feature_image}}
+    <a class="post-card-image-link" href="{{url}}">
+      <img class="post-card-image empty" src="{{asset "120x63.png"}}"/>
+      <div class="close-tag-placeholder">{{> icons/jbm-close-tag}}</div>
+    </a>
+  {{/unless}}
 
   <div class="post-card-content">
 
-    <div class="post-card-meta post-full-all-tags" style="display:flex; margin-top: 1em; margin-bottom: 0.5em;">
+    <div class="post-card-meta post-full-all-tags">
       {{#foreach tags}}
         <a href="{{url}}" title="{{name}}" class="post-card-primary-tag tag tag-{{id}} {{slug}}">{{name}}</a>{{#unless @last}}
         |{{/unless}}
@@ -30,6 +38,10 @@
         <h2 class="post-card-title">{{title}}</h2>
       </header>
 
+      <div class="post-card-byline-content">
+      <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date
+        format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+      </div>
       <section class="post-card-excerpt">
         {{#if feature_image}}
           <p>{{excerpt characters="72"}}...</p>
@@ -39,27 +51,6 @@
       </section>
 
     </a>
-
-    <footer class="post-card-meta">
-      <ul class="author-list">
-        {{#foreach authors}}
-          <li class="author-list-item">
-            {{#if profile_image}}
-              <a href="{{url}}" class="static-avatar">
-                <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
-              </a>
-            {{else}}
-              <a href="{{url}}" class="static-avatar author-profile-image">{{> icons/avatar}}</a>
-            {{/if}}
-          </li>
-        {{/foreach}}
-      </ul>
-      <div class="post-card-byline-content">
-        <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
-        <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date
-          format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-      </div>
-    </footer>
 
   </div>{{!--/.post-card-content--}}
 

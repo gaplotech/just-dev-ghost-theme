@@ -1,5 +1,5 @@
 @import 'variables';
-@import 'jetbrain_mono';
+@import 'hack_hbml_liga';
 /* Reset
 /* ---------------------------------------------------------- */
 
@@ -207,7 +207,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+  font-family: 'HackJBMLigaturedCCG-Regular', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   font-size: 1em;
 }
 
