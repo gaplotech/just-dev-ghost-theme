@@ -1,0 +1,20 @@
+@font-face {
+  @font-face {
+    font-family: "HackJBMLigaturedCCG-Regular";
+    src: url("/assets/fonts/HackJBMLigaturedCCG-Regular.eot"); /* IE9 Compat Modes */
+    src: url("/assets/fonts/HackJBMLigaturedCCG-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/assets/fonts/HackJBMLigaturedCCG-Regular.otf") format("opentype"), /* Open Type Font */
+    url("/assets/fonts/HackJBMLigaturedCCG-Regular.svg") format("svg"), /* Legacy iOS */
+    url("/assets/fonts/HackJBMLigaturedCCG-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/assets/fonts/HackJBMLigaturedCCG-Regular.woff") format("woff"), /* Modern Browsers */
+    url("/assets/fonts/HackJBMLigaturedCCG-Regular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+* {
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

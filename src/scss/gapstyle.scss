@@ -1,26 +1,16 @@
-/**
- * Based on copypasta from Remy Bach and Sarah Drasner
- */
-
 code[class*='language-'] {
   color: #a9b7c6;
   background: #2c2c2c;
-  font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+  font-family: 'HackJBMLigaturedCCG-Regular', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   direction: ltr;
   font-feature-settings: normal;
   text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
+  overflow: auto;
   word-wrap: normal;
+  white-space: pre;
   line-height: 1.5;
   margin-bottom: 0;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
   font-size: 0.75em;
 }
@@ -29,22 +19,15 @@ pre {
   &[class*='language-'] {
     color: #cbad96;
     background: #2c2c2c;
-    font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+    font-family: 'HackJBMLigaturedCCG-Regular', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
     direction: ltr;
     font-feature-settings: normal;
     text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
+    overflow: auto;
     word-wrap: normal;
+    white-space: pre;
     line-height: 1.5;
-    margin-bottom: 0;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
     hyphens: none;
     font-size: 0.75em;
 
@@ -58,7 +41,6 @@ pre {
 
     padding: 1rem 2rem;
     margin: 0 0 0.5rem 0;
-    overflow: auto;
     position: relative;
   }
 
@@ -84,7 +66,7 @@ pre {
 /* Inline code */
 
 :not(pre) > code {
-  font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
+  font-family: 'HackJBMLigaturedCCG-Regular', Consolas, Menlo, Monaco, source-code-pro, 'Andale Mono', monospace;
   padding: 0.3rem;
   margin: 0.2rem;
   border-radius: 0.4rem;
@@ -99,6 +81,18 @@ pre {
   &.prolog,
   &.cdata {
     color: #808080;
+
+    > .url,
+    > .url-link,
+    > .email-link {
+      color: #808080;
+      text-decoration: none;
+      box-shadow: #808080 0 -1px 0 inset;
+      &:hover {
+        color: #589df6;
+        box-shadow: #287bde 0 -1px 0 inset;
+      }
+    }
   }
 
   &.doc-comment {
@@ -145,7 +139,8 @@ pre {
     color: #ae81ff;
   }
 
-  &.property {
+  &.property,
+  &.parameter {
     color: #cf8822;
   }
 
@@ -180,7 +175,13 @@ pre {
   &.url-link,
   &.email-link {
     color: #589df6;
-    text-decoration: underline;
+    text-decoration: none;
+    box-shadow: #287bde 0 -1px 0 inset;
+    &:hover {
+      color: #589df6;
+      text-decoration: none;
+      box-shadow: #287bde 0 -1px 0 inset;
+    }
   }
 
   &.function {
@@ -199,6 +200,10 @@ pre {
 
   &.property-access {
     color: #cf8822;
+    &.function,
+    &.method {
+      color: #a6e22e;
+    }
   }
 
   &.abstract > .token {
@@ -298,26 +303,34 @@ div.code-toolbar {
   margin: 0 0 1.5em 0;
 
   > .toolbar {
-    font-family: 'JetBrains Mono', Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
+    font-family: 'HackJBMLigaturedCCG-Regular', Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
     position: absolute;
-    top: 0.3em;
-    right: 0.2em;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-  }
-
-  &:hover > .toolbar,
-  &:focus-within > .toolbar {
+    top: -1.5em;
     opacity: 1;
+    width: 100%;
+    user-select: none;
+    background: #2c2c2c;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 16px 0 16px;
   }
 
   > .toolbar {
     .toolbar-item {
       display: inline-block;
-      padding: 4px;
+      line-height: 40px;
+      margin: 0 4px;
 
       &:hover {
         color: #e49c3b;
+      }
+      &:first-child {
+        flex: 1;
+        margin: 0;
+      }
+      &:last-child {
+        margin-right: 0;
       }
     }
 
@@ -341,15 +354,25 @@ div.code-toolbar {
     }
 
     a,
-    button,
-    span {
-      background: rgba(255, 255, 255, 0.1);
+    button {
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 2rem;
-      color: #a9b7c6;
+      color: #747c85;
       padding: 4px 8px;
       text-align: right;
       font-size: 14px;
       box-shadow: none;
+    }
+
+    h4 {
+      border-radius: 2rem;
+      color: #747c85;
+      font-weight: 400;
+      font-size: 16px;
+      box-shadow: none;
+      margin: 0;
+      padding: 0;
+      line-height: 40px;
     }
 
     a {
@@ -390,7 +413,6 @@ pre[class*='language-'].line-numbers {
 
   > code {
     position: relative;
-    white-space: inherit;
   }
 }
 
@@ -433,12 +455,10 @@ pre[class*='language-'].line-numbers {
   right: 0;
   padding: inherit 0;
   margin-top: 1em; /* Same as .prism’s padding-top */
-
   background: rgba(33, 66, 131, 0.85);
   border-left: 4px solid #f92672;
   pointer-events: none;
   line-height: inherit;
-  white-space: pre;
   width: 100vw;
 }
 .line-highlight:before,
