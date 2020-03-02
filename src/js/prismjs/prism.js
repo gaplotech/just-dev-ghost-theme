@@ -16,4 +16,6 @@ import './lang/swift'
 import './lang/typescript'
 import './lang/scala'
 
-Prism.highlightAll()
+requestAnimationFrame(() => {
+  Prism.highlightAll(true)
+})

@@ -58,7 +58,8 @@
     var parseMethod = isLineHeightRounded() ? parseInt : parseFloat
     var lineHeight = parseMethod(getComputedStyle(pre).lineHeight)
     var hasLineNumbers = hasClass(pre, 'line-numbers')
-    var parentElement = hasLineNumbers ? pre : pre.querySelector('code') || pre
+    var codeElement = pre.querySelector('code')
+    var parentElement = hasLineNumbers ? pre : codeElement || pre
     var mutateActions = /** @type {(() => void)[]} */ ([])
 
     ranges.forEach(function(currentRange) {
@@ -89,9 +90,15 @@
         }
 
         if (endNode) {
-          var height = endNode.offsetTop - startNode.offsetTop + endNode.offsetHeight + 'px'
+          const height = endNode.getBoundingClientRect().height
+          // TODO: find a good way to replace 100
+          const width = Math.max(
+            parentElement.getBoundingClientRect().width,
+            codeElement.getBoundingClientRect().width + 100
+          )
           mutateActions.push(function() {
-            line.style.height = height
+            line.style.height = height + 'px'
+            line.style.width = width + 'px'
           })
         }
       } else {
