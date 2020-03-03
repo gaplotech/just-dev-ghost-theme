@@ -295,14 +295,18 @@
 
   pre {
     overflow-x: auto;
-    margin: 1.5em 0 3em;
-    padding: 20px;
+    margin: 1.5rem 0 3rem;
+    padding: 1rem 2rem;
     max-width: 100%;
     color: $whitegrey;
-    font-size: 1.4rem;
-    line-height: 1.5em;
+    font-size: 75%;
+    line-height: 1.5;
     background-color: #f8f8f8;
     border-radius: 5px;
+
+    @media (max-width: 700px) {
+      font-size: 70%;
+    }
 
     code {
       padding: 0;
@@ -313,6 +317,24 @@
       :not(span) {
         color: inherit;
       }
+    }
+
+    &[class*='language-'] {
+      opacity: 0;
+      margin-bottom: 60px;
+      &.loaded {
+        opacity: 1;
+        margin-bottom: 22px;
+      }
+
+
+      @media (max-width: 700px) {
+        margin-bottom: 52px;
+        &.loaded {
+          margin-bottom: 22px;
+        }
+      }
+
     }
   }
 
@@ -1035,7 +1057,7 @@ Usage (In Ghost editor):
   }
 
   figure {
-    margin: 0.8em 0 2.3em;
+    margin: 0.8em 0 2em;
   }
 
   h1 + figure,
@@ -1050,7 +1072,7 @@ Usage (In Ghost editor):
   }
 
   figcaption {
-    margin: 1em 0 0;
+    margin: 8px 0 0;
     color: darken($midgrey, 10%);
     font-family: $default-font-family;
     font-size: 75%;
@@ -1128,7 +1150,7 @@ Usage (In Ghost editor):
   width: 100%;
 
   pre {
-    margin: 0;
+    margin-top: 0;
   }
 }
 
@@ -1242,7 +1264,7 @@ Usage (In Ghost editor):
 @media (max-width: 800px) {
   .post-full-content {
     figure {
-      margin: 0.2em 0 1.3em;
+      margin: 0.2em 0 1em;
     }
 
     h1 + figure,

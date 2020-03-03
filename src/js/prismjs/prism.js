@@ -16,6 +16,8 @@ import './lang/swift'
 import './lang/typescript'
 import './lang/scala'
 
-requestAnimationFrame(() => {
-  Prism.highlightAll(true)
+Prism.highlightAll(false, () => {
+  document.querySelectorAll(`pre[class*='language-']`).forEach(el => {
+    el.classList.add('loaded')
+  })
 })

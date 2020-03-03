@@ -355,13 +355,12 @@
     }
 
     var language = languages[env.language] || env.language
-    var fileExt = fileExtensionMap[env.language]
 
     if (!language) {
       return
     }
     var element = document.createElement('h4')
-    const title = fileExt ? `${language}(${fileExt})` : language
+    const title = language
     element.textContent = title.charAt(0).toUpperCase() + title.substring(1)
     element.classList.add('title')
 
@@ -375,12 +374,13 @@
     }
 
     var language = env.language
+    var fileExt = fileExtensionMap[env.language]
 
     if (!language) {
       return
     }
     var element = document.createElement('a')
-    element.textContent = 'GapStyle'
+    element.textContent = fileExt ? `GapStyle(${fileExt})` : 'GapStyle'
     element.href = 'https://github.com/gaplo917/GapStyle'
     element.target = '_blank'
 
@@ -425,7 +425,7 @@
   }
 
   Prism.plugins.toolbar.registerButton('copy-to-clipboard', function(env) {
-    var linkCopy = document.createElement('button')
+    var linkCopy = document.createElement('a')
     linkCopy.textContent = 'Copy'
 
     if (!ClipboardJS) {
