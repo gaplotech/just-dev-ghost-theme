@@ -38,8 +38,8 @@ $toolbar-title-color: $toolbar-action-text-color;
 $toolbar-action-text-hover-color: #e49c3b;
 
 pre {
-  opacity: 0;
   &[class*='language-'] {
+    opacity: 0;
     background: $default-bg-color;
     font-size: 75%;
     line-height: 1.5;
