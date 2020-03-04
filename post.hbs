@@ -82,6 +82,9 @@ into the {body} of the default.hbs template --}}
             />
           </figure>
         {{/if}}
+        {{#unless feature_image}}
+          {{> inject/image-placeholder-meta }}
+        {{/unless}}
 
         <section class="post-full-content">
           <div class="post-content">
