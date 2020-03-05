@@ -279,14 +279,14 @@
   }
 
   code {
-    padding: 0.4rem 0.4rem;
-    margin: 0.2rem;
-    font-size: 0.8em;
+    font-size: 0.9em;
     line-height: 1em;
     font-weight: 400 !important;
     color: #d63200;
-    background-color: #f8f8f8;
+    background: transparent;
     border-radius: 3px;
+    white-space: pre-wrap;
+    padding: 0;
   }
 
   p code {
@@ -324,7 +324,7 @@
       margin-bottom: 60px;
       &.loaded {
         opacity: 1;
-        margin-bottom: 22px;
+        margin-bottom: 16px;
       }
 
 
@@ -831,7 +831,7 @@ Usage (In Ghost editor):
 
 .read-next {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: lighten($darkgrey, +2%);
+  background: lighten($dark-bg-color, +2%);
 }
 
 .read-next-feed {

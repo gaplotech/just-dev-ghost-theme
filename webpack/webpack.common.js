@@ -5,6 +5,7 @@ const RemovePlugin = require('remove-files-webpack-plugin')
 
 module.exports = {
   entry: {
+    vueapp: './src/App.vue',
     'js/prism': './src/js/prismjs/prism.js',
     'js/app': './src/js/app.js',
     'css/app': './src/scss/screen.scss',
@@ -38,8 +39,10 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '~': Path.resolve(__dirname, '../src')
-    }
+      '~': Path.resolve(__dirname, '../src'),
+      vue$: 'vue/dist/vue.esm.js'
+    },
+    extensions: ['*', '.js', '.vue', '.json']
   },
   module: {
     rules: [

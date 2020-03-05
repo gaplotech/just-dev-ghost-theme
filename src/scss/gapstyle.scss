@@ -1,7 +1,7 @@
 @import 'hack_hbml_liga';
 
 $default-token-color: #a9b7c6;
-$default-bg-color: #2c2c2c;
+$default-bg-color: #222831;
 $default-font-family: 'HackJBMLigaturedCCG-Regular', Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
 $line-number-text-color: #999;
 
@@ -38,6 +38,7 @@ $toolbar-title-color: $toolbar-action-text-color;
 $toolbar-action-text-hover-color: #e49c3b;
 
 pre {
+  $toolbar-padding: 40px;
   &[class*='language-'] {
     opacity: 0;
     background: $default-bg-color;
@@ -51,6 +52,7 @@ pre {
     word-wrap: normal;
     white-space: nowrap;
     position: relative;
+    padding-top: $toolbar-padding;
 
     &.soft-wrap {
       white-space: pre-wrap;
@@ -62,69 +64,6 @@ pre {
     ::selection {
       color: inherit;
       background: $selection-bg-color;
-    }
-
-    // line number feature
-    &.line-numbers {
-      position: relative;
-      $toolbar-padding: 48px;
-      padding-top: $toolbar-padding;
-      padding-left: 64px;
-      counter-reset: linenumber;
-
-      > code {
-        position: relative;
-        z-index: 2; // higher than the highlight
-      }
-
-      .line-numbers-rows {
-        position: absolute;
-        pointer-events: none;
-        top: -2px;
-        left: -56px;
-        width: 48px;
-
-        /* works for line-numbers below 1000 lines */
-        letter-spacing: -1px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        border-right: 1px solid $border-color;
-        // work-around to make the border-right full
-        margin-top: -#{$toolbar-padding};
-
-        > span {
-          pointer-events: none;
-          display: block;
-          counter-increment: linenumber;
-          position: relative;
-          z-index: 1;
-          &:first-child {
-            margin-top: $toolbar-padding; // compensate parent margin-top: -1em
-          }
-          &:before {
-            content: counter(linenumber);
-            color: $line-number-text-color;
-            display: block;
-            padding-right: 16px;
-            text-align: right;
-          }
-        }
-      }
-    }
-
-    // line highlight feature
-    .line-highlight {
-      position: absolute;
-      left: 0;
-      right: 0;
-      padding: 0 0;
-      margin-top: 0;
-      background: $selection-bg-color;
-      border-left: 4px solid $keyword-color;
-      pointer-events: none;
-      z-index: 1;
     }
   }
 
@@ -396,7 +335,7 @@ div.code-toolbar {
     border-radius: 8px 8px 0 0;
     display: flex;
     justify-content: flex-end;
-    padding: 0 32px;
+    padding: 0 16px;
     border-bottom: 1px solid $border-color;
     z-index: 3;
 
@@ -474,9 +413,11 @@ div.code-toolbar {
 
     &[class*='language-'] {
       font-size: 70%;
+      $toolbar-padding: 32px;
+      padding-top: $toolbar-padding;
 
-      &.line-numbers {
-        $toolbar-padding: 40px;
+      &.line-numbers,
+      code {
         padding-top: $toolbar-padding;
         .line-numbers-rows {
           margin-top: -#{$toolbar-padding};

@@ -1,0 +1,36 @@
+<script>
+  {{!-- Don't want use ghost json api for the vue app, inject the data I need --}}
+  {{!-- unless I am going to rewrite the whole blog to Nuxt.js --}}
+  window['GHOST_INITIAL_DATA'] = {
+    "settings": {
+      "title": "{{@site.title}}",
+      "description": "{{@site.description}}",
+      "logo": "{{@site.logo}}",
+      "icon": "{{@site.icon}}",
+      "cover_image": "{{@site.cover_image}}",
+      "facebook": "{{@site.facebook}}",
+      "twitter": "{{@site.twitter}}",
+      "lang": "{{@site.lang}}",
+      "timezone": "{{@site.timezone}}",
+      "navigation": [
+        {{#foreach @site.navigation}}
+        {
+          "label": "{{t label}}",
+          "url": "{{url absolute="true"}}",
+          "current": "{{current}}",
+          "slug": "{{slug}}"
+        },
+        {{/foreach}}
+      ],
+      "meta_title": "{{@site.meta_title}}",
+      "meta_description": "{{@site.meta_description}}",
+      "og_image": "{{@site.og_image}}",
+      "og_title": "{{@site.og_title}}",
+      "og_description": "{{@site.og_description}}",
+      "twitter_image": "{{@site.twitter_image}}",
+      "twitter_title": "{{@site.twitter_title}}",
+      "twitter_description": "{{@site.twitter_description}}",
+      "url": "{{@site.url}}"
+  }
+}
+</script>

@@ -9,21 +9,20 @@
       <div class="site-nav-content">
         {{#if @site.navigation}}
           <ul class="nav" role="menu">
-          <!-- {{navigation}}-->
-          {{#foreach navigation}}
-            <li class=" nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{t label}}</a></li>
-          {{/foreach}}
+            <!-- {{navigation}}-->
+            {{#foreach navigation}}
+              <li class=" nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{t label}}</a></li>
+            {{/foreach}}
           </ul>
         {{/if}}
       </div>
     </div>
     <div class="site-nav-content-toggle">
-      {{> components/menu-toggle/menu-toggle this}}
+      <menu-toggle is-index="{{^is "index"}}true{{/is}}"></menu-toggle>
     </div>
   </div>
   <div class="site-nav-right">
-    {{> components/dark-mode-toggle/dark-mode-toggle }}
-    {{!-- <img class="nav-more-btn ripple" src="{{asset "more_vert-24px.svg"}}"/> --}}
+    <dark-mode-toggle dark-src="/assets/moon.svg" light-src="/assets/sun.svg"></dark-mode-toggle>
 
     {{#if @site.secondary_navigation}}
       {{navigation type="secondary"}}
@@ -49,4 +48,4 @@
 
 </nav>
 
-{{> components/aside-menu/aside-menu }}
+<aside-menu></aside-menu>

@@ -368,7 +368,7 @@ body {
 
 ::selection {
   text-shadow: none;
-  background: rgba($primary, 0.2);
+  background: $default-text-selection-color;
 }
 
 hr {

@@ -87,9 +87,6 @@ body {
 
 @import 'footer';
 
-// all components scss
-@import '../../partials/components/index';
-
 .bulma {
   $menu-item-hover-background-color: rgba($primary, 0.2);
   @import '~bulma/sass/utilities/_all.sass';

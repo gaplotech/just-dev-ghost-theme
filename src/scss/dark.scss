@@ -9,7 +9,7 @@ body {
 }
 
 ::selection {
-  background: rgba($primary, 0.2);
+  background: $dark-text-selection-color;
 }
 
 .post-feed {
@@ -136,11 +136,11 @@ mark {
 
   code {
     color: #16f0a0;
-    background: lighten($dark-bg-color, +4%);
+    background: transparent;
   }
 
   pre {
-    background: #2c2c2c;
+    background: $dark-nav-bar-bg-color;
   }
 
   blockquote {
