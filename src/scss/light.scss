@@ -1,10 +1,30 @@
 /* Global - Set up the things
 /* ---------------------------------------------------------- */
+@import 'variables';
 @import 'global';
-@import 'medium-zoom';
+@import 'plugin/medium-zoom';
 
-body {
-  background: $default-bg-color;
+:root {
+  --primary: #{$primary};
+  --bg-color: #{$default-bg-color};
+  --text-color: #{$default-text-color};
+  --strong-text-color: #{$default-strong-text-color};
+  --border-color: #{$default-border-color};
+  --mark-color: #{$default-mark-color};
+  --text-selection-color: #{$default-text-selection-color};
+  --secondary-text-color: #{$default-secondary-text-color};
+  --nav-bar-bg-color: #{$default-nav-bar-bg-color};
+  --nav-bar-text-color: #{$default-nav-bar-text-color};
+  --excerpt-color: #{$default-excerpt-color};
+  --blockquote-bg-color: #{$default-blockquote-bg-color};
+  --code-text-color: #{$default-code-text-color};
+  --code-bg-color: #{$default-code-bg-color};
+  --font-family: #{$default-font-family};
+  --card-bg-color: #{$default-card-bg-color};
+  --box-shadow: #{$default-box-shadow};
+  --ripple-bg-color: #{$default-ripple-bg-color};
+  --disabled-text-color: #{$default-disabled-text-color};
+  --footer-bg-color: #{$default-footer-bg-color};
 }
 
 .img {
@@ -63,7 +83,7 @@ body {
   .home-template .post-feed,
   .tag-template .post-feed,
   .author-template .post-feed {
-    padding: 40px 0 5vw;
+    padding: 40px 0 0 0;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }
@@ -81,14 +101,15 @@ body {
 
 @import 'author';
 
-@import 'error-template';
-
 @import 'site-navigation';
 
 @import 'footer';
 
 .bulma {
-  $menu-item-hover-background-color: rgba($primary, 0.2);
+  $menu-item-hover-background-color: var(--primary);
+  $menu-item-color: var(--text-color);
+  $menu-item-hover-color: var(--strong-text-color);
+  $menu-item-hover-background-color: rgba(var(--primary), 0.2);
   @import '~bulma/sass/utilities/_all.sass';
   @import '~bulma/sass/base/_all.sass';
   @import '~bulma/sass/components/menu';

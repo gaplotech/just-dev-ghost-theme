@@ -1,4 +1,4 @@
-@import 'variables';
+
 /* Reset
 /* ---------------------------------------------------------- */
 
@@ -199,7 +199,7 @@ svg:not(:root) {
 }
 
 mark {
-  background-color: rgba($primary, 0.5);
+  background-color: var(--mark-color);
 }
 
 code,
@@ -352,15 +352,15 @@ html {
 
 body {
   overflow-x: hidden;
-  color: darken($midgrey, 25%);
-  font-family: $default-font-family;
+  color: var(--text-color);
+  font-family: var(--font-family);
   font-size: 1.6rem;
   line-height: 1.6em;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0;
   text-rendering: optimizeLegibility;
-  background: $default-bg-color;
+  background: var(--bg-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: 'liga' on;
@@ -368,7 +368,7 @@ body {
 
 ::selection {
   text-shadow: none;
-  background: $default-text-selection-color;
+  background: var(--text-selection-color);
 }
 
 hr {
@@ -379,7 +379,7 @@ hr {
   padding: 0;
   height: 1px;
   border: 0;
-  border-top: 1px solid lighten($lightgrey, +10%);
+  border-top: 1px solid var(--border-color);
 }
 
 audio,
@@ -453,7 +453,7 @@ dt {
   float: left;
   margin: 0 20px 0 0;
   width: 120px;
-  color: $darkgrey;
+  color: var(--text-color);
   font-weight: 500;
   text-align: right;
 }
@@ -466,7 +466,6 @@ dd {
 blockquote {
   margin: 1.5em 0;
   padding: 0 1.6em 0 1.6em;
-  border-left: $whitegrey 0.5em solid;
 
   p {
     margin: 0.8em 0;
@@ -496,7 +495,7 @@ blockquote {
 /* Quotation marks */
 
 a {
-  color: darken($primary, 5%);
+  color: var(--primary);
   text-decoration: none;
 
   &:hover {
@@ -600,6 +599,6 @@ img[src$='.gif?inline=1'] {
 
 .fb-post.fb_iframe_widget {
   iframe {
-    background-color: $default-bg-color;
+    background-color: var(--bg-color);
   }
 }

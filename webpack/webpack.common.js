@@ -5,17 +5,12 @@ const RemovePlugin = require('remove-files-webpack-plugin')
 
 module.exports = {
   entry: {
-    vueapp: './src/App.vue',
     'js/prism': './src/js/prismjs/prism.js',
-    'js/app': './src/js/app.js',
-    'css/app': './src/scss/screen.scss',
+    'js/color-scheme': './src/js/color-scheme.js',
+    'js/main': './src/js/main.js',
+    'css/light': './src/scss/light.scss',
     'css/dark': './src/scss/dark.scss',
-    'css/gapstyle': './src/scss/gapstyle.scss',
-    ...glob.sync('./src/js/pages/*.js').reduce((acc, curr) => {
-      const [head] = curr.replace(`./src/`, '').split('.')
-      acc[head] = curr
-      return acc
-    }, {})
+    'css/gapstyle': './src/scss/prism/gapstyle.scss'
   },
   output: {
     path: Path.join(__dirname, '../assets')

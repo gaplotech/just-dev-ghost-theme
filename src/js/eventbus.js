@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue.min'
+import Vue from 'vue'
 
 const eventBus = new Vue()
 

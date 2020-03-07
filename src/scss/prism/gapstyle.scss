@@ -37,8 +37,9 @@ $toolbar-action-text-color: #bababa;
 $toolbar-title-color: $toolbar-action-text-color;
 $toolbar-action-text-hover-color: #e49c3b;
 
+$toolbar-height: 40px;
+
 pre {
-  $toolbar-padding: 40px;
   &[class*='language-'] {
     opacity: 0;
     background: $default-bg-color;
@@ -52,7 +53,7 @@ pre {
     word-wrap: normal;
     white-space: nowrap;
     position: relative;
-    padding-top: $toolbar-padding;
+    padding-top: $toolbar-height;
 
     &.soft-wrap {
       white-space: pre-wrap;
@@ -65,6 +66,19 @@ pre {
       color: inherit;
       background: $selection-bg-color;
     }
+  }
+
+  // line highlight feature
+  .line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 0;
+    margin-top: $toolbar-height;
+    background: $selection-bg-color;
+    border-left: 4px solid $keyword-color;
+    pointer-events: none;
+    z-index: 1;
   }
 
   > code[class*='language-'] {
@@ -341,7 +355,7 @@ div.code-toolbar {
 
     .toolbar-item {
       display: inline-block;
-      height: 40px;
+      height: $toolbar-height;
       margin: 0 4px;
 
       &:hover {
@@ -353,6 +367,10 @@ div.code-toolbar {
       }
       &:last-child {
         margin-right: 0;
+      }
+
+      .copy-btn {
+        width: 16px;
       }
 
       a,
@@ -408,42 +426,34 @@ div.code-toolbar {
 }
 
 @media (max-width: 700px) {
+  $toolbar-height: 32px;
+
   pre {
     opacity: 0;
 
     &[class*='language-'] {
       font-size: 70%;
-      $toolbar-padding: 32px;
-      padding-top: $toolbar-padding;
+      padding-top: $toolbar-height;
 
-      &.line-numbers,
-      code {
-        padding-top: $toolbar-padding;
-        .line-numbers-rows {
-          margin-top: -#{$toolbar-padding};
-          > span {
-            &:first-child {
-              margin-top: $toolbar-padding; // compensate parent margin-top: -1em
-            }
-          }
-        }
+      .line-highlight {
+        margin-top: $toolbar-height;
       }
     }
   }
   div.code-toolbar {
     > .toolbar {
       .toolbar-item {
-        height: 32px;
+        height: $toolbar-height;
 
         a,
         button,
         span {
           font-size: 12px;
-          line-height: 32px;
+          line-height: $toolbar-height;
         }
         .title {
           font-size: 12px;
-          line-height: 32px;
+          line-height: $toolbar-height;
         }
       }
     }

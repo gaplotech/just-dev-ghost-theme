@@ -29,8 +29,8 @@
 
     <div class="post-card-meta post-full-all-tags">
       {{#foreach tags}}
-        <a href="{{url}}" title="{{name}}" class="post-card-primary-tag tag tag-{{id}} {{slug}}">{{name}}</a>{{#unless @last}}
-        |{{/unless}}
+        <a href="{{url}}" title="{{name}}" class="post-card-primary-tag tag {{slug}}">{{name}}</a>{{#unless @last}}
+        +{{/unless}}
       {{/foreach}}
     </div>
     <a class="post-card-content-link" href="{{url}}">

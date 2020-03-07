@@ -156,7 +156,6 @@ export default {
 </script>
 
 <style type="scss">
-@import '../../../src/scss/variables';
 .aside-menu {
   .menu-list {
     li {
@@ -171,7 +170,7 @@ export default {
     content: '•';
     position: absolute;
     left: 12px;
-    color: $primary;
+    color: var(--primary);
     font-size: 1.5em;
     margin-top: -0.1em;
   }
@@ -190,7 +189,7 @@ export default {
   }
   .fixed-left-menu {
     position: fixed;
-    background-color: #fff;
+    background-color: var(--nav-bar-bg-color);
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     width: 300px;
     height: calc(100vh - 48px);

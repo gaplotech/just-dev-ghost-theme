@@ -3,210 +3,28 @@
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
 
-body {
-  color: rgba(255, 255, 255, 0.8);
-  background: $dark-bg-color;
-}
+:root {
+  --primary: #{$primary};
+  --bg-color: #{$dark-bg-color};
+  --text-color: #{$dark-text-color};
+  --strong-text-color: #{$dark-strong-text-color};
+  --border-color: #{$dark-border-color};
+  --mark-color: #{$dark-mark-color};
 
-::selection {
-  background: $dark-text-selection-color;
-}
+  --text-selection-color: #{$dark-text-selection-color};
+  --secondary-text-color: #{$dark-secondary-text-color};
+  --nav-bar-bg-color: #{$dark-nav-bar-bg-color};
+  --nav-bar-text-color: #{$dark-nav-bar-text-color};
+  --excerpt-color: #{$dark-excerpt-color};
+  --blockquote-bg-color: #{$dark-blockquote-bg-color};
+  --code-text-color: #{$dark-code-text-color};
+  --code-bg-color: #{$dark-code-bg-color};
+  --card-bg-color: #{$dark-card-bg-color};
 
-.post-feed {
-  background: $dark-bg-color;
-}
-
-.full-site-nav-content {
-  background-color: lighten($dark-bg-color, +2%);
-
-  a.full-nav {
-    color: #fff;
-  }
-}
-
-.post-card {
-  border-bottom-color: lighten($dark-bg-color, +8%);
-
-  &:hover {
-    border-bottom-color: lighten($dark-bg-color, +8%);
-  }
-}
-
-.author-profile-image {
-  background: $dark-bg-color;
-}
-
-.post-card-byline-content {
-  color: $dark-secondary-text-color;
-  a {
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
-mark {
-  background-color: rgba($primary, 0.5);
-}
-
-.post-card-title {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.post-card-excerpt {
-  color: $dark-secondary-text-color;
-}
-
-.author-avatar,
-.static-avatar {
-  border-color: lighten($darkgrey, +2%);
-}
-
-.site-main,
-.post-template .site-main,
-.page-template .site-main,
-.post-full-content {
-  background: $dark-bg-color;
-}
-
-.post-full-title {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.post-full-custom-excerpt {
-  color: lighten($dark-secondary-text-color, 20%);
-}
-
-.post-full-byline {
-  border-top-color: lighten($dark-bg-color, +8%);
-}
-
-.post-full-byline-meta {
-  color: $dark-secondary-text-color;
-  h4 {
-    a {
-      color: rgba(255, 255, 255, 0.8);
-
-      &:hover {
-        color: $primary;
-      }
-    }
-  }
-}
-
-.author-list-item .author-card {
-  background: color($dark-bg-color l(+4%));
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
-
-  &:before {
-    border-top-color: lighten($dark-bg-color, +4%);
-  }
-}
-
-.no-image .author-social-link a {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.post-full-content {
-  h1,
-  h2,
-  h3,
-  h4,
-  h6 {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  a {
-    color: $primary;
-    word-break: break-word;
-    box-shadow: $primary 0 -1px 0 inset;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: none;
-      box-shadow: rgba(255, 255, 255, 0.9) 0 -1px 0 inset;
-    }
-  }
-
-  strong,
-  em {
-    color: #fff;
-  }
-
-  code {
-    color: #16f0a0;
-    background: transparent;
-  }
-
-  pre {
-    background: $dark-nav-bar-bg-color;
-  }
-
-  blockquote {
-    color: #fff;
-  }
-}
-
-hr,
-.post-full-byline {
-  border-top-color: lighten($dark-bg-color, +8%);
-}
-
-.post-full-content {
-  figcaption {
-    color: rgba(255, 255, 255, 0.65);
-  }
-
-  .kg-bookmark-container {
-    color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
-
-    &:hover {
-      color: rgba(255, 255, 255, 0.75);
-      box-shadow: 0 0 1px rgba(255, 255, 255, 0.9);
-    }
-  }
-
-  blockquote {
-    background-color: lighten($dark-bg-color, +4%);
-  }
-}
-
-.kg-bookmark-title {
-  color: #fff;
-}
-
-.kg-bookmark-description,
-.kg-bookmark-metadata {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.site-archive-header .no-image {
-  color: rgba(255, 255, 255, 0.9);
-  background: $dark-bg-color;
-
-  .site-header-content {
-    border-bottom-color: lighten($dark-bg-color, +15%);
-  }
-}
-
-.site-header-content .author-profile-image {
-  box-shadow: 0 0 0 6px hsla(0, 0%, 100%, 0.04);
-}
-
-.kg-bookmark-card {
-  background-color: lighten($dark-bg-color, +4%);
-}
-
-.medium-zoom-overlay {
-  background-color: $dark-bg-color;
-}
-
-.aside-menu {
-  .fixed-left-menu {
-    background-color: lighten($dark-bg-color, +6%);
-  }
+  --box-shadow: #{$dark-box-shadow};
+  --ripple-bg-color: #{$dark-ripple-bg-color};
+  --disabled-text-color: #{$dark-disabled-text-color};
+  --footer-bg-color: #{$dark-footer-bg-color};
 }
 
 .menu-toggle {
@@ -215,31 +33,8 @@ hr,
   }
 }
 
-.nav,
-.nav-logo {
-  li {
-    a {
-      color: #fff;
-    }
-  }
-}
-
-.site-main,
-.site-nav-main {
-  .site-nav {
-    color: #fff;
-    background-color: $dark-nav-bar-bg-color;
-  }
-
-  .fixed-nav-active.site-nav {
-    color: #fff;
-    background-color: $dark-nav-bar-bg-color;
-  }
-}
-
 .social-link {
   i {
-    color: $dark-nav-bar-text-color;
     filter: none;
   }
 }
@@ -248,39 +43,6 @@ hr,
   filter: none;
 }
 
-.site-archive-header {
-  .no-image {
-    .site-description {
-      color: $dark-secondary-text-color;
-      opacity: 1;
-    }
-  }
-}
-
 .dark-mode-toggle {
   filter: none;
-}
-
-.bulma {
-  $menu-item-color: rgba(255, 255, 255, 0.9);
-  $menu-item-hover-color: rgba(255, 255, 255, 0.9);
-  $menu-item-hover-background-color: rgba($primary, 0.2);
-  @import '~bulma/sass/utilities/_all.sass';
-  @import '~bulma/sass/base/_all.sass';
-  @import '~bulma/sass/components/menu';
-  @import '~bulma/sass/components/pagination';
-  @import 'bulma-pagination';
-
-  .pagination-previous,
-  .pagination-next {
-    color: #fff;
-
-    &:hover {
-      color: #fff;
-    }
-
-    &[disabled] {
-      color: rgba(#fff, 0.4);
-    }
-  }
 }

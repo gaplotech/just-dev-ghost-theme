@@ -1,6 +1,3 @@
-@import "global";
-
-
 /* Site Navigation
 /* ---------------------------------------------------------- */
 
@@ -10,7 +7,7 @@
   right: 0;
   left: 0;
   z-index: 1000;
-  background: $default-nav-bar-bg-color;
+  background: var(--nav-bar-bg-color);
 }
 
 .site-nav {
@@ -63,14 +60,13 @@
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
   margin-right: 10px;
   padding: 10px 0 80px;
   font-weight: 500;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   white-space: nowrap;
-  -ms-overflow-scrolling: touch;
 
   .nav li:last-of-type {
     padding-right: 20px;
@@ -92,7 +88,7 @@
   display: inline-block;
   margin-right: 32px;
   padding: 12px 0;
-  color: $default-nav-bar-text-color;
+  color: var(--nav-bar-text-color);
   font-size: 1.7rem;
   line-height: 1.8rem;
   font-weight: bold;
@@ -197,7 +193,7 @@
       position: relative;
       display: block;
       padding: 12px 12px;
-      color: $default-nav-bar-text-color;
+      color: var(--nav-bar-text-color);
       opacity: 0.8;
       transition: opacity 0.35s ease-in-out;
 
@@ -213,7 +209,7 @@
         bottom: 8px;
         left: 12px;
         height: 1px;
-        background: $primary;
+        background: var(--primary);
         opacity: 1;
         transition: all 0.35s ease-in-out;
       }
@@ -242,7 +238,7 @@
   visibility: hidden;
   position: absolute;
   top: 9px;
-  color: $default-nav-bar-text-color;
+  color: var(--nav-bar-text-color);
   font-size: 1.7rem;
   font-weight: 400;
   text-transform: none;
@@ -307,7 +303,7 @@
   }
 
   i {
-    color: $default-nav-bar-text-color;
+    color: var(--nav-bar-text-color);
     padding: 8px;
     border-radius: 1.5rem;
 
@@ -352,8 +348,8 @@
   flex-grow: 1;
 
   .site-nav {
-    color: $default-nav-bar-text-color;
-    background-color: $default-nav-bar-bg-color;
+    color: var(--nav-bar-text-color);
+    background-color: var(--nav-bar-bg-color);
   }
 
   .fixed-nav-active.site-nav {
@@ -363,8 +359,8 @@
     width: 100vw;
     z-index: 10000;
     padding: 0 5vw;
-    color: $default-nav-bar-text-color;
-    background-color: $default-nav-bar-bg-color;
+    color: var(--nav-bar-text-color);
+    background-color: var(--nav-bar-bg-color);
     .site-nav-logo {
       display: unset;
     }
@@ -382,7 +378,7 @@
 }
 
 .full-site-nav-content {
-  background-color: $default-nav-bar-bg-color;
+  background-color: var(--nav-bar-bg-color);
   display: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 12000;
@@ -412,10 +408,10 @@
 
   a.full-nav {
     &:hover {
-      background-color: rgba($primary, 70%);
+      background-color: rgba(var(--primary), 70%);
       text-decoration: none;
     }
-    color: $default-nav-bar-text-color;
+    color: var(--nav-bar-text-color);
   }
 }
 

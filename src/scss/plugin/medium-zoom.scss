@@ -1,8 +1,6 @@
-@import 'variables';
-
 .medium-zoom-overlay {
   z-index: 1000;
-  background-color: #fff;
+  background-color: var(--bg-color);
 }
 
 .medium-zoom-image {

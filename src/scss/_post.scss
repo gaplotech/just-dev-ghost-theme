@@ -1,4 +1,3 @@
-@import "global";
 /* Single Post
 /* ---------------------------------------------------------- */
 
@@ -6,7 +5,7 @@
 .page-template .site-main {
   margin-top: 64px;
   padding-bottom: 4vw;
-  background: #fff;
+  background: var(--bg-color);
 }
 
 .post-full-header {
@@ -17,25 +16,14 @@
   border-top-right-radius: 3px;
 }
 
-.post-full-tags {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: $midgrey;
-  font-size: 1.3rem;
-  line-height: 1.4em;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
 .post-full-all-tags {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: $midgrey;
+  color: var(--secondary-text-color);
   font-size: 1.3rem;
   line-height: 1.4em;
-  font-weight: 600;
+  font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
   margin-top: 1em;
@@ -51,7 +39,7 @@
 }
 
 .post-full-meta-date {
-  color: $midgrey;
+  color: var(--secondary-text-color);
   font-size: 1.2rem;
   font-weight: 400;
 }
@@ -77,12 +65,12 @@
 
 .post-full-title {
   margin: 0 0 0.2em;
-  color: darken($darkgrey, 5%);
+  color: var(--text-color);
 }
 
 .post-full-custom-excerpt {
   margin: 20px 0 0;
-  color: darken($default-secondary-text-color, 20%);
+  color: var(--excerpt-color);
   font-size: 2.3rem;
   line-height: 1.4em;
   font-weight: 300;
@@ -115,10 +103,10 @@
   margin: 0 auto;
   padding: 0 170px 6vw;
   min-height: 230px;
-  font-family: $default-font-family;
+  font-family: var(--font-family);
   font-size: 2rem;
   line-height: 1.6em;
-  background: #fff;
+  background: var(--bg-color);
 }
 
 @media (max-width: 1170px) {
@@ -167,7 +155,7 @@
     min-width: 100%;
   }
   blockquote {
-    color: #000;
+    color: var(--strong-text-color);
   }
 }
 
@@ -204,21 +192,21 @@
   }
 
   a {
-    color: $primary;
+    color: var(--primary);
     word-break: break-word;
-    box-shadow: $primary 0 -1px 0 inset;
+    box-shadow: var(--primary) 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: $darkgrey;
+      color: var(--text-color);
       text-decoration: none;
-      box-shadow: $darkgrey 0 -1px 0 inset;
+      box-shadow: var(--text-color) 0 -1px 0 inset;
     }
   }
 
   strong,
   em {
-    color: darken($darkgrey, 5%);
+    color: var(--strong-text-color);
   }
 
   small {
@@ -241,7 +229,7 @@
 
   img {
     max-width: 100%;
-    background: #fff;
+    background: var(--bg-color);
     &[src$='#full'] {
       max-width: none;
       width: 100vw;
@@ -262,8 +250,8 @@
   blockquote {
     margin: 0 0 1.5em;
     padding: 0.5em 1.5em;
-    border-left: $primary 4px solid;
-    background-color: lighten($primary, +39%);
+    border-left: var(--primary) 4px solid;
+    background-color: var(--blockquote-bg-color);
 
     p {
       margin: 0 0 1em 0;
@@ -282,7 +270,7 @@
     font-size: 0.9em;
     line-height: 1em;
     font-weight: 400 !important;
-    color: #d63200;
+    color: var(--code-text-color);
     background: transparent;
     border-radius: 3px;
     white-space: pre-wrap;
@@ -298,10 +286,10 @@
     margin: 1.5rem 0 3rem;
     padding: 1rem 2rem;
     max-width: 100%;
-    color: $whitegrey;
+    color: var(--code-text-color);
     font-size: 75%;
     line-height: 1.5;
-    background-color: #f8f8f8;
+    background-color: var(--code-bg-color);
     border-radius: 5px;
 
     @media (max-width: 700px) {
@@ -356,7 +344,7 @@
   h4,
   h5,
   h6 {
-    color: darken($darkgrey, 5%);
+    color: var(--strong-text-color);
   }
 
   h1 {
@@ -411,7 +399,7 @@
     margin: 0.5em 0;
     padding: 0.4em 1em 0.9em;
     border: 0;
-    color: $primary;
+    color: var(--primary);
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -526,14 +514,6 @@ Usage (In Ghost editor):
   }
 }
 
-.footnote-backref {
-  color: $blue !important;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: none !important;
-  box-shadow: none !important;
-}
-
 /* Some grouped styles for smaller viewports */
 @media (max-width: 1170px) {
   .post-full-image {
@@ -588,7 +568,7 @@ Usage (In Ghost editor):
   width: auto;
   border-spacing: 0;
   border-collapse: collapse;
-  font-family: $default-font-family;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   white-space: nowrap;
   vertical-align: top;
@@ -636,7 +616,7 @@ Usage (In Ghost editor):
   justify-content: space-between;
   margin: 35px 0 0;
   padding-top: 15px;
-  border-top: 1px solid lighten($lightgrey, +10%);
+  border-top: 1px solid var(--border-color);
 }
 
 .post-full-byline-content {
@@ -652,7 +632,7 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta {
   margin: 2px 0 0;
-  color: $default-secondary-text-color;
+  color: var(--secondary-text-color);
   font-size: 1.2rem;
   line-height: 1.2em;
   letter-spacing: 0.2px;
@@ -665,11 +645,11 @@ Usage (In Ghost editor):
     font-weight: 500;
 
     a {
-      color: lighten($darkgrey, +10%);
+      color: var(--text-color);
 
       &:hover {
         text-decoration: unset;
-        color: $primary;
+        color: var(--primary);
       }
     }
   }
@@ -687,8 +667,6 @@ Usage (In Ghost editor):
   margin: 0 -4px;
   width: 40px;
   height: 40px;
-  border: #fff 2px solid;
-  border-radius: 100%;
   transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 700ms;
 }
 
@@ -703,7 +681,7 @@ Usage (In Ghost editor):
   width: 400px;
   font-size: 1.4rem;
   line-height: 1.5em;
-  background: white;
+  background: var(--bg-color);
   border-radius: 3px;
   box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px, rgba(39, 44, 49, 0.06) 1px 3px 8px;
   opacity: 0;
@@ -720,7 +698,7 @@ Usage (In Ghost editor):
     margin-left: -8px;
     width: 0;
     height: 0;
-    border-top: 8px solid #fff;
+    border-top: 8px solid var(--border-color);
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
   }
@@ -746,7 +724,7 @@ Usage (In Ghost editor):
 
     p {
       margin: 4px 0 0;
-      color: darken($midgrey, 10%);
+      color: var(--secondary-text-color);
     }
 
     .bio {
@@ -830,15 +808,13 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .read-next {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: lighten($dark-bg-color, +2%);
+  background: var(--bg-color);
 }
 
 .read-next-feed {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -25px;
-  padding: 60px 0 0 0;
 }
 
 .read-next {
@@ -852,7 +828,7 @@ Usage (In Ghost editor):
   }
 
   .post-card-title {
-    color: #fff;
+    color: var(--strong-text-color);
     opacity: 0.8;
     transition: all 0.2s ease-in-out;
   }
@@ -862,7 +838,7 @@ Usage (In Ghost editor):
   }
 
   .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-color);
   }
 
   .static-avatar {
@@ -870,10 +846,10 @@ Usage (In Ghost editor):
   }
 
   .post-card-byline-content {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--secondary-text-color);
 
     a {
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--secondary-text-color);
     }
   }
 }
@@ -886,8 +862,9 @@ Usage (In Ghost editor):
   overflow: hidden;
   margin: 0 25px 50px;
   padding: 25px;
-  background: linear-gradient(lighten($darkgrey, +5%), lighten($darkgrey, +2%));
+  background: var(--card-bg-color);
   border-radius: 3px;
+  box-shadow: var(--box-shadow);
 
   a {
     transition: all 0.2s ease-in-out;
@@ -900,7 +877,7 @@ Usage (In Ghost editor):
 
 .read-next-card-header h3 {
   margin: 0;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--strong-text-color);
   font-size: 1.2rem;
   line-height: 1em;
   font-weight: 300;
@@ -908,7 +885,7 @@ Usage (In Ghost editor):
   text-transform: uppercase;
 
   a {
-    color: $primary;
+    color: var(--primary);
     font-weight: 500;
     text-decoration: none;
 
@@ -935,7 +912,7 @@ Usage (In Ghost editor):
     align-items: flex-start;
     margin: 0;
     padding: 20px 0;
-    border-bottom: rgba(255, 255, 255, 0.1);
+    border-bottom: var(--border-color);
 
     &:last-of-type {
       padding-bottom: 5px;
@@ -952,7 +929,7 @@ Usage (In Ghost editor):
 
   li a {
     display: block;
-    color: #fff;
+    color: var(--strong-text-color);
     opacity: 0.8;
 
     &:hover {
@@ -977,7 +954,7 @@ Usage (In Ghost editor):
 
   p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--secondary-text-color);
   }
 }
 
@@ -986,14 +963,12 @@ Usage (In Ghost editor):
   margin: 40px 0 5px;
 
   a {
-    padding: 7px 12px 8px 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--secondary-text-color);
     font-size: 1.3rem;
-    border-radius: 999px;
     transition: all 0.35s ease-in-out;
 
     &:hover {
-      color: $primary;
+      color: var(--primary);
       text-decoration: none;
     }
   }
@@ -1009,14 +984,11 @@ Usage (In Ghost editor):
 @media (max-width: 650px) {
   .read-next-feed {
     flex-direction: column;
-    padding: 25px 0 0;
   }
 
   .read-next-card {
     flex: 1 1 auto;
     margin: 0 25px;
-    padding: 0;
-    background: none;
   }
 
   .read-next .post-card {
@@ -1073,8 +1045,8 @@ Usage (In Ghost editor):
 
   figcaption {
     margin: 8px 0 0;
-    color: darken($midgrey, 10%);
-    font-family: $default-font-family;
+    color: var(--secondary-text-color);
+    font-family: var(--font-family);
     font-size: 75%;
     line-height: 1.5em;
     text-align: center;
@@ -1156,6 +1128,7 @@ Usage (In Ghost editor):
 
 .kg-bookmark-card {
   width: 100%;
+  background-color: var(--card-bg-color);
 }
 
 .kg-card + .kg-bookmark-card {
@@ -1165,16 +1138,16 @@ Usage (In Ghost editor):
 .post-full-content .kg-bookmark-container {
   display: flex;
   min-height: 148px;
-  color: $darkgrey;
-  font-family: $default-font-family;
+  color: var(--text-color);
+  font-family: var(--font-family);
   text-decoration: none;
   border-radius: 3px;
-  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+  box-shadow: var(--box-shadow);
 
   &:hover {
-    color: $darkgrey;
+    color: var(--text-color);
     text-decoration: none;
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+    box-shadow: var(--box-shadow);
   }
 }
 
@@ -1188,7 +1161,7 @@ Usage (In Ghost editor):
 }
 
 .kg-bookmark-title {
-  color: darken($midgrey, 30%);
+  color: var(--strong-text-color);
   font-size: 1.6rem;
   line-height: 1.5em;
   font-weight: 600;
@@ -1196,7 +1169,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
-  color: $primary;
+  color: var(--primary);
 }
 
 .kg-bookmark-description {
@@ -1204,7 +1177,7 @@ Usage (In Ghost editor):
   overflow-y: hidden;
   margin-top: 12px;
   max-height: 48px;
-  color: darken($midgrey, 10%);
+  color: var(--excerpt-color);
   font-size: 1.5rem;
   line-height: 1.5em;
   font-weight: 400;
@@ -1233,7 +1206,7 @@ Usage (In Ghost editor):
   flex-wrap: wrap;
   align-items: center;
   margin-top: 14px;
-  color: darken($midgrey, 10%);
+  color: var(--excerpt-color);
   font-size: 1.5rem;
   font-weight: 400;
 }

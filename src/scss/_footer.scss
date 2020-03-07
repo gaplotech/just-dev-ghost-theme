@@ -6,8 +6,8 @@
   position: relative;
   padding-top: 20px;
   padding-bottom: 60px;
-  color: #fff;
-  background: lighten($dark-bg-color, +2%);
+  color: var(--text-color);
+  background: var(--footer-bg-color);
 }
 
 .site-footer-content {
@@ -15,14 +15,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-color);
   font-size: 1.3rem;
 
   a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--secondary-text-color);
 
     &:hover {
-      color: rgba(255, 255, 255, 1);
+      color: var(--strong-text-color);
       text-decoration: none;
     }
   }
@@ -43,7 +43,7 @@
       display: block;
       width: 2px;
       height: 2px;
-      background: #fff;
+      background: var(--text-color);
       border-radius: 100%;
     }
 

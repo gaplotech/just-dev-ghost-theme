@@ -1,5 +1,3 @@
-@import "global";
-
 /* Author Template
 /* ---------------------------------------------------------- */
 
@@ -28,7 +26,7 @@
   margin: 5px 0 0;
   width: 110px;
   height: 110px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
+  box-shadow: var(--box-shadow);
 }
 
 .author-header-content {
@@ -63,7 +61,7 @@
 .no-image .author-header-content {
   .author-bio,
   .author-meta {
-    color: $midgrey;
+    color: var(--secondary-text-color);
     opacity: 1;
   }
 }
@@ -74,7 +72,7 @@
 }
 
 .no-image .author-social-link a {
-  color: $darkgrey;
+  color: var(--text-color);
 }
 
 .author-social-link {
@@ -102,7 +100,7 @@
   .author-location + .author-stats:before,
   .author-stats + .author-social-link:before,
   .author-social-link + .author-social-link:before {
-    color: $midgrey;
+    color: var(--secondary-text-color);
   }
 }
 

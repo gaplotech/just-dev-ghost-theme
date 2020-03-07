@@ -30,7 +30,8 @@ into the {body} of the default.hbs template --}}
                       {{img_url feature_image size="l"}} 1000w,
                       {{img_url feature_image size="xl"}} 2000w"
               sizes="(max-width: 800px) 400px,(max-width: 1170px) 1170px,2000px"
-              src="{{img_url feature_image size="xl"}}"
+              src="{{asset "default-close-tag@2x.png"}}"
+              onerror="this.classList.add('empty'); this.removeAttribute('srcset')"
               alt="{{title}}"
             />
           </figure>
@@ -45,8 +46,3 @@ into the {body} of the default.hbs template --}}
   </main>
 
 {{/post}}
-
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-  <script async defer src={{asset "js/pages/page.js"}}></script>
-{{/contentFor}}

@@ -1,6 +1,6 @@
 import mediumZoom from 'medium-zoom'
 import Vue from 'vue'
-import App from '../App'
+import App from './App'
 
 /**
  * Gallery card support

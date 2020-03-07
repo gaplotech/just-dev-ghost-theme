@@ -10,7 +10,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-  <main id="site-main" class="site-main outer">
+  <main v-pre id="site-main" class="site-main outer">
     <div class="inner">
 
       <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
@@ -20,8 +20,8 @@ into the {body} of the default.hbs template --}}
           {{#if primary_tag}}
             <section class="post-full-all-tags">
               {{#foreach tags}}
-                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>{{#unless @last}}
-                |{{/unless}}
+                <a href="{{url}}" title="{{name}}" class="tag post-card-primary-tag {{slug}}">{{name}}</a>{{#unless @last}}
+                +{{/unless}}
               {{/foreach}}
             </section>
           {{/if}}
@@ -77,7 +77,8 @@ into the {body} of the default.hbs template --}}
               sizes="(max-width: 800px) 400px,
                         (max-width: 1170px) 1170px,
                             2000px"
-              src="{{img_url feature_image size="xl"}}"
+              src="{{asset "default-close-tag@2x.png"}}"
+              onerror="this.classList.add('empty'); this.removeAttribute('srcset')"
               alt="{{title}}"
             />
           </figure>
@@ -107,9 +108,9 @@ into the {body} of the default.hbs template --}}
 
     </div>
   </main>
-
+  <hr/>
   {{!-- Links to Previous/Next posts --}}
-  <aside class="read-next outer">
+  <aside v-pre class="read-next outer">
     <div class="inner">
       <div class="read-next-feed">
         {{#if primary_tag}}
@@ -161,8 +162,3 @@ into the {body} of the default.hbs template --}}
   </aside>
 
 {{/post}}
-
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-  <script async defer src="{{asset "js/pages/post.js"}}"></script>
-{{/contentFor}}
