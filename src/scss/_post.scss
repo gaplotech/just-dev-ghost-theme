@@ -229,7 +229,7 @@
 
   img {
     max-width: 100%;
-    background: var(--bg-color);
+    background: var(--image-bg-color);
     &[src$='#full'] {
       max-width: none;
       width: 100vw;

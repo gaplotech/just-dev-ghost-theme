@@ -34,6 +34,7 @@ $default-card-bg-color: darken($default-bg-color, +2%);
 $default-ripple-bg-color: lighten(#1d232c, +10%);
 $default-disabled-text-color: rgba(#000, 0.4);
 $default-footer-bg-color: transparent;
+$default-image-bg-color: #f8f8f8;
 
 
 // dark theme
@@ -55,3 +56,4 @@ $dark-card-bg-color: lighten($dark-bg-color, +2%);
 $dark-ripple-bg-color: lighten($dark-bg-color, +10%);
 $dark-disabled-text-color: rgba(#fff, 0.4);
 $dark-footer-bg-color: #222831;
+$dark-image-bg-color: #f8f8f8;
