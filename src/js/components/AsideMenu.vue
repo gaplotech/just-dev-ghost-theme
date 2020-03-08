@@ -164,6 +164,9 @@ export default {
         padding: 0;
       }
     }
+    .full-nav {
+      text-transform: capitalize;
+    }
   }
 
   .nav-current::before {
