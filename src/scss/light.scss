@@ -5,7 +5,7 @@
 @import 'plugin/medium-zoom';
 
 :root {
-  --primary: #{$primary};
+  --primary: #{$default-primary-color};
   --bg-color: #{$default-bg-color};
   --text-color: #{$default-text-color};
   --strong-text-color: #{$default-strong-text-color};

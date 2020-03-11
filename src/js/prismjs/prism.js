@@ -25,8 +25,16 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
   'tabs-to-spaces': 2
 })
 
-Prism.highlightAll(false, () => {
-  document.querySelectorAll(`pre[class*='language-']`).forEach(el => {
-    el.classList.add('loaded')
-  })
-})
+if (typeof document === 'object') {
+  document
+    .querySelectorAll(
+      'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+    )
+    .forEach(el => {
+      if (!el.classList.contains('loaded')) {
+        Prism.highlightElement(el, true, () => {
+          el.classList.add('loaded')
+        })
+      }
+    })
+}

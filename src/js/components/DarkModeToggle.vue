@@ -1,5 +1,5 @@
 <template>
-  <img id="dark-mode-toggle" class="dark-mode-toggle ripple" :src="src" @click="toggle()" />
+  <img id="dark-mode-toggle" class="dark-mode-toggle ripple" :src="src" @click="toggle()" alt="dark mode toggle" />
 </template>
 <script>
 /**
@@ -7,27 +7,27 @@
  * The origin abstraction is too leaky(difficult to change UI's padding/margin) and required modern browser version to load the modules
  * just rewrite the concept in vuejs components
  */
-const { LIGHT, DARK, getInitialMode, updateExternal } = window.theme
 
 export default {
   name: 'dark-mode-toggle',
   props: ['dark-src', 'light-src'],
   data: function() {
     return {
-      mode: getInitialMode()
+      mode: window.theme.getInitialMode()
     }
   },
 
   computed: {
     src() {
-      return this.mode === LIGHT ? this.darkSrc : this.lightSrc
+      return this.mode === window.theme.LIGHT ? this.darkSrc : this.lightSrc
     }
   },
 
   methods: {
     toggle() {
+      const { LIGHT, DARK } = window.theme
       const mode = this.mode === LIGHT ? DARK : LIGHT
-      updateExternal(mode)
+      window.theme.updateExternal(mode)
       this.mode = mode
     }
   }

@@ -306,24 +306,6 @@
         color: inherit;
       }
     }
-
-    &[class*='language-'] {
-      opacity: 0;
-      margin-bottom: 60px;
-      &.loaded {
-        opacity: 1;
-        margin-bottom: 16px;
-      }
-
-
-      @media (max-width: 700px) {
-        margin-bottom: 52px;
-        &.loaded {
-          margin-bottom: 22px;
-        }
-      }
-
-    }
   }
 
   .fluid-width-video-wrapper {
