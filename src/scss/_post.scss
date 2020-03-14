@@ -287,6 +287,7 @@
     padding: 1rem 2rem;
     max-width: 100%;
     color: var(--code-text-color);
+    font-family: var(--code-font-family);
     font-size: 75%;
     line-height: 1.5;
     background-color: var(--code-bg-color);
@@ -542,7 +543,7 @@ Usage (In Ghost editor):
 
 /* Tables */
 
-.post-full-content table {
+:not(.gist).post-full-content table {
   display: inline-block;
   overflow-x: auto;
   margin: 0.5em 0 2.5em;
@@ -550,7 +551,7 @@ Usage (In Ghost editor):
   width: auto;
   border-spacing: 0;
   border-collapse: collapse;
-  font-family: var(--font-family);
+  font-family: var(--code-font-family);
   font-size: 1.6rem;
   white-space: nowrap;
   vertical-align: top;
@@ -586,7 +587,7 @@ Usage (In Ghost editor):
   }
 
   tr {
-    border-bottom: 1px solid rgba(#aaa, 0.4);
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -846,8 +847,6 @@ Usage (In Ghost editor):
   padding: 25px;
   background: var(--card-bg-color);
   border-radius: 3px;
-  box-shadow: var(--box-shadow);
-
   a {
     transition: all 0.2s ease-in-out;
 
