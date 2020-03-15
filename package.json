@@ -1,17 +1,13 @@
 {
-    "name": "gaplotech-blog-theme",
-    "description": "A default theme for gaplo.tech blog",
-    "demo": "https://gaplo.tech",
+    "name": "just-dev",
+    "description": "A default developer blog theme",
+    "demo": "https://intl.gaplo.tech",
     "version": "1.0.0",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
-    },
     "scripts": {
         "dev": "webpack-dev-server --config webpack/webpack.config.dev.js",
         "lint": "eslint --fix --ext .js gulpfile.js src/js/",
@@ -26,7 +22,7 @@
     "author": {
         "name": "GapLoTech",
         "email": "gaplotech@gmail.com",
-        "url": "https://gaplo.tech"
+        "url": "https://intl.gaplo.tech"
     },
     "gpm": {
         "type": "theme",
@@ -42,9 +38,9 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/gaplotech/gaplotech-blog-theme.git"
+        "url": "https://github.com/gaplotech/just-dev-ghost-theme.git"
     },
-    "bugs": "https://github.com/gaplotech/gaplotech-blog-theme/issues",
+    "bugs": "https://github.com/gaplotech/just-dev-ghost-theme/issues",
     "devDependencies": {
         "@babel/core": "^7.8.0",
         "@babel/plugin-proposal-class-properties": "^7.8.0",

@@ -8,5 +8,14 @@
   "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
-  "useTabs": false
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 90,
+        "proseWrap": "always"
+      }
+    }
+  ]
 }
