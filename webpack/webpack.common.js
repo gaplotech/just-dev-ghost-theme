@@ -1,6 +1,5 @@
 const Path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const glob = require('glob')
 const RemovePlugin = require('remove-files-webpack-plugin')
 
 module.exports = {

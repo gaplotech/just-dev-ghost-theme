@@ -7789,11 +7789,6 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-reframe.js@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/reframe.js/-/reframe.js-2.2.7.tgz#2589b72e2d3185663351a82533061d4b77e63cb6"
-  integrity sha512-Ix85bPpPFVczgOoxBQX09iWZmZ1kK6YzdunrFFpXr9P8JF24DTJc9VrEwkT54qpZTYKci60dGSz9F8+mVYPceA==
-
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-8.1.0.tgz#ef51e0f0ea4ad424b77bf7cb41f3e015c70a3f0e"
