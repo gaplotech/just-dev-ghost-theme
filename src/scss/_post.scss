@@ -1117,6 +1117,9 @@ figure.kg-code-card {
 .kg-bookmark-card {
   width: 100%;
   background-color: var(--card-bg-color);
+  figcaption {
+    margin: 4px 0 4px;
+  }
 }
 
 .kg-card + .kg-bookmark-card {
@@ -1130,8 +1133,16 @@ figure.kg-code-card {
   font-family: var(--font-family);
   text-decoration: none;
   border-radius: 3px;
-  box-shadow: var(--box-shadow);
+  box-shadow: none;
+  border-bottom: 1px solid var(--border-color);
 
+  &:hover {
+    color: var(--text-color);
+    text-decoration: none;
+    box-shadow: none;
+  }
+}
+.post-full-content .kg-bookmark-card {
   &:hover {
     color: var(--text-color);
     text-decoration: none;
@@ -1186,6 +1197,7 @@ figure.kg-code-card {
     height: 100%;
     border-radius: 0 3px 3px 0;
     object-fit: cover;
+    background: transparent;
   }
 }
 
@@ -1203,6 +1215,7 @@ figure.kg-code-card {
   margin-right: 8px;
   width: 22px;
   height: 22px;
+  background: transparent;
 }
 
 .kg-bookmark-author {
