@@ -1,9 +1,12 @@
+.medium-zoom-image {
+  background-color: var(--image-bg-color);
+}
+
 .medium-zoom-overlay {
   z-index: 1000;
   background-color: var(--bg-color);
 }
-
-.medium-zoom-image {
+.medium-zoom-overlay + .medium-zoom-image {
   z-index: 1001;
   background-color: var(--image-bg-color);
 }

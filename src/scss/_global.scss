@@ -573,7 +573,7 @@ h6 {
   }
 
   &:active {
-    background-color: lighten($dark-bg-color, +10%);
+    background-color: var(--border-color);
     background-size: 100%;
     transition: background 0s;
   }

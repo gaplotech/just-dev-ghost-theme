@@ -7,22 +7,26 @@
         <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
       {{/if}}
       <div class="site-nav-content">
-        {{#if @site.navigation}}
-          <ul class="nav" role="menu">
-            <!-- {{navigation}}-->
-            {{#foreach navigation}}
-              <li class=" nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{t label}}</a></li>
-            {{/foreach}}
-          </ul>
-        {{/if}}
+        {{navigation}}
       </div>
     </div>
     <div class="site-nav-content-toggle">
-      <menu-toggle is-index="{{^is "index"}}true{{/is}}"></menu-toggle>
+      <menu-toggle is-index="{{^is "index"}}true{{/is}}">
+        <template v-slot:icon>
+          {{> icons/menu }}
+        </template>
+      </menu-toggle>
     </div>
   </div>
   <div class="site-nav-right">
-    <dark-mode-toggle dark-src="/assets/moon.svg" light-src="/assets/sun.svg"></dark-mode-toggle>
+    <dark-mode-toggle>
+      <template v-slot:light>
+        {{> icons/sun }}
+      </template>
+      <template v-slot:dark>
+        {{> icons/moon }}
+      </template>
+    </dark-mode-toggle>
 
     {{#if @site.secondary_navigation}}
       {{navigation type="secondary"}}
@@ -48,4 +52,17 @@
 
 </nav>
 
-<aside-menu></aside-menu>
+<aside-menu>
+  <template v-slot:github>
+    {{> icons/github }}
+  </template>
+  <template v-slot:facebook>
+    {{> icons/facebook }}
+  </template>
+  <template v-slot:twitter>
+    {{> icons/twitter }}
+  </template>
+  <template v-slot:rss>
+    {{> icons/rss }}
+  </template>
+</aside-menu>

@@ -1,5 +1,8 @@
 <template>
-  <img id="dark-mode-toggle" class="dark-mode-toggle ripple" :src="src" @click="toggle()" alt="dark mode toggle" />
+  <div class="dark-mode-toggle ripple" @click="toggle()">
+    <slot name="light" v-if="isLight"></slot>
+    <slot name="dark" v-else></slot>
+  </div>
 </template>
 <script>
 /**
@@ -10,7 +13,6 @@
 
 export default {
   name: 'dark-mode-toggle',
-  props: ['dark-src', 'light-src'],
   data: function() {
     return {
       mode: window.theme.getInitialMode()
@@ -18,8 +20,8 @@ export default {
   },
 
   computed: {
-    src() {
-      return this.mode === window.theme.LIGHT ? this.darkSrc : this.lightSrc
+    isLight() {
+      return this.mode === window.theme.LIGHT
     }
   },
 
@@ -42,7 +44,15 @@ export default {
   border-radius: 10rem;
   height: 3rem;
   width: 3rem;
-  filter: invert(100%);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
   &:hover {
     opacity: 1;
   }
