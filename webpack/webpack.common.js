@@ -4,7 +4,6 @@ const RemovePlugin = require('remove-files-webpack-plugin')
 
 module.exports = {
   entry: {
-    'js/prism': './src/js/prismjs/prism.js',
     'js/color-scheme': './src/js/color-scheme.js',
     'js/main': './src/js/main.js',
     'css/light': './src/scss/light.scss',
