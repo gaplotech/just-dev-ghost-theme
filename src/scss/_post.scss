@@ -1102,9 +1102,16 @@ Usage (In Ghost editor):
 .kg-code-card {
   width: 100%;
 
+
   pre {
-    margin-top: 0;
+    margin-bottom: 0;
   }
+  figcaption {
+    margin-bottom: 2rem;
+  }
+}
+figure.kg-code-card {
+  display: contents;
 }
 
 .kg-bookmark-card {
