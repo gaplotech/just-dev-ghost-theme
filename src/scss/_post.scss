@@ -191,22 +191,36 @@
     }
   }
 
+  strong,
+  em {
+    color: var(--strong-text-color);
+  }
+
   a {
     color: var(--primary);
     word-break: break-word;
     box-shadow: var(--primary) 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
 
+    // override the strong color if this is a url
+    strong,
+    em {
+      color: var(--primary);
+      transition: all 0.2s ease-in-out;
+    }
+
     &:hover {
       color: var(--text-color);
       text-decoration: none;
       box-shadow: var(--text-color) 0 -1px 0 inset;
-    }
-  }
 
-  strong,
-  em {
-    color: var(--strong-text-color);
+      strong,
+      em {
+        color: var(--strong-text-color);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
   }
 
   small {
