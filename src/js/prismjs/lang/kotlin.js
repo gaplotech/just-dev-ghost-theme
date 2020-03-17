@@ -1,5 +1,5 @@
 ;(function(Prism) {
-  var keywords = /(^|[^.])\b(?:abstract|actual|annotation|as|break|by|catch|class|companion|const|constructor|continue|crossinline|data|do|dynamic|else|enum|expect|external|final|finally|for|fun|get|if|import|in|infix|init|inline|inner|interface|internal|is|lateinit|noinline|null|object|open|operator|out|override|package|private|protected|public|reified|return|sealed|set|super|suspend|tailrec|this|throw|to|try|typealias|val|var|vararg|when|where|while)\b/
+  var keywords = /(^|[^.])\b(?:abstract|actual|annotation|as|break|by|catch|class|companion|const|constructor|continue|crossinline|data|do|dynamic|else|enum|expect|external|final|finally|for|fun|get|if|import|in|infix|init|inline|inner|interface|internal|is|lateinit|noinline|null|object|open|operator|out|override|package|private|protected|public|reified|return|sealed|set|super|suspend|tailrec|this|throw|try|typealias|val|var|vararg|when|where|while)\b/
 
   // based on the java naming conventions
   var className = /\b[A-Z](?:\w*[a-z]\w*)?\b/
@@ -11,7 +11,7 @@
       lookbehind: true
     },
     function: [
-      /\w+(?=\s*\()/,
+      /\w+(?=\s*\()|to/,
       {
         pattern: /(\.)\w+(?=\s*\{)/,
         lookbehind: true
