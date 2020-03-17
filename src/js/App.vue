@@ -24,7 +24,7 @@ const initGalleryCard = document => {
 
 const initMediumZoom = document => {
   mediumZoom(document.querySelectorAll('.post-content :not(.kg-bookmark-thumbnail) > img:not(.kg-bookmark-icon)'), {
-    background: null
+    background: 'var(--bg-color)'
   })
 }
 
