@@ -110,7 +110,7 @@
 
   Prism.languages.insertBefore('kotlin', 'constant', {
     'maybe-generic-template': {
-      pattern: /T/,
+      pattern: /<[_$a-zA-Z\xA0-\uFFFF]>/,
       alias: 'constant'
     }
   })
