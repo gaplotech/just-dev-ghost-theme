@@ -403,9 +403,11 @@
       if (code.classList.contains('soft-wrap')) {
         code.classList.remove('soft-wrap')
         element.classList.remove('active')
+        element.classList.add('no-hover') // this fix touch effect on mobile
       } else {
         code.classList.add('soft-wrap')
         element.classList.add('active')
+        element.classList.remove('no-hover')
       }
     }
 

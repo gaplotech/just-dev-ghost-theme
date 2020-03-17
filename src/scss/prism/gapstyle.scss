@@ -417,6 +417,10 @@ div.code-toolbar {
           color: inherit;
           text-decoration: none;
         }
+
+        &.no-hover {
+          color: $toolbar-action-text-color;
+        }
       }
 
       .title {
