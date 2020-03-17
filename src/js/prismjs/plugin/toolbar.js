@@ -388,6 +388,29 @@
 
     return element
   })
+
+  Prism.plugins.toolbar.registerButton('soft-wrap', function(env) {
+    var pre = env.element.parentNode
+    if (!pre || !/pre/i.test(pre.nodeName)) {
+      return
+    }
+
+    var element = document.createElement('a')
+    element.classList.add('wrap-btn')
+    element.innerHTML = `<svg height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m8 38h12v-4h-12zm32-28h-32v4h32zm-6 12h-26v4h26.5c2.21 0 4 1.79 4 4s-1.79 4-4 4h-4.5v-4l-6 6 6 6v-4h4c4.41 0 8-3.59 8-8s-3.59-8-8-8z"/><path d="m0 0h48v48h-48z" fill="none"/></svg>`
+    element.onclick = () => {
+      const code = pre.querySelector('code')
+      if (code.classList.contains('soft-wrap')) {
+        code.classList.remove('soft-wrap')
+        element.classList.remove('active')
+      } else {
+        code.classList.add('soft-wrap')
+        element.classList.add('active')
+      }
+    }
+
+    return element
+  })
 })()
 ;(function() {
   if (typeof self === 'undefined' || !self.Prism || !self.document) {
@@ -427,9 +450,10 @@
   }
 
   Prism.plugins.toolbar.registerButton('copy-to-clipboard', function(env) {
-    var linkCopy = document.createElement('a')
-    const svgHtml = `<svg class="copy-btn" data-prefix="far" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"></path></svg>`
-    linkCopy.innerHTML = svgHtml
+    var element = document.createElement('a')
+    const svgHtml = `<svg data-prefix="far" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"></path></svg>`
+    element.classList.add('copy-btn')
+    element.innerHTML = svgHtml
 
     if (!ClipboardJS) {
       callbacks.push(registerClipboard)
@@ -437,17 +461,17 @@
       registerClipboard()
     }
 
-    return linkCopy
+    return element
 
     function registerClipboard() {
-      var clip = new ClipboardJS(linkCopy, {
+      var clip = new ClipboardJS(element, {
         text: function() {
           return env.code
         }
       })
 
       clip.on('success', function() {
-        linkCopy.innerHTML = 'Copied!'
+        element.innerHTML = '✓'
 
         resetText()
       })
@@ -458,8 +482,8 @@
 
     function resetText() {
       setTimeout(function() {
-        linkCopy.innerHTML = svgHtml
-      }, 5000)
+        element.innerHTML = svgHtml
+      }, 2000)
     }
   })
 })()

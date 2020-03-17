@@ -25,4 +25,6 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
   'tabs-to-spaces': 2
 })
 
+Prism.manual = true
+
 export default Prism

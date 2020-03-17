@@ -47,7 +47,6 @@ pre {
     font-family: $default-font-family;
     border: 0;
     direction: ltr;
-    font-feature-settings: normal;
     text-align: left;
     word-wrap: normal;
     white-space: nowrap;
@@ -84,14 +83,16 @@ pre {
     // there very likely are local-var color instead of default color
     color: $local-var-color;
     direction: ltr;
-    font-feature-settings: normal;
     text-align: left;
-    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     word-wrap: normal;
     word-break: break-all;
     white-space: pre;
-    tab-size: 4;
+    tab-size: 2;
     hyphens: none;
+    display: block;
+    -webkit-overflow-scrolling: touch;
 
     &.soft-wrap {
       white-space: pre-wrap;
@@ -347,11 +348,12 @@ div.code-toolbar {
     border-radius: 8px 8px 0 0;
     display: flex;
     justify-content: flex-end;
-    padding: 0 16px;
+    align-items: baseline;
+    padding: 0 0 0 16px;
     z-index: 3;
 
     .toolbar-item {
-      display: inline-block;
+      display: flex;
       height: $toolbar-height;
       margin: 0 4px;
 
@@ -367,7 +369,28 @@ div.code-toolbar {
       }
 
       .copy-btn {
-        width: 16px;
+        font-size: 24px;
+        padding: 3px 8px 0 0;
+
+        &.active {
+          color: $toolbar-action-text-hover-color;
+        }
+
+        svg {
+          min-width: 15px;
+        }
+      }
+
+      .wrap-btn {
+        font-size: 24px;
+        padding: 3px 8px 0 0;
+
+        &.active {
+          color: $toolbar-action-text-hover-color;
+        }
+        svg {
+          width: 22px;
+        }
       }
 
       a,
@@ -400,8 +423,6 @@ div.code-toolbar {
         color: $toolbar-title-color;
         font-weight: 700;
         font-size: 16px;
-        line-height: 40px;
-        box-shadow: none;
         margin: 0;
         padding: 0;
       }
@@ -431,19 +452,27 @@ div.code-toolbar {
   }
   div.code-toolbar {
     > .toolbar {
-      top: -16px;
+      top: -20px;
       .toolbar-item {
         height: $toolbar-height;
 
         a,
         button,
         span {
-          font-size: 12px;
-          line-height: $toolbar-height;
+          font-size: 14px;
         }
         .title {
-          font-size: 12px;
-          line-height: $toolbar-height;
+          font-size: 14px;
+        }
+
+        .copy-btn {
+          display: none;
+        }
+
+        .wrap-btn {
+          svg {
+            width: 20px;
+          }
         }
       }
     }
