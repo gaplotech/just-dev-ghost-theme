@@ -45,7 +45,7 @@
         "@babel/core": "^7.8.0",
         "@babel/plugin-proposal-class-properties": "^7.8.0",
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-        "@babel/polyfill": "^7.8.0",
+        "@babel/polyfill": "^7.8.7",
         "@babel/preset-env": "^7.8.7",
         "@tryghost/release-utils": "0.3.3",
         "axios": "^0.19.2",
