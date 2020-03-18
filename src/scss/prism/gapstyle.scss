@@ -51,6 +51,7 @@ pre {
     word-wrap: normal;
     white-space: nowrap;
     position: relative;
+    will-change: transform;
 
     &.soft-wrap {
       white-space: pre-wrap;
@@ -93,6 +94,7 @@ pre {
     hyphens: none;
     display: block;
     -webkit-overflow-scrolling: touch;
+    will-change: transform;
 
     &.soft-wrap {
       white-space: pre-wrap;
