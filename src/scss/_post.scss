@@ -1040,6 +1040,7 @@ Usage (In Ghost editor):
 
   figcaption {
     margin: 8px 0 0;
+    padding: 0 16px;
     color: var(--secondary-text-color);
     font-family: var(--font-family);
     font-size: 75%;
@@ -1270,10 +1271,6 @@ figure.kg-code-card {
     .kg-width-full {
       margin-right: -5vw;
       margin-left: -5vw;
-    }
-
-    figcaption {
-      margin-bottom: 2rem;
     }
 
     .kg-bookmark-container {
