@@ -32,10 +32,9 @@
   {{!-- The footer at the very bottom of the screen --}}
   <footer class="site-footer outer">
     <div class="site-footer-content inner">
-      <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+      <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}} - <a href="https://github.com/gaplotech/just-dev-ghost-theme" target="_blank" rel="noopener">Just Dev Theme</a></section>
       <nav class="site-footer-nav">
         <a href="{{@site.url}}">{{t "Latest Post"}}</a>
-        <a href="https://github.com/gaplotech/just-dev-ghost-theme" target="_blank" rel="noopener">Just Dev Ghost Theme</a>
         <a href="https://www.github.com/gaplo917" target="_blank" rel="noopener">GitHub</a>
         {{#if @site.facebook}}
           <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
