@@ -1,0 +1,22 @@
+.post-full-tg {
+  .tg-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2rem 0;
+  }
+
+  .tg-icon-wrapper {
+    padding: 0 16px 0 0;
+  }
+  .tg-icon {
+    display: inline;
+    background: transparent;
+    max-width: 56px;
+    min-width: 56px;
+    margin: 0;
+    padding: 0;
+    line-height: 64px
+  }
+
+}
