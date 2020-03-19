@@ -105,7 +105,7 @@
 
   Prism.languages.insertBefore('javascript', 'function', {
     method: {
-      pattern: RegExp('(\\.\\s*)' + Prism.languages.javascript['function'].source),
+      pattern: RegExp('(\\.\\s*)' + Prism.languages.javascript.function.source),
       lookbehind: true,
       alias: ['function', 'property-access']
     }
@@ -127,7 +127,7 @@
     ]
   })
 
-  Prism.languages.javascript['keyword'].unshift(
+  Prism.languages.javascript.keyword.unshift(
     {
       pattern: /\b(?:as|default|export|from|import)\b/,
       alias: 'module'
@@ -217,7 +217,7 @@
 
   // see the pattern in prism-javascript.js
   var templateLiteralPattern = templateString.pattern.source
-  var interpolationObject = templateString.inside['interpolation']
+  var interpolationObject = templateString.inside.interpolation
   var interpolationPunctuationObject = interpolationObject.inside['interpolation-punctuation']
   var interpolationPattern = interpolationObject.pattern.source
 

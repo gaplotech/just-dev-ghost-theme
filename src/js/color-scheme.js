@@ -55,7 +55,7 @@ const init = () => {
   updateExternal(getInitialMode())
 }
 
-window['theme'] = {
+window.theme = {
   init,
   getInitialMode,
   updateExternal,
