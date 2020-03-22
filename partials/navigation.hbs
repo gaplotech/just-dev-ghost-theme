@@ -1,6 +1,6 @@
 <ul class="nav" role="menu">
   {{#foreach navigation}}
-    <li class=" nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{t label}}</a></li>
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="menuitem"><a href="{{url absolute="true"}}">{{t label}}</a></li>
   {{/foreach}}
 </ul>
 {{#contentFor "beforeScripts"}}

@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  overflow-y: hidden;
+  overflow-y: visible;
   height: 64px;
   font-size: 1.3rem;
   border-bottom: 1px solid rgba(0,0,0, 0.1);
@@ -25,6 +25,10 @@
 
   @media (max-width: 700px) {
     height: 48px;
+
+    .categories {
+      visibility: hidden;
+    }
   }
 
   &.hide {
@@ -32,48 +36,23 @@
   }
 }
 
-.site-nav-left-wrapper {
-  position: relative;
-  flex: 1 0 auto;
-  display: flex;
-}
-
-.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
-.site-nav-main .site-nav-left-wrapper:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  z-index: 1000;
-  width: 40px;
-  height: 100%;
-}
-
-.site-header-background:not(.responsive-header-img) .site-nav-left-wrapper:after,
-.site-nav-main .site-nav-left-wrapper:after {
-  right: 0;
-}
-
 .site-nav-left {
   max-width: 80vw;
-  flex: 1 0 auto;
+  flex-grow: 0;
   display: flex;
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
   overflow-scrolling: touch;
   margin-right: 10px;
-  padding: 10px 0 80px;
+  padding: 10px 0 0;
   font-weight: 500;
   letter-spacing: 0.2px;
   text-transform: capitalize;
   white-space: nowrap;
 
-  .nav li:last-of-type {
-    padding-right: 20px;
-  }
-
   @media (max-width: 700px) {
-    margin-left: 32px;
+    margin-left: 16px;
   }
 
   @media (max-width: 700px) {
@@ -144,39 +123,8 @@
     }
   }
 }
-.site-nav-content-toggle {
-  display: none;
-  margin: 0 8px 0 -8px;
-  a.ripple {
-    position: absolute;
-    display: block;
-    padding: 8px;
-    border-radius: 32px;
-    z-index: 1000;
-    left: -16px;
-    top: 8px;
-
-    @media (max-width: 700px) {
-      top: 4px;
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-
-  @media (max-width: 700px) {
-    display: block;
-  }
-}
 
 .nav, .nav-logo {
-  position: absolute;
-
-  @media (max-width: 700px) {
-    position: relative;
-  }
-
   z-index: 1000;
   display: flex;
   margin: 0 0 0 -12px;
@@ -441,9 +389,6 @@
 }
 
 @media (max-width: 500px) {
-  .site-nav-left {
-    width: 50vw;
-  }
   .site-main .site-nav {
     .site-nav-logo {
       display: flex;

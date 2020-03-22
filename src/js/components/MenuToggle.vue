@@ -1,5 +1,5 @@
 <template>
-  <div id="menu-toggle" class="menu-toggle" :class="{ 'fixed-nav-active': isIndex }">
+  <div class="menu-toggle" :class="{ 'fixed-nav-active': isIndex }">
     <a class="menu-toggle-btn ripple" @click="toggle()">
       <slot name="icon"></slot>
     </a>
@@ -49,8 +49,11 @@ export default {
     }
   }
 
-  &.fixed-nav-active {
-    display: block;
+  @media (max-width: 700px) {
+    &.fixed-nav-active {
+      display: flex;
+      margin: 8px 0 0;
+    }
   }
 }
 </style>

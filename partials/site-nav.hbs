@@ -1,23 +1,20 @@
 <nav class="site-nav {{classes}}">
-  <div class="site-nav-left-wrapper">
-    <div class="site-nav-left">
-      {{#if @site.logo}}
-        <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}"/></a>
-      {{else}}
-        <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-      {{/if}}
-      <div class="site-nav-content">
-        {{navigation}}
-      </div>
-    </div>
-    <div class="site-nav-content-toggle">
-      <menu-toggle is-index="{{^is "index"}}true{{/is}}">
-        <template v-slot:icon>
-          {{> icons/menu }}
-        </template>
-      </menu-toggle>
+  <menu-toggle is-index="{{^is "index"}}true{{/is}}">
+    <template v-slot:icon>
+      {{> icons/menu }}
+    </template>
+  </menu-toggle>
+  <div class="site-nav-left">
+    {{#if @site.logo}}
+      <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}"/></a>
+    {{else}}
+      <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+    {{/if}}
+    <div class="site-nav-content">
+      {{navigation}}
     </div>
   </div>
+  <categories-nav style="flex-grow: 1;"></categories-nav>
   <div class="site-nav-right">
     <dark-mode-toggle>
       <template v-slot:light>

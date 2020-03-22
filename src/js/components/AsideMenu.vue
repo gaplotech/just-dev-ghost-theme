@@ -1,5 +1,5 @@
 <template>
-  <div id="aside-menu" class="aside-menu">
+  <div class="bulma aside-menu">
     <div class="backdrop" :class="{ active: isToggle }" @click="toggle($event)"></div>
     <aside class="fixed-left-menu bulma menu" :class="{ active: isToggle }">
       <p class="menu-label">
@@ -10,6 +10,16 @@
           <a class="full-nav" :class="{ 'nav-current': nav.current }" :href="nav.url" @click="toggle()">
             {{ nav.label }}
           </a>
+        </li>
+        <li v-if="isZh" v-for="nav in navigation_extra">
+          <a>
+            {{ nav.label }}
+          </a>
+          <ul>
+            <li v-for="subnav in nav.navigation">
+              <a :href="subnav.slug">{{ subnav.label }}</a>
+            </li>
+          </ul>
         </li>
       </ul>
       <p class="menu-label">
@@ -60,13 +70,15 @@ export default {
   name: 'aside-menu',
   data: function() {
     const { settings } = window['GHOST_INITIAL_DATA']
-    const { navigation, facebook, twitter, url } = settings
+    const { navigation, facebook, twitter, url, navigation_extra, lang } = settings
     return {
       isToggle: false,
       navigation,
       facebook,
       twitter,
-      url
+      url,
+      navigation_extra,
+      lang
     }
   },
 
@@ -78,6 +90,9 @@ export default {
   computed: {
     rssHref() {
       return `https://feedly.com/i/subscription/feed/${this.url}/rss/`
+    },
+    isZh() {
+      return this.lang === 'zh'
     }
   },
   methods: {
@@ -99,7 +114,7 @@ export default {
 }
 </script>
 
-<style type="scss">
+<style type="scss" scoped>
 .aside-menu {
   .menu-list {
     li {
@@ -147,6 +162,8 @@ export default {
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateX(-300px);
     overflow-y: auto;
+    font-size: 1.5rem;
+
     &.active {
       transform: translateX(0);
     }

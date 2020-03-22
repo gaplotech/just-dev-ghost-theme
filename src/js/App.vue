@@ -3,6 +3,7 @@ import mediumZoom from 'medium-zoom'
 import DarkModeToggle from './components/DarkModeToggle'
 import MenuToggle from './components/MenuToggle'
 import AsideMenu from './components/AsideMenu'
+import CategoriesNav from './components/CategoriesNav'
 import Prism from './prismjs/prism'
 /**
  * Gallery card support
@@ -47,7 +48,8 @@ export default {
   components: {
     DarkModeToggle,
     MenuToggle,
-    AsideMenu
+    AsideMenu,
+    CategoriesNav
   },
   mounted() {
     initGalleryCard(this.$el)

@@ -114,9 +114,23 @@
   $menu-item-color: var(--text-color);
   $menu-item-hover-color: var(--strong-text-color);
   $menu-item-hover-background-color: rgba(var(--primary), 0.2);
+  $menu-list-border-left: 1px solid var(--border-color) !default;
+  $navbar-item-color: var(--text-color);
+  $navbar-item-hover-color: var(--strong-text-color);
+  $navbar-item-hover-background-color: rgba(var(--primary), 0.2);
+  $navbar-dropdown-arrow: var(--text-color);
+  $navbar-dropdown-item-hover-color: var(--text-color);
+  $navbar-dropdown-background-color: var(--card-bg-color);
+  $navbar-dropdown-item-hover-background-color: var(--border-color);
+  $navbar-dropdown-border-top: 1px soild var(--border-color);
+  // breakpoint system not using bulma, set 0 to disable it
+  $navbar-breakpoint: 0;
   @import '~bulma/sass/utilities/_all.sass';
   @import '~bulma/sass/base/_all.sass';
   @import '~bulma/sass/components/menu';
   @import '~bulma/sass/components/pagination';
+  @import '~bulma/sass/elements/button';
+  @import '~bulma/sass/components/dropdown';
+  @import '~bulma/sass/components/navbar';
   @import 'bulma-pagination';
 }
