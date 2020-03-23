@@ -159,11 +159,6 @@
   }
 }
 
-.post-full-comments,
-.footnotes {
-  margin: 0 0 1.5em 0;
-  min-width: 100%;
-}
 
 @media (max-width: 500px) {
   .post-full-content {
@@ -174,11 +169,6 @@
     pre {
       margin-bottom: 1.28em;
     }
-  }
-
-  .post-full-comments,
-  .footnotes {
-    margin-bottom: 1.28em;
   }
 }
 
@@ -798,7 +788,11 @@ Usage (In Ghost editor):
 
 .post-full-comments {
   margin: 0 auto;
-  max-width: 840px;
+  padding-bottom: 0;
+
+  h3 {
+    margin: 0 0 3rem;
+  }
 }
 
 /* 7.4. Related posts

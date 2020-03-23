@@ -17,5 +17,8 @@
   "tgChannel0Url": "https://t.me/gaplotech",
   "tgChannel1": "GLT Discussion Group",
   "tgChannel1Desc": " - Discuss latest technology with Gap telegram-by-telegram or our community members.",
-  "tgChannel1Url": "https://t.me/gaplotechd"
+  "tgChannel1Url": "https://t.me/gaplotechd",
+  "tgCommentHeader": "Login Telegram to Comments",
+  "tgCommentSiteId": "wcEyD3Jt",
+  "navigationExtraJson": "[]"
 }

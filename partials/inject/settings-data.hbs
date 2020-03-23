@@ -26,28 +26,8 @@
         {
           "label": "{{t 'category'}}",
           "group": true,
-          "navigation": [
-            {
-              "label": "# 我思我想",
-              "slug": "/tag/thoughts"
-            },
-            {
-              "label": "# 技術隨筆",
-              "slug": "/tag/tech-snippets"
-            },
-            {
-              "label": "# 網絡安全",
-              "slug": "/tag/cyber-security"
-            },
-            {
-              "label": "# 熱門",
-              "slug": "/tag/hot-topic"
-            },
-            {
-              "label": "# IT",
-              "slug": "/tag/it"
-            },
-          ]
+          {{!-- work around for handling different locale --}}
+          "navigation": {{{t 'recommendedCategories'}}}.map(function(c) { return { label: c[0], slug: c[1] } }),
         }
       ],
       "meta_title": "{{@site.meta_title}}",
