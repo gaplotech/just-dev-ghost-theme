@@ -1,6 +1,14 @@
 ;(function(Prism) {
+  // based on the swift naming conventions
+  const className = /\b[A-Z](?:\w*[a-z]\w*)?\b/
   // issues: nested multiline comments
   Prism.languages.swift = Prism.languages.extend('clike', {
+    'class-name': [
+      className,
+      // variables and parameters
+      // this to support class names (or generic parameters) which do not contain a lower case letter (also works for methods)
+      /\b[A-Z]\w*(?=\s+\w+\s*[;,=())])/
+    ],
     string: {
       pattern: /("|')(?:\\(?:\((?:[^()]|\([^)]+\))+\)|\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
       greedy: true,
