@@ -28,6 +28,7 @@ $generic-type-color: #20999d;
 $label-color: #467cda;
 $inserted-color: #294436;
 $deleted-color: #484a4a;
+$tag-attr-name-color: #bababa;
 
 $url-hover-color: #589df6;
 $url-hover-underline-color: #287bde;
@@ -165,6 +166,14 @@ pre {
         .punctuation {
           color: $tag-color;
         }
+
+        .attr-name {
+          color: $tag-attr-name-color;
+        }
+
+        .class-name {
+          color: $tag-color;
+        }
       }
 
       &.doctype,
@@ -225,6 +234,9 @@ pre {
 
       &.function {
         color: $function-color;
+        .maybe-class-name {
+          color: $function-color;
+        }
       }
 
       &.regex {
