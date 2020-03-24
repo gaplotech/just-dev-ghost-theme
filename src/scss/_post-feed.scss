@@ -36,14 +36,17 @@
 
 .post-card-image {
   width: 100%;
-  height: auto;
-  max-height: 240px;
+  height: 200px;
   background: #f8f8f8 no-repeat center center;
   object-fit: cover;
 
   &[src$='120x63.png'] {
     max-height: unset;
     width: 100%;
+  }
+  @media (max-width: 500px) {
+    height: auto;
+    max-height: 240px;
   }
 }
 
