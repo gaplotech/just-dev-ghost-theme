@@ -260,7 +260,7 @@
     padding: 0.5em 1.5em;
     font-style: italic;
     font-weight: 200;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     line-height: 1.5;
     color: var(--strong-text-color);
 
@@ -294,6 +294,10 @@
       font-style: unset;
       font-weight: normal;
       font-size: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 2.2rem;
     }
   }
 

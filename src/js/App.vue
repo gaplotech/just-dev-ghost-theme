@@ -5,6 +5,8 @@ import MenuToggle from './components/MenuToggle'
 import AsideMenu from './components/AsideMenu'
 import CategoriesNav from './components/CategoriesNav'
 import Prism from './prismjs/prism'
+import TelegramComment from './components/TelegramComment'
+
 /**
  * Gallery card support
  * Used on any individual post/page
@@ -49,7 +51,8 @@ export default {
     DarkModeToggle,
     MenuToggle,
     AsideMenu,
-    CategoriesNav
+    CategoriesNav,
+    TelegramComment
   },
   mounted() {
     initGalleryCard(this.$el)

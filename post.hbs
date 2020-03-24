@@ -10,12 +10,12 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-  <main v-pre id="site-main" class="site-main outer">
+  <main id="site-main" class="site-main outer">
     <div class="inner">
 
       <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-        <header class="post-full-header">
+        <header v-pre class="post-full-header">
 
           {{#if primary_tag}}
             <section class="post-full-all-tags">
@@ -66,7 +66,7 @@ into the {body} of the default.hbs template --}}
         </header>
 
         {{#if feature_image}}
-          <figure class="post-full-image">
+          <figure v-pre class="post-full-image">
             {{!-- This is a responsive image, it loads different sizes depending on device
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
             <img
@@ -87,7 +87,7 @@ into the {body} of the default.hbs template --}}
           {{> inject/image-placeholder-meta }}
         {{/unless}}
 
-        <section class="post-full-content">
+        <section v-pre class="post-full-content">
           <div class="post-content">
             {{content}}
           </div>
@@ -102,7 +102,7 @@ into the {body} of the default.hbs template --}}
           {{> telegram-comments }}
         </section>
 
-        <section class="post-full-content post-full-tg">
+        <section v-pre class="post-full-content post-full-tg">
           <hr/>
           {{> subscribe-telegram }}
         </section>
