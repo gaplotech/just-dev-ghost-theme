@@ -824,6 +824,11 @@ Usage (In Ghost editor):
   h3 {
     margin: 0 0 3rem;
   }
+
+  iframe {
+    background-color: white;
+    min-width: 100% !important;
+  }
 }
 
 /* 7.4. Related posts
