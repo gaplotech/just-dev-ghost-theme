@@ -36,10 +36,16 @@ into the {body} of the default.hbs template --}}
             />
           </figure>
         {{/if}}
+
         <section v-pre class="post-full-content">
           <div class="post-content">
             {{content}}
           </div>
+        </section>
+
+        <section v-pre class="post-full-content post-full-tg">
+          <hr/>
+          {{> subscribe-callout }}
         </section>
         <section class="post-full-content post-full-comments">
           {{> facebook-comments }}

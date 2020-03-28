@@ -98,13 +98,13 @@ into the {body} of the default.hbs template --}}
           {{> subscribe-form}}
         {{/if}}
 
-        <section class="post-full-content post-full-comments">
-          {{> facebook-comments }}
-        </section>
-
         <section v-pre class="post-full-content post-full-tg">
           <hr/>
           {{> subscribe-callout }}
+        </section>
+
+        <section class="post-full-content post-full-comments">
+          {{> facebook-comments }}
         </section>
       </article>
 
