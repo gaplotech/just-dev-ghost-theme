@@ -28,22 +28,20 @@
     {{#if @site.secondary_navigation}}
       {{navigation type="secondary"}}
     {{else}}
-      <div class="social-links">
-        <a class="social-link" href="https://github.com/gaplo917" title="GitHub" target="_blank"
+      <div class="so-cial-links">
+        <a class="so-cial-link" href="https://github.com/gaplo917" title="GitHub" target="_blank"
            rel="noopener"><i class="ripple">{{> icons/github }}</i></a>
         {{#if @site.facebook}}
-          <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
+          <a class="so-cial-link so-cial-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
              rel="noopener"><i class="ripple">{{> icons/facebook}}</i></a>
         {{/if}}
         {{#if @site.twitter}}
-          <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
+          <a class="so-cial-link so-cial-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
              rel="noopener"><i class="ripple">{{> icons/twitter}}</i></a>
         {{/if}}
       </div>
-      {{#unless @labs.members}}
-        <a class="social-link rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
+        <a class="so-cial-link rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS"
            target="_blank" rel="noopener"><i class="ripple">{{> icons/rss}}</i></a>
-      {{/unless}}
     {{/if}}
   </div>
 

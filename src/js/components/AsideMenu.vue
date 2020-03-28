@@ -27,7 +27,7 @@
       </p>
       <ul class="menu-list">
         <li>
-          <a class="social-link" href="https://github.com/gaplo917" title="GitHub" target="_blank" rel="noopener">
+          <a class="so-cial-link" href="https://github.com/gaplo917" title="GitHub" target="_blank" rel="noopener">
             <i class="ripple">
               <slot name="github"></slot>
             </i>
@@ -35,7 +35,7 @@
           </a>
         </li>
         <li>
-          <a class="social-link" :href="facebook" title="Facebook" target="_blank" rel="noopener">
+          <a class="so-cial-link" :href="facebook" title="Facebook" target="_blank" rel="noopener">
             <i class="ripple">
               <slot name="facebook"></slot>
             </i>
@@ -43,7 +43,7 @@
           </a>
         </li>
         <li>
-          <a class="social-link" :href="twitter" title="Twitter" target="_blank" rel="noopener">
+          <a class="so-cial-link" :href="twitter" title="Twitter" target="_blank" rel="noopener">
             <i class="ripple">
               <slot name="twitter"></slot>
             </i>
@@ -51,7 +51,7 @@
           </a>
         </li>
         <li>
-          <a class="social-link" :href="rssHref" title="RSS" target="_blank" rel="noopener">
+          <a class="so-cial-link" :href="rssHref" title="RSS" target="_blank" rel="noopener">
             <i class="ripple">
               <slot name="rss"></slot>
             </i>
