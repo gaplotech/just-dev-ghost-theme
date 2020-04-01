@@ -47,7 +47,7 @@
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@babel/polyfill": "^7.8.7",
         "@babel/preset-env": "^7.8.7",
-        "@tryghost/release-utils": "0.3.3",
+        "@tryghost/release-utils": "0.5.0",
         "axios": "^0.19.2",
         "babel-loader": "^8.0.6",
         "babel-minify-webpack-plugin": "^0.3.1",
