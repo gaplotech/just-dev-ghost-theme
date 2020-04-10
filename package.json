@@ -10,6 +10,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "webpack-dev-server --config webpack/webpack.config.dev.js",
+        "test": "yarn build",
         "lint": "eslint --fix --ext .js gulpfile.js src/js/",
         "build": "npm-run-all -s lint build:*",
         "build:test": "gscan --fatal --verbose .",
