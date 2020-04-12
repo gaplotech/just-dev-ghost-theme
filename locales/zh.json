@@ -24,5 +24,6 @@
   "fbPageUrl": "https://www.facebook.com/gaplotech",
   "CommentHeader": "留言給作者",
   "tgCommentSiteId": "1W9vCvYE",
-  "recommendedCategories": "[['# 我思我想','/tag/thoughts'],['# 技術隨筆','/tag/tech-snippets'], ['# 隨筆','/tag/snippets'], ['# 網絡安全', '/tag/cyber-security'], ['# 熱門', '/tag/hot-topic'], ['# IT', '/tag/it']]"
+  "recommendedCategories": "[['# 我思我想','/tag/thoughts'],['# 技術隨筆','/tag/tech-snippets'], ['# 隨筆','/tag/snippets'], ['# 網絡安全', '/tag/cyber-security'], ['# 熱門', '/tag/hot-topic'], ['# IT', '/tag/it']]",
+  "sponsor": "或使用此連結註冊 Digital Ocean 贊助 Gap撈Tech"
 }
