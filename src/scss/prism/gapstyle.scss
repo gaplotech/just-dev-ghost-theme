@@ -81,9 +81,7 @@ pre {
   }
 
   > code[class*='language-'] {
-    // normally this should be $default-token-color, but in real-life example
-    // there very likely are local-var color instead of default color
-    color: $local-var-color;
+    color: $default-token-color;
     direction: ltr;
     text-align: left;
     overflow-x: scroll;
@@ -322,7 +320,7 @@ pre {
   }
 
   // Css language Special handling
-  > code[class='language-css'] {
+  > code[class*='language-css'] {
     .token {
       &.property {
         color: $function-color;
@@ -346,6 +344,18 @@ pre {
       }
     }
   }
+
+  > code[class*='language-kotlin'],
+  > code[class*='language-java'],
+  > code[class*='language-javascript'],
+  > code[class*='language-typescript'],
+  > code[class*='language-scala'],
+  > code[class*='language-swift'] {
+    // normally this should be $default-token-color, but in real-life example
+    // there very likely are local-var color instead of default color
+    color: $local-var-color;
+  }
+
 }
 
 div.code-toolbar {

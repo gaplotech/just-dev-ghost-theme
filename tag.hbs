@@ -8,7 +8,7 @@
       background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
       <div class="inner site-header-content">
         <h1 class="site-title">{{name}}</h1>
-        <h2 class="site-description">
+        <h2 class="site-description" style="padding: 16px 0">
           {{plural ../../pagination.total empty=(t 'posts') singular=(t '% post') plural=(t '% posts')}} -
           {{#if description}}
             {{description}}

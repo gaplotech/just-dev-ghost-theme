@@ -257,11 +257,12 @@
 
   blockquote {
     margin: 0 0 1.5em;
-    padding: 0.5em 1.5em;
-    font-weight: 200;
+    padding: 1em 1.5em;
+    font-weight: normal;
     font-size: 2.5rem;
     line-height: 1.5;
     color: var(--strong-text-color);
+    background-color: var(--blockquote-bg-color);
 
     & + blockquote {
       margin-top: -1.5em;
@@ -276,6 +277,13 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    &.quote {
+      padding: 0.5em 1.5em;
+      font-weight: 200;
+      background-color: unset;
+      color: var(--strong-text-color);
     }
 
     &.callout {
