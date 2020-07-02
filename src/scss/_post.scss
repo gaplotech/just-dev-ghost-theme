@@ -259,10 +259,11 @@
     margin: 0 0 1.5em;
     padding: 1em 1.5em;
     font-weight: normal;
-    font-size: 2.5rem;
+    font-size: 110%;
     line-height: 1.5;
     color: var(--strong-text-color);
     background-color: var(--blockquote-bg-color);
+    border-left: 4px solid var(--mark-color);
 
     & + blockquote {
       margin-top: -1.5em;
@@ -291,6 +292,7 @@
       font-weight: normal;
       background-color: var(--blockquote-bg-color);
       color: var(--strong-text-color);
+      border-left: none;
     }
 
     &.info {
@@ -299,11 +301,7 @@
       background-color: var(--blockquote-bg-color);
       font-style: unset;
       font-weight: normal;
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 700px) {
-      font-size: 2.0rem;
+      font-size: 100%;
     }
   }
 
@@ -322,9 +320,13 @@
     word-break: break-word;
   }
 
+  p img {
+    margin: auto;
+  }
+
   pre {
     overflow-x: auto;
-    margin: 2rem 0 3rem;
+    margin: 2rem 0 2rem;
     padding: 1rem 2rem;
     max-width: 100%;
     color: var(--code-text-color);
