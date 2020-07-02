@@ -14,7 +14,7 @@
         "lint": "eslint --fix --ext .js gulpfile.js src/js/",
         "build": "npm-run-all -s lint build:*",
         "build:test": "gscan --fatal --verbose .",
-        "build:theme": "cross-env NODE_ENV=production webpack --verbose --config webpack/webpack.config.prod.js  --colors;",
+        "build:theme": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors;",
         "build:zip": "gulp zip",
         "deploy": "node deploy.js",
         "release": "yarn build && yarn deploy",
