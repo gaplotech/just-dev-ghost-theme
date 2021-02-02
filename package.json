@@ -122,7 +122,7 @@
     },
     "dependencies": {
         "bulma": "^0.8.0",
-        "medium-zoom": "^1.0.5",
+        "medium-zoom": "^1.0.6",
         "prismjs": "^1.19.0",
         "vue": "^2.6.11"
     }
