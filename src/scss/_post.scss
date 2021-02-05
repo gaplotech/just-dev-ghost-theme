@@ -587,6 +587,7 @@ Usage (In Ghost editor):
 /* Tables */
 
 :not(.gist).post-full-content table {
+  display: block;
   overflow-x: auto;
   margin: 0.5em 0 2.5em;
   width: 80vw;
@@ -633,7 +634,8 @@ Usage (In Ghost editor):
 }
 @media (max-width: 800px) {
   :not(.gist).post-full-content table {
-    width: 100%;
+    width: calc(100vw - 16px);
+    font-size: 1.2rem;
   }
 }
 
