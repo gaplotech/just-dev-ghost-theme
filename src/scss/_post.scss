@@ -624,7 +624,6 @@ Usage (In Ghost editor):
   }
 
   td {
-    max-width: 330px;
     padding: 6px 12px;
   }
 
@@ -632,7 +631,15 @@ Usage (In Ghost editor):
     border-bottom: 1px solid var(--border-color);
   }
 }
+
 @media (max-width: 800px) {
+  :not(.gist).post-full-content table {
+    width: calc(100vw - 32px);
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 500px) {
   :not(.gist).post-full-content table {
     width: calc(100vw - 16px);
     font-size: 1.2rem;
