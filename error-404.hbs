@@ -21,7 +21,7 @@ into the {body} of the default.hbs template --}}
 
     {{#get "posts" limit="3" include="authors,tags"}}
       <div class="post-feed">
-        {{#foreach posts}}
+        {{#foreach posts visibility='all'}}
           {{> "post-card"}}
         {{/foreach}}
       </div>

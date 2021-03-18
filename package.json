@@ -4,8 +4,8 @@
     "demo": "https://intl.gaplo.tech",
     "version": "1.0.0",
     "engines": {
-        "ghost": ">=3.0.0",
-        "ghost-api": "v3"
+        "ghost": ">=4.0.0",
+        "ghost-api": "v4"
     },
     "license": "MIT",
     "scripts": {
@@ -72,7 +72,7 @@
         "file-loader": "^6.0.0",
         "form-data": "^3.0.0",
         "glob": "^7.1.6",
-        "gscan": "3.3.3",
+        "gscan": "4.0.1",
         "gulp": "4.0.2",
         "gulp-zip": "5.0.1",
         "html-webpack-plugin": "^4.0.0-beta.14",
