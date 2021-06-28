@@ -589,8 +589,8 @@ Usage (In Ghost editor):
 :not(.gist).post-full-content table {
   display: block;
   overflow-x: auto;
-  margin: 0.5em 0 2.5em;
-  width: 80vw;
+  margin: 0em auto 2em;
+  max-width: 80vw;
   border-spacing: 0;
   border-collapse: collapse;
   font-family: var(--code-font-family);
