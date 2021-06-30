@@ -634,14 +634,12 @@ Usage (In Ghost editor):
 
 @media (max-width: 800px) {
   :not(.gist).post-full-content table {
-    width: calc(100vw - 32px);
     font-size: 1.4rem;
   }
 }
 
 @media (max-width: 500px) {
   :not(.gist).post-full-content table {
-    width: calc(100vw - 16px);
     font-size: 1.2rem;
   }
 }
