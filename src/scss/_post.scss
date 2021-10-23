@@ -589,12 +589,12 @@ Usage (In Ghost editor):
 :not(.gist).post-full-content table {
   display: block;
   overflow-x: auto;
-  margin: 0em auto 2em;
+  margin: 0 -200px 2em;
   max-width: 80vw;
   border-spacing: 0;
   border-collapse: collapse;
   font-family: var(--code-font-family);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   vertical-align: top;
   -webkit-overflow-scrolling: touch;
   background-attachment: scroll, scroll;
@@ -615,12 +615,13 @@ Usage (In Ghost editor):
   }
 
   th {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
     padding: 6px 12px;
+    vertical-align: bottom;
   }
 
   td {
@@ -634,13 +635,13 @@ Usage (In Ghost editor):
 
 @media (max-width: 800px) {
   :not(.gist).post-full-content table {
-    font-size: 1.4rem;
+    margin: 0 auto 2em;
   }
 }
 
 @media (max-width: 500px) {
   :not(.gist).post-full-content table {
-    font-size: 1.2rem;
+    margin: 0 auto 2em;
   }
 }
 
