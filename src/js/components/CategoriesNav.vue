@@ -1,6 +1,6 @@
 <template>
   <div class="bulma categories">
-    <div class="navbar-menu" v-if="isZh">
+    <div class="navbar-menu">
       <div class="navbar-start">
         <div class="navbar-item has-dropdown is-hoverable" v-for="nav in navigation_extra">
           <a class="navbar-link">
@@ -27,11 +27,6 @@ export default {
     return {
       navigation_extra,
       lang
-    }
-  },
-  computed: {
-    isZh() {
-      return this.lang === 'zh'
     }
   }
 }
