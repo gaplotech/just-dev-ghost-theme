@@ -2,7 +2,6 @@
   "home": "首頁",
   "hot": "熱門",
   "about": "關於",
-  "category": "推薦分類",
   "no posts": "文章",
   "% post": "% 篇文章",
   "% posts": "% 篇文章",
@@ -22,11 +21,15 @@
   "fbPage": "Gap撈Tech 專頁",
   "fbPageDesc": " - Like 及 Follow 接收最新的想法及與 Gap 在留言中互動",
   "fbPageUrl": "https://www.facebook.com/gaplotech",
+  "twitterPage": "Gap撈Tech 專頁 (Software Engineering)",
+  "twitterPageDesc": " - Follow 接收最新的 re-tweet 及與 Gap 在留言中互動",
+  "twitterPageUrl": "https://www.twitter.com/gaplo917",
   "patreon": "Patreon Support",
   "patreonDesc": " - Support for Gap to R&D different types of interesting benchmark, industrial insight, and summary of popular frameworks or programming languages findings.",
   "patreonUrl": "https://www.patreon.com/gaplotech",
   "CommentHeader": "留言給 Gap",
   "tgCommentSiteId": "1W9vCvYE",
+  "category": "推薦分類",
   "recommendedCategories": "[['# 我思我想','/tag/thoughts'],['# 技術隨筆','/tag/tech-snippets'], ['# 隨筆','/tag/snippets'], ['# 網絡安全', '/tag/cyber-security'], ['# 熱門', '/tag/hot-topic'], ['# IT', '/tag/it']]",
   "sponsor": "或使用此連結註冊 Digital Ocean 贊助 Gap撈Tech"
 }

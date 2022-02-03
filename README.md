@@ -1,6 +1,6 @@
-# Just Dev Blog Theme
+# GapStyle Blog Theme
 
-The default developer blog theme for Ghost 3.0+.
+The default developer blog theme for Ghost 3.0+ and customized with GapStyle and client-side vuejs integration 
 
 |                                                    |                                                  |
 | :------------------------------------------------: | :----------------------------------------------: |
