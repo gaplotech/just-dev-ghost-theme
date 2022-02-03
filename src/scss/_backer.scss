@@ -1,0 +1,15 @@
+.backer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  .backer-sp {
+    margin: 1em;
+    .logo-container {
+      width: 200px;
+      img {
+        margin: 0;
+      }
+    }
+  }
+}
