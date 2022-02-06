@@ -6,6 +6,7 @@ import AsideMenu from './components/AsideMenu'
 import CategoriesNav from './components/CategoriesNav'
 import Prism from './prismjs/prism'
 import TelegramComment from './components/TelegramComment'
+import { initGhostCards } from './ghostcards'
 
 /**
  * Gallery card support
@@ -56,9 +57,15 @@ export default {
     TelegramComment
   },
   mounted() {
-    initGalleryCard(this.$el)
-    initMediumZoom(this.$el)
-    initPrism(this.$el)
+    if(!this.INIT_SCRIPTS) {
+      this.INIT_SCRIPTS = (() => {
+        initGalleryCard(this.$el)
+        initMediumZoom(this.$el)
+        initPrism(this.$el)
+        initGhostCards()
+        return true
+      })()
+    }
   }
 }
 </script>

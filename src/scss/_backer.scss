@@ -2,14 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  width: 100%;
 
-  .backer-sp {
-    margin: 1em;
-    .logo-container {
-      width: 200px;
-      img {
-        margin: 0;
-      }
+  .logo-container {
+    width: 200px;
+    img {
+      margin: 0;
     }
   }
+
 }

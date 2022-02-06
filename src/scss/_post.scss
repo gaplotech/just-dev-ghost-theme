@@ -255,9 +255,11 @@
     margin: 0 auto !important;
   }
 
-  blockquote {
+  blockquote:not(.kg-blockquote-alt) {
     margin: 0 0 1.5em;
     padding: 1em 1.5em;
+    font-family: var(--blockquote-font-family);
+    font-style: italic;
     font-weight: normal;
     font-size: 110%;
     line-height: 1.5;
@@ -265,8 +267,12 @@
     background-color: var(--blockquote-bg-color);
     border-left: 4px solid var(--mark-color);
 
-    & + blockquote {
+    & + blockquote:not(.kg-blockquote-alt) {
       margin-top: -1.5em;
+    }
+
+    & + blockquote.kg-blockquote-alt {
+      margin-top: -1em;
     }
 
     p {
@@ -303,6 +309,16 @@
       font-weight: normal;
       font-size: 100%;
     }
+  }
+
+  blockquote.kg-blockquote-alt {
+    margin: 0;
+    padding: 1.5em;
+    font-family: var(--blockquote-font-family);
+    font-style: italic;
+    font-weight: normal;
+    font-size: 175%;
+    line-height: 1.5;
   }
 
   code {
@@ -1186,8 +1202,51 @@ figure.kg-code-card {
   }
 }
 
+.kg-card {
+  width: 100%;
+}
+
+.kg-card + p {
+  margin-top: 1.5em;
+}
+
+figure.kg-card {
+  margin: 0;
+}
+
 .kg-card + .kg-bookmark-card {
   margin-top: 0;
+}
+
+.kg-card.kg-header-card {
+  width: 100vw;
+  margin-bottom: 1.5em;
+}
+
+.kg-toggle-heading {
+  margin-right: 40px
+}
+
+//file download
+a.kg-file-card-container {
+  box-shadow: none;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.kg-file-card-icon {
+  .a {
+    fill: none;
+    stroke: var(--strong-text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5px;
+  }
+}
+
+.kg-product-card > .kg-product-card-container > .kg-product-card-image {
+  margin: 0;
 }
 
 .post-full-content .kg-bookmark-container {
