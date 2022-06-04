@@ -11,8 +11,8 @@
   <meta name="HandheldFriendly" content="True"/>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
   {{{block "meta"}}}
-  <link rel="shortcut icon" href="/assets/favicon.ico">
-  <link rel="apple-touch-icon" href="{{asset "apple-touch-icon.jpg"}}">
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+  <link rel="apple-touch-icon" href="{{asset "apple-touch-icon.png"}}">
   <link rel="stylesheet" type="text/css" href="{{asset "js/main.css"}}"/>
   <link rel="stylesheet" type="text/css" href="{{asset "css/light.css"}}"/>
   <link rel="stylesheet" type="text/css" href="{{asset "css/dark.css"}}" media="(prefers-color-scheme: dark)"/>
@@ -44,46 +44,6 @@
   </footer>
 
 </div>
-
-{{!-- The big email subscribe modal content --}}
-{{!--
-{{#if @labs.members}}
-  <div class="subscribe-success-message">
-    <a class="subscribe-close" href="javascript:;"></a>
-    You've successfully subscribed to {{@site.title}}!
-  </div>
-
-  <div id="subscribe" class="subscribe-overlay">
-    <a class="subscribe-close" href="#"></a>
-    <div class="subscribe-overlay-content">
-      {{#if @site.logo}}
-        <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}"/>
-      {{/if}}
-      <div class="subscribe-form">
-        <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-        <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered straight
-          to your inbox</p>
-        <form data-members-form="subscribe">
-          <div class="form-group">
-            <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
-                   autocomplete="false"/>
-            <button class="button primary" type="submit">
-              <span class="button-content">Subscribe</span>
-              <span class="button-loader">{{> "icons/loader"}}</span>
-            </button>
-          </div>
-          <div class="message-success">
-            <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
-          </div>
-          <div class="message-error">
-            Please enter a valid email address!
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-{{/if}}
---}}
 {{{block "beforeScripts"}}}
 <script src="{{asset "js/main.js"}}"></script>
 {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
