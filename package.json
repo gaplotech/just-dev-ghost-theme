@@ -6,6 +6,7 @@
     "engines": {
         "ghost": ">=4.0.0"
     },
+    "card_assets": true,
     "license": "MIT",
     "scripts": {
         "dev": "webpack-dev-server --config webpack/webpack.config.dev.js",
