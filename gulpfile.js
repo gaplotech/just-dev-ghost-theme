@@ -21,7 +21,19 @@ function zipper(done) {
 
   pump(
     [
-      src(['**', '!.git', '!.git/**', '!node_modules', '!node_modules/**', '!dist', '!dist/**']),
+      src([
+        '**',
+        '!.git',
+        '!.git/**',
+        '!node_modules',
+        '!node_modules/**',
+        '!dist',
+        '!dist/**',
+        '!docker-cache',
+        '!docker-cache/**',
+        '!secret.json',
+        '!**/*.map'
+      ]),
       zip(filename),
       dest(targetDir)
     ],

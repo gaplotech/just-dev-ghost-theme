@@ -8,7 +8,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool: 'source-map',
+  devtool: false,
   stats: 'errors-only',
   bail: true,
   plugins: [

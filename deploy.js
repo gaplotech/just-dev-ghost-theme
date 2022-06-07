@@ -34,7 +34,7 @@ async function deploy({ serverUrl, apiKey }) {
   })
 
   // Make an authenticated request to create a post
-  const url = `${serverUrl}/ghost/api/v3/admin/themes/upload/`
+  const url = `${serverUrl}/ghost/api/admin/themes/upload`
   const themePath = path.resolve(__dirname, `dist/${themeName}.zip`)
 
   const formData = new FormData()
@@ -42,6 +42,8 @@ async function deploy({ serverUrl, apiKey }) {
   formData.append('file', fs.createReadStream(themePath), { knownLength: fs.statSync(themePath).size })
   const headers = {
     ...formData.getHeaders(),
+    'Accept-Version': 'v5.2',
+    'Content-Type': 'multipart/form-data;',
     'Content-Length': formData.getLengthSync(),
     Authorization: `Ghost ${token}`
   }
