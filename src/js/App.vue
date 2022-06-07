@@ -4,9 +4,9 @@ import DarkModeToggle from './components/DarkModeToggle'
 import MenuToggle from './components/MenuToggle'
 import AsideMenu from './components/AsideMenu'
 import CategoriesNav from './components/CategoriesNav'
-import Prism from './prismjs/prism'
 import TelegramComment from './components/TelegramComment'
 import { initGhostCards } from './ghostcards'
+import GapStyleTheme from './gapstyle.shiki.json'
 
 /**
  * Gallery card support
@@ -33,18 +33,20 @@ const initMediumZoom = document => {
   })
 }
 
-const initPrism = document => {
-  document
-    .querySelectorAll(
-      'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
-    )
-    .forEach(el => {
-      if (!el.classList.contains('loaded')) {
-        Prism.highlightElement(el, true, () => {
-          el.classList.add('loaded')
-        })
-      }
+const initShiki = document => {
+  const nodes = Array.from(document
+      .querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code, pre > code')
+  )
+  // fallback to markdown if no language specified
+  const nodeLangTuples = nodes.map(el => [el, el.className.match(/^language-.*|^lang-.*/)?.[0]?.split('-')?.[1] ?? 'markdown'])
+  shiki.getHighlighter({
+        theme: GapStyleTheme,
+        langs: nodeLangTuples.map(it => it[1])
+  }).then(highlighter => {
+    nodeLangTuples.forEach(([el, language]) => {
+      el.parentNode.outerHTML = highlighter.codeToHtml(el.textContent, { lang: language })
     })
+  })
 }
 
 export default {
@@ -61,7 +63,7 @@ export default {
       this.INIT_SCRIPTS = (() => {
         initGalleryCard(this.$el)
         initMediumZoom(this.$el)
-        initPrism(this.$el)
+        initShiki(this.$el)
         initGhostCards()
         return true
       })()

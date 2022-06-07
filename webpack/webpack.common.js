@@ -1,6 +1,9 @@
 const Path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const RemovePlugin = require('remove-files-webpack-plugin')
+const webpack = require('webpack')
+
+const ASSET_PATH = Path.join(__dirname, '../assets')
 
 module.exports = {
   entry: {
@@ -8,15 +11,19 @@ module.exports = {
     'js/main': './src/js/main.js',
     'css/light': './src/scss/light.scss',
     'css/dark': './src/scss/dark.scss',
-    'css/gapstyle': './src/scss/prism/gapstyle.scss'
+    'css/gapstyle': './src/scss/shiki/gapstyle.scss'
   },
   output: {
-    path: Path.join(__dirname, '../assets')
+    path: ASSET_PATH,
+    publicPath: "/assets/",
   },
   optimization: {
     splitChunks: false
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
+    }),
     new CopyWebpackPlugin([{ from: Path.resolve(__dirname, '../static'), to: '' }]),
     new RemovePlugin({
       // scss entry will produce unnecessary .js file, use this plugin to remove it

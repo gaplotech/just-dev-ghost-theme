@@ -325,11 +325,14 @@
     font-size: 0.9em;
     line-height: 1em;
     font-weight: 400 !important;
-    color: var(--code-text-color);
-    background: transparent;
+    color: var(--inline-code-text-color);
+    background: var(--inline-code-bg-color);;
     border-radius: 3px;
-    white-space: pre-wrap;
     padding: 0;
+  }
+
+  code[class*='language-'] {
+    color: var(--code-text-color);
   }
 
   p code {
@@ -361,6 +364,7 @@
       font-size: inherit;
       line-height: inherit;
       background: transparent;
+      color: var(--code-text-color);
 
       :not(span) {
         color: inherit;

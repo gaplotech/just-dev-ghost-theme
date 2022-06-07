@@ -1,0 +1,50 @@
+@import 'hack_hbml_liga';
+
+$default-token-color: #a9b7c6;
+$default-bg-color: #222831;
+$default-font-family: 'HackJBMLigaturedCCG-Regular', Menlo, Consolas, Monaco, source-code-pro, 'Andale Mono', monospace;
+$selection-bg-color: rgba(33, 66, 131, 0.85);
+
+pre {
+  &[class*='language-'], &[class='shiki'] {
+    background: $default-bg-color;
+    font-size: 75%;
+    line-height: 1.5;
+    font-family: $default-font-family;
+    border: 0;
+    direction: ltr;
+    text-align: left;
+    position: relative;
+    will-change: transform;
+
+
+    // add line number in shiki
+    // https://github.com/shikijs/shiki/issues/3
+    code {
+      color: $default-token-color;
+      counter-reset: step;
+      counter-increment: step 0;
+
+      &::-moz-selection,
+      ::-moz-selection {
+        color: inherit;
+        background: $selection-bg-color;
+      }
+      &::selection,
+      ::selection {
+        color: inherit;
+        background: $selection-bg-color;
+      }
+    }
+
+    code .line::before {
+      content: counter(step);
+      counter-increment: step;
+      width: 1rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      text-align: right;
+      color: rgba(115,138,148,.4)
+    }
+  }
+}
