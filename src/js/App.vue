@@ -37,16 +37,20 @@ const initShiki = document => {
   const nodes = Array.from(document
       .querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code, pre > code')
   )
-  // fallback to markdown if no language specified
-  const nodeLangTuples = nodes.map(el => [el, el.className.match(/^language-.*|^lang-.*/)?.[0]?.split('-')?.[1] ?? 'markdown'])
-  shiki.getHighlighter({
-        theme: GapStyleTheme,
-        langs: nodeLangTuples.map(it => it[1])
-  }).then(highlighter => {
-    nodeLangTuples.forEach(([el, language]) => {
-      el.parentNode.outerHTML = highlighter.codeToHtml(el.textContent, { lang: language })
+
+  if(nodes.length > 0) {
+    // fallback to markdown if no language specified
+    const nodeLangTuples = nodes.map(el => [el, el.className.match(/^language-.*|^lang-.*/)?.[0]?.split('-')?.[1] ?? 'markdown'])
+    shiki.getHighlighter({
+      theme: GapStyleTheme,
+      langs: nodeLangTuples.map(it => it[1])
+    }).then(highlighter => {
+      nodeLangTuples.forEach(([el, language]) => {
+        el.parentNode.outerHTML = highlighter.codeToHtml(el.textContent, { lang: language })
+      })
     })
-  })
+  }
+
 }
 
 export default {
