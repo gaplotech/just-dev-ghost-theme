@@ -1085,11 +1085,31 @@ Usage (In Ghost editor):
 
 .post-full-content {
   .kg-width-wide .kg-image {
+    width: 100vw;
     max-width: 1040px;
+    transform: translateX(calc((700px - min(100vw, 1040px))/2));
+
+    @media (max-width: 800px) {
+      transform: translateX(-7.5vw);
+    }
+
+    @media (max-width: 500px) {
+      transform: translateX(-5vw);
+    }
   }
 
   .kg-width-full .kg-image {
+    width: 100vw;
     max-width: 100vw;
+    transform: translateX(calc((700px - 100vw)/2));
+
+    @media (max-width: 800px) {
+      transform: translateX(-7.5vw);
+    }
+
+    @media (max-width: 500px) {
+      transform: translateX(-5vw);
+    }
   }
 
   figure {
@@ -1133,11 +1153,6 @@ Usage (In Ghost editor):
   }
 }
 
-@media (max-width: 1040px) {
-  .post-full-content .kg-width-full .kg-image {
-    width: 100vw;
-  }
-}
 
 .kg-gallery-container {
   display: flex;
