@@ -48,7 +48,11 @@ async function deploy({ serverUrl, apiKey }) {
     Authorization: `Ghost ${token}`
   }
   await axios
-    .post(url, formData, { headers })
+    .post(url, formData, {
+      headers,
+      maxContentLength: Infinity,
+      maxBodyLength: Infinity
+    })
     .then(response => console.log(JSON.stringify(response.data)))
     .catch(error => console.error('failed to upload ghost theme', error.response.data))
 }
